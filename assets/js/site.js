@@ -109,7 +109,7 @@
       void nxt.offsetWidth;
       nxt.classList.add('on');
       fit();
-      setTimeout(() => cur.classList.remove('out'), 900);
-    }, slow ? 5000 : 3800);
+      setTimeout(() => cur.classList.remove('out'), 1250);
+    }, slow ? 6000 : 4600);
   }
 })();

@@ -682,3 +682,9 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 
 /* Hero: content sits in the vertical middle of the gradient band */
 .hero { padding-block: clamp(96px, 13vw, 176px); align-content: center; }
+
+/* Hero rotator: words slide down. The next word drops in from above while the current one slides out below. */
+.rot .w { transform: translateY(-105%); opacity: 0; filter: none; transition: transform 1200ms cubic-bezier(.65, 0, .35, 1), opacity 900ms ease; }
+.rot .w.on { transform: none; opacity: 1; filter: none; transition-delay: 0ms; }
+.rot .w.out { transform: translateY(105%); opacity: 0; filter: none; transition: transform 1200ms cubic-bezier(.65, 0, .35, 1), opacity 900ms ease; }
+.rot { transition: width 1200ms cubic-bezier(.65, 0, .35, 1); }
