@@ -649,6 +649,11 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .edu-sva { background: #fff; box-shadow: inset 0 0 0 1px #dedede; }
 .edu-sva img { width: 30px; height: auto; max-width: none; }
 
-/* Education: the two schools side by side, stacking on phones */
-.edu { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
-@media (max-width: 599px) { .edu { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact: the white list starts on the same line as the About text column above.
+   About splits its row 1fr : 1.3fr, so column two begins at (width - gap) / 2.3 + gap.
+   The card's grid is measured inside its padding, so the padding is subtracted back out. */
+.contact-card { --cp: clamp(24px, 5vw, 56px); --cg: 32px; padding: var(--cp); }
+@media (min-width: 840px) {
+  .contact-card { grid-template-columns: calc((100% + 2 * var(--cp) - var(--gap)) / 2.3 + var(--gap) - var(--cp) - var(--cg)) minmax(0, 1fr); column-gap: var(--cg); }
+}
