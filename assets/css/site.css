@@ -673,4 +673,12 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .top-nav .nav-li { padding: 0 11px; }
 .top-nav .nav-li:hover, .top-nav .nav-li:focus-visible { padding-right: 11px; }
 @media (min-width: 840px) { .contact-card .li-mobile { display: none; } }
-.hero h1 + .actions { margin-top: 16px; }
+
+/* Hero: headline 20% larger and lighter; a witty status line replaces the buttons and down arrow */
+.hero h1 { font-weight: 300; font-size: calc(var(--fs-72) * 1.2); line-height: 6rem; }
+@media (max-width: 839px) { .hero h1 { font-size: calc(var(--fs-48) * 1.2); line-height: 4.25rem; } }
+@media (max-width: 380px) { .hero h1 { font-size: calc(var(--fs-36) * 1.2); line-height: 3rem; } }
+.hero-note { margin: 8px 0 0; max-width: 34rem; font: 300 var(--fs-24)/2rem var(--md-font); color: #fff; animation: fadeInUp 1.25s .3s var(--ease-emph) both; }
+
+/* Hero: content sits in the vertical middle of the gradient band */
+.hero { padding-block: clamp(96px, 13vw, 176px); align-content: center; }
