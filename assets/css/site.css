@@ -672,3 +672,18 @@ a.card:hover .card-cta .ms { transform: translateX(3px); }
 .duo .media.ph, .pair .media.ph { aspect-ratio: 4 / 3; }
 .ph-copy p { color: var(--md-on-surface-variant); font-style: italic; }
 .template-note { display: flex; align-items: center; gap: 8px; margin: 16px 0 0; padding: 10px 16px; border-radius: 12px; background: #ffecce; color: #7a3d12; font: 500 var(--fs-14)/1.25rem var(--md-font); }
+
+/* Hero: left-aligned, eyebrow line then a two-line headline with the rotating word on top */
+.hero { text-align: left; justify-items: start; }
+.hero .actions { justify-content: flex-start; }
+.hero-eyebrow { display: flex; align-items: center; gap: 16px; margin: 0; font: 500 var(--fs-18)/1.75rem var(--md-font); letter-spacing: .14em; text-transform: uppercase; color: #fff; animation: fadeInUp 1.25s var(--ease-emph) both; }
+.hero-eyebrow .rule { width: 48px; height: 2px; background: currentColor; border-radius: 2px; }
+.hero h1 { white-space: normal; }
+.hero h1 .line { display: block; white-space: nowrap; }
+.hero .down { margin-left: -8px; }
+
+/* LinkedIn: icon-only pill at the far right of the top nav; the contact-list row only shows on phones */
+.top-nav .nav-li { padding: 0 11px; }
+.top-nav .nav-li:hover, .top-nav .nav-li:focus-visible { padding-right: 11px; }
+@media (min-width: 840px) { .contact-card .li-mobile { display: none; } }
+.hero h1 + .actions { margin-top: 16px; }
