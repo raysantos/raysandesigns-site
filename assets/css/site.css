@@ -657,3 +657,12 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 @media (min-width: 840px) {
   .contact-card { grid-template-columns: calc((100% + 2 * var(--cp) - var(--gap)) / 2.3 + var(--gap) - var(--cp) - var(--cg)) minmax(0, 1fr); column-gap: var(--cg); }
 }
+
+/* Work cards: client logos stand in for the card titles (titles stay for screen readers) */
+.card h3.card-logo { display: flex; align-items: center; gap: 16px; min-height: 48px; margin: 4px 0 4px; }
+.card-logo img { display: block; height: 40px; width: auto; }
+.card-logo .lg-osg { height: 44px; }
+.card-logo .lg-luma { height: 44px; }
+.card-logo .lg-zcl { height: 50px; margin-left: -2px; }
+.card-logo .lg-pan { height: 26px; }
+.card-logo .lg-mis { height: 30px; }
