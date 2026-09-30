@@ -113,3 +113,13 @@
     }, slow ? 5000 : 3800);
   }
 })();
+
+// What I bring: light up the power bars once the section scrolls into view
+(() => {
+  const g = document.querySelector('.power-grid');
+  if (!g) return;
+  g.querySelectorAll('.power').forEach(ul => ul.querySelectorAll('.pw').forEach((li, r) => li.style.setProperty('--row', r)));
+  if (!('IntersectionObserver' in window)) { g.classList.add('lit'); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { g.classList.add('lit'); io.disconnect(); } }), { threshold: 0.35 });
+  io.observe(g);
+})();
