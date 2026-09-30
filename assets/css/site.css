@@ -648,3 +648,7 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .edu-logo svg { display: block; }
 .edu-sva { background: #fff; box-shadow: inset 0 0 0 1px #dedede; }
 .edu-sva img { width: 30px; height: auto; max-width: none; }
+
+/* Education: the two schools side by side, stacking on phones */
+.edu { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+@media (max-width: 599px) { .edu { grid-template-columns: minmax(0, 1fr); } }
