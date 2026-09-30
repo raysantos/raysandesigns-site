@@ -659,3 +659,16 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 }
 
 .co-ring { background: #fff; box-shadow: inset 0 0 0 1px #dedede; display: grid; place-items: center; }
+
+/* Work cards link to their case studies */
+#work .grid a.card { color: inherit; }
+.card-cta { margin-top: auto; align-self: flex-end; display: inline-flex; align-items: center; gap: 4px; font: 500 var(--fs-14)/1.25rem var(--md-font); color: var(--md-primary); }
+.card-cta .ms { font-size: 18px; transition: transform var(--dur-m, .2s); }
+a.card:hover .card-cta .ms { transform: translateX(3px); }
+
+/* Case study templates: placeholder media and copy, and a draft note */
+.media.ph { aspect-ratio: 16 / 9; display: grid; place-items: center; background: repeating-linear-gradient(135deg, var(--md-surface-container, #f3f0f4) 0 12px, var(--md-surface, #fff) 12px 24px); border: 2px dashed var(--md-outline-variant); border-radius: var(--shape-l, 16px); }
+.media.ph > span { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--md-surface); color: var(--md-on-surface-variant); font: 500 var(--fs-14)/1.25rem var(--md-font); }
+.duo .media.ph, .pair .media.ph { aspect-ratio: 4 / 3; }
+.ph-copy p { color: var(--md-on-surface-variant); font-style: italic; }
+.template-note { display: flex; align-items: center; gap: 8px; margin: 16px 0 0; padding: 10px 16px; border-radius: 12px; background: #ffecce; color: #7a3d12; font: 500 var(--fs-14)/1.25rem var(--md-font); }
