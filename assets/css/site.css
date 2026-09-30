@@ -646,7 +646,7 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .edu-text { display: grid; gap: 2px; }
 .edu-logo { flex: none; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; display: grid; place-items: center; }
 .edu-logo svg { display: block; }
-.edu-sva { background: #fff; }
+.edu-sva { background: none; border-radius: 0; overflow: visible; }
 .edu-sva img { width: 40px; height: 40px; max-width: none; }
 
 
