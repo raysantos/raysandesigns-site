@@ -688,3 +688,9 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .rot .w.on { transform: none; opacity: 1; filter: none; transition-delay: 0ms; }
 .rot .w.out { transform: translateY(105%); opacity: 0; filter: none; transition: transform 1200ms cubic-bezier(.65, 0, .35, 1), opacity 900ms ease; }
 .rot { transition: width 1200ms cubic-bezier(.65, 0, .35, 1); }
+
+/* Phones: the wordmark's cream fade runs all the way to the left edge of the screen */
+@media (max-width: 839px) {
+  .top-app-bar .brand { position: relative; }
+  .top-app-bar .brand::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100%; width: 100vw; background: #ffecce; pointer-events: none; }
+}
