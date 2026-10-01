@@ -706,3 +706,4 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
   .top-app-bar .brand { position: relative; }
   .top-app-bar .brand::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100%; width: 100vw; background: #ffecce; pointer-events: none; }
 }
+.hero-note u { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; text-decoration-color: rgb(255 255 255 / .85); }
