@@ -6,6 +6,7 @@ Plain HTML, CSS and a little JavaScript, built on Material Design 3 (color roles
 index.html          Home: hero, selected work, experience, about, contact
 cheqrboard.html     CheQRboard case study
 asthma-log.html     Asthma Log case study
+kids-week.html      Kids Week case study
 favicon.svg
 assets/css/site.css All styles: M3 tokens at the top, original-site look at the bottom
 assets/js/site.js   Copy-email button, footer year, image lightbox
