@@ -84,6 +84,29 @@
 
   <section class="cs-sec wrap">
     <div class="cs-text">
+      <p class="step"><span class="ms" aria-hidden="true">animation</span>Motion</p>
+      <div>
+        <h2>Movement that keeps you oriented</h2>
+        <div class="copytext">
+          <p>Swiping drags the days with your finger, and letting go settles the grid onto the next whole day instead of stopping halfway. The arrows ease one day at a time, and the date range in the title follows along.</p>
+          <p>Switching between light and dark fades the colors over a third of a second, so the page changes mood without a jarring flash. Both motions respect the reduced-motion setting on the phone.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pair" style="max-width:52rem">
+      <figure class="fig">
+        <div class="media"><video src="assets/video/kids-snap.mp4" poster="assets/img/kids-snap-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: swiping between days on a phone, each swipe settling cleanly onto the next day, then tapping the back arrow." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
+        <figcaption><b>Swipe and snap.</b> Two swipes forward, then the arrows ease back to today.</figcaption>
+      </figure>
+      <figure class="fig">
+        <div class="media"><video src="assets/video/kids-theme.mp4" poster="assets/img/kids-theme-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: tapping the moon icon fades the schedule from light to dark mode, then the sun icon fades it back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
+        <figcaption><b>Light to dark and back,</b> with a short color fade.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-sec wrap">
+    <div class="cs-text">
       <p class="step"><span class="ms" aria-hidden="true">content_cut</span>Iteration</p>
       <div>
         <h2>Most of the edits were deletions</h2>
@@ -197,6 +220,7 @@
   <div class="dlg-head"><span class="dlg-title" id="dlg-title">Screen</span><button class="icon-btn sl close" type="button" aria-label="Close"><span class="ms" aria-hidden="true">close</span></button></div>
   <div class="dlg-body"><img alt=""></div>
 </dialog>
+<script>if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll("video[autoplay]").forEach(v=>{v.removeAttribute("autoplay");v.pause();v.controls=true;});</script>
 <script src="assets/js/site.js?v=20260930b"></script>
 </body>
 </html>
