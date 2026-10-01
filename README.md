@@ -4,7 +4,6 @@ Plain HTML, CSS and a little JavaScript, built on Material Design 3 (color roles
 
 ```
 index.html          Home: hero, selected work, experience, about, contact
-cheqrboard.html     CheQRboard case study
 asthma-log.html     Asthma Log case study
 kids-week.html      Kids Week case study
 favicon.svg
@@ -17,7 +16,7 @@ assets/img/         Case study screens (WebP)
 - Text: open the .html file in any editor (VS Code works well) and change the words between the tags.
 - Colors: the `--md-*` tokens at the top of `site.css` are M3 color roles mapped to your original palette (navy #1B3867, sky #3CB4E5, green #61CE70). The hero gradient is `--hero-grad`.
 - Icons: any Material Symbols name works, e.g. `<span class="ms">palette</span>`.
-- New case study: duplicate `cheqrboard.html`, rename it, swap the text and images, and add a card that links to it in the Selected work section of `index.html`.
+- New case study: duplicate `asthma-log.html`, rename it, swap the text and images, and add a card that links to it in the Selected work section of `index.html`.
 
 ## Preview locally
 Double-click `index.html`, or run `python3 -m http.server` in this folder and open http://localhost:8000.
