@@ -211,6 +211,7 @@ a.card-elevated:hover { box-shadow: var(--elev-2); }
 .feature h3 { font: var(--display-m); font-size: clamp(2.25rem, 5vw, 2.8125rem); }
 .feature .btn { align-self: flex-start; margin-top: 8px; }
 .feature-text { display: flex; flex-direction: column; gap: 16px; }
+.feature + .feature { margin-top: var(--gap, 24px); }
 @media (max-width: 839px) { .feature { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
 
 .media { background: var(--md-surface-container); border-radius: var(--shape-l); padding: 12px; overflow: hidden; }
