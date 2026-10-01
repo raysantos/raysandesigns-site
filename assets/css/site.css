@@ -215,6 +215,14 @@ a.card-elevated:hover { box-shadow: var(--elev-2); }
 /* Phone screenshots that carry their own frame: no tinted panel behind them */
 .media.bare, .feature .media.bare { background: transparent; padding: 0; }
 .media.bare img { border-radius: 0; }
+/* Case studies of phone screens (body.cs-phones): centered figures, roomier sections and captions */
+.cs-phones .cs-sec { padding-block: 96px 0; }
+.cs-phones .cs-hero .fig { margin-top: 48px; }
+.cs-phones .fig { margin-top: 48px; }
+.cs-phones .fig.narrow { max-width: 46rem; margin-inline: auto; }
+.cs-phones .fig figcaption { margin: 20px auto 0; max-width: 36rem; text-align: center; line-height: 1.55; }
+.cs-phones .next { margin-top: 96px; }
+@media (max-width: 839px) { .cs-phones .cs-sec { padding-block: 64px 0; } .cs-phones .fig { margin-top: 32px; } }
 @media (max-width: 839px) { .feature { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
 
 .media { background: var(--md-surface-container); border-radius: var(--shape-l); padding: 12px; overflow: hidden; }
