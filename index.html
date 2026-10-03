@@ -78,7 +78,7 @@
         <ul class="chips"><li class="chip">Data design</li><li class="chip">Information design</li><li class="chip">AI-assisted build</li></ul>
         <span class="btn btn-tonal"><span class="ms" aria-hidden="true">arrow_forward</span>Read the case study</span>
       </div>
-      <div class="media"><img src="assets/img/resin-desktop-light.webp" width="2000" height="1174" alt="Resin Matrix: leader cards above a sortable table with one Anycubic resin per row and its specs and prices across." loading="lazy"></div>
+      <div class="media"><video src="assets/video/resin-ambient.mp4" poster="assets/img/resin-ambient-poster.webp" width="1440" height="844" autoplay muted loop playsinline preload="metadata" aria-label="Resin Matrix: a table with one Anycubic resin per row slowly re-sorts itself by elongation, then impact strength, then settles back." style="display:block;width:100%;height:auto"></video></div>
     </a>
 
     <div class="grid">
@@ -266,6 +266,7 @@
 </nav>
 
 <div class="snackbar" role="status" aria-live="polite"></div>
+<script>if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll("video[autoplay]").forEach(v=>{v.removeAttribute("autoplay");v.pause();v.controls=true;});</script>
 <script src="assets/js/site.js?v=20260930b"></script>
 </body>
 </html>
