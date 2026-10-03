@@ -37,7 +37,7 @@
     <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
     <p class="overline"><span class="ms" aria-hidden="true">pulmonology</span>Case study · Personal project</p>
     <h1>Asthma <span class="accent">Log</span></h1>
-    <p class="lede">My daughter has asthma. Between a rescue inhaler, a twice-a-day nebulizer and two parents trading shifts, the question at 2am was always the same: when did she last have it, and can she have it now? I designed and built a small web app that answers that at a glance, on any family member's phone.</p>
+    <p class="lede">My daughter has asthma. Between a rescue inhaler, a twice-a-day nebulizer and two parents trading shifts, the question at 2am was always the same: when did she last have it, and can she have it now? I designed and built a small web app that answers that at a glance on any family member's phone, and is clear enough for her to log her own doses.</p>
     <div class="meta">
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">family_home</span>Client</p><p>My family</p></div>
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">smartphone</span>Product</p><p>Installable mobile web app</p></div>
@@ -45,7 +45,7 @@
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">open_in_new</span>Live app</p><p><a href="https://raysantos.github.io/asthma-log/" target="_blank" rel="noopener">Asthma Log</a></p></div>
     </div>
     <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: Dosage, History and Medications screens"><div class="media bare"><img src="assets/img/asthma-hero.webp?v=3" width="1658" height="900" alt="Three phone screens of Asthma Log: Dosage with next-dose cards, History with a seven-day chart of rescue and controller doses, and the Medications list."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <button class="zoom" type="button" aria-label="Enlarge: Dosage, History and Medications screens"><div class="media bare"><img src="assets/img/asthma-hero.webp?v=4" width="1658" height="900" alt="Three phone screens of Asthma Log: Dosage with next-dose cards, History with a seven-day chart of rescue and controller doses, and the Medications list."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>Three tabs, one job each.</b> Dosage answers "can she have it now?", History shows the week, and Medications holds what she takes and how often.</figcaption>
     </figure>
   </section>
@@ -69,12 +69,12 @@
       <div>
         <h2>A morning, start to finish</h2>
         <div class="copytext">
-          <p>It's 7:45 and the morning nebulizer is due. Log the dose with a note, see it land in History, add a new medication, and head back to Dosage, where its card is already waiting.</p>
+          <p>It's 7:45 and the morning nebulizer is due. Pick the medicine, add a note and save. Then check it in History, add a new medication, and head back to Dosage, where its card is already waiting.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <div class="media bare"><video src="assets/video/asthma-walkthrough.mp4" poster="assets/img/asthma-walkthrough-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: logging the morning Budesonide dose with a note, checking it in History, adding an allergy syrup in Medications, then returning to Dosage where its new card appears." style="display:block;width:min(100%,360px);height:auto;margin:0;border:3px solid #e6ecef;border-radius:28px;background:#fff"></video></div>
+      <div class="media bare"><video src="assets/video/asthma-walkthrough.mp4?v=2" poster="assets/img/asthma-walkthrough-poster.webp?v=2" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: logging the morning Budesonide dose with a note, checking it in History, adding an allergy syrup in Medications, then returning to Dosage where its new card appears." style="display:block;width:min(100%,360px);height:auto;margin:0;border:3px solid #e6ecef;border-radius:28px;background:#fff"></video></div>
       <figcaption><b>Log, review, add.</b> Every tap in the recording is a real tap in the app.</figcaption>
     </figure>
   </section>
@@ -91,8 +91,8 @@
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: Dosage tab and early-dose warning"><div class="media bare"><img src="assets/img/asthma-dosage.webp?v=3" width="1092" height="900" alt="Two phone screens: the Dosage tab with next-dose cards for Albuterol and Budesonide, and the dose form showing a warning that a new dose would be 110 minutes after the last one."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Next dose, then log.</b> Picking a medication fills in its usual amount and the current time. Logging inside the spacing window shows a heads-up but still saves, because parents often log a dose after the fact.</figcaption>
+      <button class="zoom" type="button" aria-label="Enlarge: Dosage tab and early-dose warning"><div class="media bare"><img src="assets/img/asthma-dosage.webp?v=4" width="1092" height="900" alt="Two phone screens: the Dosage tab with next-dose cards for Albuterol and Budesonide, and the dose form showing a warning that a new dose would be 110 minutes after the last one."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Next dose, then log.</b> Each medicine says whether it's time. Picking one fills in its usual amount and the current time. Logging inside the spacing window shows a heads-up but still saves, because doses often get logged after the fact.</figcaption>
     </figure>
   </section>
 
@@ -100,10 +100,12 @@
     <div class="cs-text">
       <p class="step"><span class="ms" aria-hidden="true">touch_app</span>Logging</p>
       <div>
-        <h2>One tap, even one-handed</h2>
+        <h2>Clear enough to log her own dose</h2>
         <div class="copytext">
-          <p>Each medication is a button, so logging a dose is tap, check the time, save. A floating Log dose button stays at the bottom of every screen within thumb reach, and gets out of the way when the form is already on screen.</p>
-          <p>Each medication has one type that matters: rescue or controller. Budesonide counts as a controller whether it goes through a nebulizer or not, and that type drives both the schedule and the chart. How a medication is given doesn't change anything, so the app doesn't ask.</p>
+          <p>My daughter is six, reads like a third grader and does her own treatments. So the form had to be clear enough for her to log a dose herself, without turning into a kids' app.</p>
+          <p>Logging is three numbered steps: pick the medicine, check the amount and time, save. Each medicine is a large button that says whether it's time, like <b>Due this morning</b> or <b>Wait until 12:30am</b>. The amount and time fill in on their own, the note waits behind Add a note, and the Save button names the medicine, so it's clear what's about to be logged.</p>
+          <p>Small hands tap twice. Save locks after the first tap, a confirmation with Undo takes its place, and the medicine buttons pause for two seconds. Logging the same medicine again within ten minutes asks first.</p>
+          <p>Each medication has one type that matters, rescue or controller, and it drives both the schedule and the chart. How a medication is given doesn't change anything, so the app doesn't ask. A floating Log dose button jumps to the form from any tab.</p>
         </div>
       </div>
     </div>
@@ -115,14 +117,14 @@
       <div>
         <h2>A week at a glance, ready for the doctor</h2>
         <div class="copytext">
-          <p>History puts rescue and controller doses side by side for the last seven days. A day with more red than usual is easy to spot, and that's the pattern a pediatrician asks about.</p>
-          <p>Copy 30-day summary turns the log into plain text that pastes straight into a message or a patient portal.</p>
+          <p>History opens on a Last 7 days card: the week's totals, then rescue and controller doses side by side for each dated day, with today marked. A day with more red than usual is easy to spot, and that's the pattern a pediatrician asks about.</p>
+          <p>The dose list below starts with Today and Yesterday, with Load more for older days. Copy 30-day summary turns the log into plain text that pastes straight into a message or a patient portal.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: History tab"><div class="media bare"><img src="assets/img/asthma-history.webp?v=3" width="1092" height="900" alt="Two phone screens of the History tab: weekly totals, a doses-per-day bar chart for rescue and controller, and the dose list grouped by day."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Doses per day</b>, with red for rescue and green for controller, above the full dose list.</figcaption>
+      <button class="zoom" type="button" aria-label="Enlarge: History tab"><div class="media bare"><img src="assets/img/asthma-history.webp?v=4" width="1092" height="900" alt="Two phone screens of the History tab: weekly totals, a doses-per-day bar chart for rescue and controller, and the dose list grouped by day."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>The Last 7 days card</b>, with red for rescue and green for controller, above the dose list and Load more.</figcaption>
     </figure>
   </section>
 
@@ -132,13 +134,13 @@
       <div>
         <h2>Anyone can look, only family can log</h2>
         <div class="copytext">
-          <p>Everyone who opens the link sees the same live log, so a grandparent can check the last dose without calling. Logging, deleting and changing medications take a family password, entered once per phone.</p>
+          <p>Everyone who opens the link sees the same live log, so a grandparent can check the last dose without calling. Logging, deleting and changing medications take a family password, entered once per phone, and the floating Log dose button only appears after that.</p>
           <p>The password is checked by the database's own sign-in service, and its security rules refuse any change that doesn't come from the family account. Editing the page can't get around it.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: locked phone"><div class="media bare"><img src="assets/img/asthma-lock.webp?v=3" width="1092" height="900" alt="Two phone screens on a locked device: the dose form with a password box in place of the Save button, and the History tab still open to view."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <button class="zoom" type="button" aria-label="Enlarge: locked phone"><div class="media bare"><img src="assets/img/asthma-lock.webp?v=4" width="1092" height="900" alt="Two phone screens on a locked device: the dose form with a password box in place of the Save button, and the History tab still open to view."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>A locked phone</b> swaps the Save button for a password box. History stays open to everyone.</figcaption>
     </figure>
   </section>
@@ -154,13 +156,14 @@
             <li><span class="ms" aria-hidden="true">check_circle</span><span>A dark mode that doesn't light up the room, with a manual switch</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span>Source Sans 3, a humanist sans that stays readable at small sizes, and compact times like 12:30am</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span>Add to Home Screen, so it opens like an app, plus offline support that syncs once the phone is back online</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>A Last Dose line under the title on every tab, naming the medication and how long ago</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A Last Dose line under the title on every tab, naming the most recent medication and how long ago</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A white light mode and neutral wording, since anyone in the family might be the one logging</span></li>
           </ul>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: dark mode"><div class="media bare"><img src="assets/img/asthma-dark.webp?v=3" width="1092" height="900" alt="The Dosage and History tabs in dark mode."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <button class="zoom" type="button" aria-label="Enlarge: dark mode"><div class="media bare"><img src="assets/img/asthma-dark.webp?v=4" width="1092" height="900" alt="The Dosage and History tabs in dark mode."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>Dark mode</b>, designed alongside light rather than inverted from it.</figcaption>
     </figure>
   </section>
@@ -169,9 +172,9 @@
     <div class="cs-text">
       <p class="step"><span class="ms" aria-hidden="true">auto_awesome</span>Process</p>
       <div>
-        <h2>Designed and shipped in one evening</h2>
+        <h2>Shipped in an evening, refined by real use</h2>
         <div class="copytext">
-          <p>I worked with Claude as a build partner. I set the direction and made the design calls, and Claude wrote the code. The app went from first idea to a live, shared tool in about two hours and a few dozen rounds of feedback, from renaming tabs and tightening spacing to moving the password check onto the server.</p>
+          <p>I worked with Claude as a build partner. I set the direction and made the design calls, and Claude wrote the code. The first version went from idea to a live, shared tool in one evening. The days of real use that followed shaped the rest: catching double taps, dropping the inhaler and nebulizer labels, trimming History to the last two days, and rebuilding the form so she could log her own doses.</p>
           <p>It's one HTML file hosted on GitHub Pages, with Firebase for the shared database and sign-in. That costs nothing to run and leaves very little to maintain.</p>
         </div>
       </div>
@@ -190,7 +193,7 @@
         <div class="copytext">
           <ul>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Reminders.</b> The app shows when the next dose is due, but it doesn't nudge anyone. A notification when the controller is due, or when a rescue dose is allowed again, would close the loop.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Who gave it.</b> Everyone logs through one family password, so the log can't say which caregiver gave a dose. Separate sign-ins would add that without adding steps.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Who gave it.</b> Everyone logs through one family password, so the log can't say whether a parent logged a dose or she did. Separate sign-ins would add that without adding steps.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Real schedules.</b> Morning and night split at noon, so a 2am dose counts as morning. Time windows set per medication, like 6 to 10am and 6 to 10pm, would match how doses are actually given.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Test the fast path first.</b> After launch, a quick double tap could save the same dose twice. A save lock, an Undo and a two-second cooldown fixed it. Next time, rapid-tap testing comes before launch, not after.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A report for the doctor.</b> The 30-day summary is plain text. A one-page chart of rescue use across the month would make checkups faster.</span></li>
