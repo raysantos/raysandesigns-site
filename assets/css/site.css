@@ -709,3 +709,14 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
   .top-app-bar .brand::before { content: ""; position: absolute; top: 0; bottom: 0; right: 100%; width: 100vw; background: #ffecce; pointer-events: none; }
 }
 .hero-note u { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; text-decoration-color: rgb(255 255 255 / .85); }
+
+/* Case studies: figures get the same breathing room as the gap between sections */
+.cs-sec .fig, .cs-sec .duo, .cs-sec .pair { margin-top: 64px; }
+.cs-sec .duo .fig, .cs-sec .pair .fig { margin-top: 0; }
+.cs-phones .cs-sec .fig, .cs-phones .cs-sec .duo, .cs-phones .cs-sec .pair { margin-top: 96px; }
+.cs-phones .cs-sec .duo .fig, .cs-phones .cs-sec .pair .fig { margin-top: 0; }
+@media (max-width: 839px) {
+  .cs-sec .fig, .cs-sec .duo, .cs-sec .pair { margin-top: 48px; }
+  .cs-phones .cs-sec .fig, .cs-phones .cs-sec .duo, .cs-phones .cs-sec .pair { margin-top: 64px; }
+  .cs-sec .duo .fig, .cs-sec .pair .fig { margin-top: 0; }
+}
