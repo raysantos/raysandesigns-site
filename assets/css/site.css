@@ -753,17 +753,20 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
   --md-inverse-on-surface: #1b1f24;
   --chip-ink: #86e292;
   --chip-fill: rgb(97 206 112 / .12);
-  --wordmark-fade: linear-gradient(90deg, #3b2b18, rgb(18 20 23 / 0));
+  --wordmark-fade: linear-gradient(90deg, rgb(255 140 58 / .38), rgb(18 20 23 / 0));
+  --neon-orange: #ff8c3a;
 }
 :root[data-theme="dark"], :root[data-theme="dark"] body { background: var(--md-surface); }
 :root[data-theme="dark"] .top-app-bar { background: var(--md-surface); }
-:root[data-theme="dark"] .top-nav .nav-pill[aria-current], :root[data-theme="dark"] .fab { background-color: #3b2b18; color: #ffd9a8; }
-:root[data-theme="dark"] .top-nav .nav-pill:hover, :root[data-theme="dark"] .top-nav .nav-pill:focus-visible,
+/* Dark: nav items get no fill, just a neon-orange icon and label when current or hovered */
+:root[data-theme="dark"] .top-nav .nav-pill[aria-current], :root[data-theme="dark"] .top-nav .nav-pill:hover, :root[data-theme="dark"] .top-nav .nav-pill:focus-visible { background: none; color: var(--neon-orange); }
+:root[data-theme="dark"] .top-nav .nav-pill[aria-current] .ms, :root[data-theme="dark"] .top-nav .nav-pill:hover .ms, :root[data-theme="dark"] .top-nav .nav-pill:focus-visible .ms, :root[data-theme="dark"] .top-nav .nav-pill[aria-current] .ico, :root[data-theme="dark"] .top-nav .nav-pill:hover .ico, :root[data-theme="dark"] .top-nav .nav-pill:focus-visible .ico { color: var(--neon-orange); }
+:root[data-theme="dark"] .fab { background-color: var(--neon-orange); color: #1f1206; box-shadow: 0 0 22px rgb(255 140 58 / .35); }
 :root[data-theme="dark"] .fab:hover, :root[data-theme="dark"] .fab:focus-visible { color: #fff; }
-@media (max-width: 839px) { :root[data-theme="dark"] .top-app-bar .brand::before { background: #3b2b18; } }
+@media (max-width: 839px) { :root[data-theme="dark"] .top-app-bar .brand::before { background: rgb(255 140 58 / .3); } }
 :root[data-theme="dark"] .feature, :root[data-theme="dark"] .next { background: #172a4b; border-color: #23395f; }
 :root[data-theme="dark"] .contact-card .list { background: var(--md-surface-container); }
-:root[data-theme="dark"] .card-icon.s { background: #3b2618; color: #ffb88a; }
+:root[data-theme="dark"] .card-icon.s { background: rgb(255 140 58 / .16); color: var(--neon-orange); }
 :root[data-theme="dark"] .nav-bar { background: var(--md-surface-container); }
 :root[data-theme="dark"] .snackbar { background: var(--md-inverse-surface); color: var(--md-inverse-on-surface); }
 /* Logos and white product screens keep their own light backgrounds */
