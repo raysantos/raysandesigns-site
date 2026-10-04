@@ -113,3 +113,28 @@
     }, slow ? 6000 : 4600);
   }
 })();
+
+// Light / dark switch in the footer. Light is the default; the choice is remembered on this device.
+(() => {
+  const root = document.documentElement;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const apply = (t) => {
+    if (t === 'dark') root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#121417' : '#ffffff');
+    document.querySelectorAll('.theme-toggle').forEach((b) => {
+      const dark = t === 'dark';
+      b.setAttribute('aria-pressed', String(dark));
+      b.querySelector('.ms').textContent = dark ? 'light_mode' : 'dark_mode';
+      b.querySelector('.tt-label').textContent = dark ? 'Light mode' : 'Dark mode';
+    });
+  };
+  const current = () => (root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  apply(current());
+  document.querySelectorAll('.theme-toggle').forEach((b) => b.addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    root.classList.add('theme-fading');
+    apply(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    setTimeout(() => root.classList.remove('theme-fading'), 350);
+  }));
+})();

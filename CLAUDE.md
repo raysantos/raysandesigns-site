@@ -34,3 +34,9 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 - Several conversations edit this site at once. Pull before every change, touch only the files the task is about, and rebase before pushing.
 - When `site.css` changes, bump its `?v=` value on every page that links it, so browsers load the new version.
 - Images live in `assets/img/` (WebP), clips in `assets/video/` (H.264 MP4, muted, looping, with a WebP poster).
+
+## Light / dark mode
+
+- Light is the default. The footer has a sun/moon `.theme-toggle` button, and `site.js` sets `data-theme="dark"` on `<html>` and saves the choice in `localStorage`.
+- Every page needs the one-line theme script right after the `theme-color` meta (it prevents a light flash), plus the toggle button in `.site-foot`. Copy both from `index.html`.
+- Use the `--md-*` color tokens, not hard-coded colors, so new sections work in both modes. Dark values live under `:root[data-theme="dark"]` at the end of `site.css`.
