@@ -125,7 +125,9 @@
       const dark = t === 'dark';
       b.setAttribute('aria-pressed', String(dark));
       b.querySelector('.ms').textContent = dark ? 'light_mode' : 'dark_mode';
-      b.querySelector('.tt-label').textContent = dark ? 'Light mode' : 'Dark mode';
+      const t2 = dark ? 'Switch to light mode' : 'Switch to dark mode';
+      b.setAttribute('aria-label', t2); b.title = t2;
+      const lbl = b.querySelector('.tt-label'); if (lbl) lbl.remove();
     });
   };
   const current = () => (root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');

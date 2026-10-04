@@ -771,10 +771,10 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 
 /* Theme switch in the footer: Material Symbols sun and moon */
 .site-foot { align-items: center; }
-.theme-toggle { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border: 1px solid var(--md-outline-variant); border-radius: var(--shape-full); background: transparent; color: var(--md-on-surface); font: 600 .875rem/1 var(--md-font); cursor: pointer; transition: background-color var(--dur-s); }
+.theme-toggle { display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: var(--shape-full); background: transparent; color: var(--md-on-surface); font: 600 .875rem/1 var(--md-font); cursor: pointer; transition: background-color var(--dur-s); }
 .theme-toggle:hover { background: var(--md-surface-container-high); }
 .theme-toggle:focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
-.theme-toggle .ms { font-size: 20px; }
+.theme-toggle .ms { font-size: 22px; }
 
 /* A short color fade while switching, skipped for reduced motion */
 :root.theme-fading, :root.theme-fading *, :root.theme-fading *::before, :root.theme-fading *::after {
