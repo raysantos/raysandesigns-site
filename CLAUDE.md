@@ -27,6 +27,10 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 ```
 
    Aim for three to five honest items: gaps in the current version, lessons learned, and what you'd do next. Write them as plain statements, not apologies.
+
+   **Keep it current.** When a project gets revised, check off the items the revision addresses: give the `<li>` `class="done"`, swap the icon to `check_circle`, and start the text with "Done:" plus what shipped. Never delete a checked item. If only part is done, check off the done part and add a new unchecked item for what's left. Add new items as new gaps show up.
+
+   **Revisions section.** Right before Things to improve, a `<section class="cs-sec wrap">` with step label `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date.
 4. Contact block and footer, copied from the home page.
 
 ## Working rules

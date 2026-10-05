@@ -48,11 +48,11 @@
     </div>
     <div class="duo">
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: schedule on a phone"><div class="media"><img src="assets/img/kids-phone-light.webp" width="780" height="1360" alt="The schedule on a phone: today and tomorrow side by side, with each child's drop-off and pickup times and an after-school club card."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-        <figcaption><b>On a phone,</b> exactly two days fit.</figcaption>
+        <button class="zoom" type="button" aria-label="Enlarge: schedule on a phone"><div class="media"><img src="assets/img/kids-phone-light.webp" width="780" height="1520" alt="The schedule on a phone during Spirit Week: today and tomorrow side by side, each child's outfit for the day on a dashed card, school times, an after-school club, and the back, Today and forward buttons in a bar along the bottom."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>On a phone,</b> exactly two days fit, and the controls sit within thumb reach at the bottom.</figcaption>
       </figure>
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: schedule on desktop"><div class="media"><img src="assets/img/kids-desktop-light.webp" width="1600" height="838" alt="The schedule on a desktop browser: a week of days across the top, three children down the side, with school times and color-coded activity cards."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <button class="zoom" type="button" aria-label="Enlarge: schedule on desktop"><div class="media"><img src="assets/img/kids-desktop-light.webp" width="1600" height="1162" alt="The schedule on a desktop browser during Spirit Week: a week of days across the top with Spirit Week labels, three children down the side, outfit cards, school times, color-coded activities, and a table of delayed-opening and early-dismissal times below."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>On desktop,</b> the same grid shows the week. Names, places and times in these screens are sample data.</figcaption>
       </figure>
     </div>
@@ -78,7 +78,7 @@
         <h2>Days across, kids down</h2>
         <div class="copytext">
           <p>Each child gets a row and each day gets a column. School drop-off and pickup sit in a quiet gray strip at the top of every school day, and activities sit below as cards tinted in that child's color.</p>
-          <p>The page opens with today in the first column. The arrows step one day at a time, and swiping snaps cleanly from day to day. The columns resize so a whole number of days always fits the screen, with no sliver of a third day hanging off the edge.</p>
+          <p>The page opens with today in the first column. The arrows move a full screen of days at a time, and a Today button brings you back. On a phone those three controls sit in a bar along the bottom where a thumb reaches them, and on desktop you can also click and drag the grid. The columns resize so a whole number of days always fits the screen, with no sliver of a third day hanging off the edge.</p>
         </div>
       </div>
     </div>
@@ -90,18 +90,18 @@
       <div>
         <h2>Movement that keeps you oriented</h2>
         <div class="copytext">
-          <p>Swiping drags the days with your finger, and letting go settles the grid onto the next whole day instead of stopping halfway. The arrows ease one day at a time, and the date range in the title follows along.</p>
-          <p>Switching between light and dark fades the colors over a third of a second, so the page changes mood without a jarring flash. Both motions respect the reduced-motion setting on the phone.</p>
+          <p>Swiping drags the days with your finger, and letting go settles the grid onto the next whole day instead of stopping halfway. On desktop, click-and-drag behaves the same way, and a quick flick carries further. The arrows ease a screen of days at a time, and the date range in the title follows along.</p>
+          <p>Light and dark mode switch on their own at sunrise and sunset, and the colors fade over a third of a second instead of flashing. Tapping the toggle overrides it until the next sunrise or sunset. Both motions respect the reduced-motion setting on the phone.</p>
         </div>
       </div>
     </div>
     <div class="pair" style="max-width:52rem">
       <figure class="fig">
-        <div class="media"><video src="assets/video/kids-snap.mp4" poster="assets/img/kids-snap-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: swiping between days on a phone, each swipe settling cleanly onto the next day, then tapping the back arrow." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-        <figcaption><b>Swipe and snap.</b> Two swipes forward, then the arrows ease back to today.</figcaption>
+        <div class="media"><video src="assets/video/kids-snap.mp4" poster="assets/img/kids-snap-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: swiping between days on a phone, each swipe settling cleanly onto the next day, then tapping the forward arrow and the Today button in the bottom bar." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
+        <figcaption><b>Swipe and snap.</b> Two swipes forward, a jump ahead, then Today eases back.</figcaption>
       </figure>
       <figure class="fig">
-        <div class="media"><video src="assets/video/kids-theme.mp4" poster="assets/img/kids-theme-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: tapping the moon icon fades the schedule from light to dark mode, then the sun icon fades it back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
+        <div class="media"><video src="assets/video/kids-theme.mp4" poster="assets/img/kids-theme-poster.webp" width="720" height="1404" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: at the bottom of the page, tapping the moon icon fades the schedule from light to dark mode, then the sun icon fades it back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
         <figcaption><b>Light to dark and back,</b> with a short color fade.</figcaption>
       </figure>
     </div>
@@ -140,21 +140,39 @@
             <li><span class="ms" aria-hidden="true">check_circle</span><span>A "Hide drop-off &amp; pickup" button turns the grid into an activities-only view. Each device remembers the choice.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span>Activities get an emoji from their name, so swim, dance, soccer or chess is recognizable before you read a word.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span>No-school days say so, and after-school clubs drop off those days automatically.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Light mode by default, with a Material Symbols sun and moon toggle for anyone who prefers dark.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Past days fade slightly, so the eye lands on today and what's ahead.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A small table under the grid lists each child's delayed-opening and early-dismissal times, for the mornings a weather call changes everything.</span></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="pair">
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: activities-only view"><div class="media"><img src="assets/img/kids-phone-hidden.webp" width="780" height="1174" alt="The phone view with drop-off and pickup hidden, showing only activity cards."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <button class="zoom" type="button" aria-label="Enlarge: activities-only view"><div class="media"><img src="assets/img/kids-phone-hidden.webp" width="780" height="1520" alt="The phone view with drop-off and pickup hidden, showing only activity cards."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>Activities only,</b> with school times hidden.</figcaption>
       </figure>
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: dark mode"><div class="media"><img src="assets/img/kids-phone-dark.webp" width="780" height="1360" alt="The phone view in dark mode, with today highlighted in a warm tone."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <button class="zoom" type="button" aria-label="Enlarge: dark mode"><div class="media"><img src="assets/img/kids-phone-dark.webp" width="780" height="1520" alt="The phone view in dark mode, with today highlighted in a warm tone and Spirit Week days in deep blue."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>Dark mode,</b> designed as its own palette rather than an inversion.</figcaption>
       </figure>
     </div>
+  </section>
+
+  <section class="cs-sec wrap">
+    <div class="cs-text">
+      <p class="step"><span class="ms" aria-hidden="true">celebration</span>Special days</p>
+      <div>
+        <h2>Days that change the rules for everyone</h2>
+        <div class="copytext">
+          <p>Spirit Week arrived in the first week of use, with a different outfit every day for each school. The first try was a banner across the top of the week. It took a row of space for one word, so it became a light school-blue tint on those five columns with a small label on each day line, the same way "Today" is marked. Each child's outfit sits at the top of their cell as a dashed card.</p>
+          <p>No-school days use the same idea in amber, with a "No School" label and nothing else. The first version was red, which read too close to one child's color, so it changed. The outfit cards moved off yellow for the same reason: they were competing with the Today highlight.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="fig narrow" style="max-width:26rem">
+      <button class="zoom" type="button" aria-label="Enlarge: a no-school day"><div class="media"><img src="assets/img/kids-phone-noschool.webp" width="780" height="1520" alt="A no-school Monday on a phone: the day is tinted amber with a No School label, with only an evening activity listed."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>No school,</b> in amber so it can't be mistaken for a child's color. Spirit Week is in the phone screen at the top of the page.</figcaption>
+    </figure>
   </section>
 
   <section class="cs-sec wrap">
@@ -176,12 +194,59 @@
 
   <section class="cs-sec wrap">
     <div class="cs-text">
+      <p class="step"><span class="ms" aria-hidden="true">sync</span>Data</p>
+      <div>
+        <h2>From the family calendar, not a spreadsheet</h2>
+        <div class="copytext">
+          <p>The first version was typed by hand. Now a small script reads our family Google Calendar and the school's club calendar, expands the repeating events and turns long calendar titles into short names and places through a rules file. School days come from the drop-off and pickup events, so deleting a drop-off quietly turns that day into a day off. Club meetings only appear on school days, and they push pickup to when the club ends.</p>
+          <p>Phones that saved the page to the home screen held on to old copies. Each published version now carries a build stamp, and when the page opens or comes back on screen it checks for a newer one and reloads itself, still unlocked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-sec wrap">
+    <div class="cs-text">
       <p class="step"><span class="ms" aria-hidden="true">auto_awesome</span>Process</p>
       <div>
         <h2>Designed in conversation, shipped the same day</h2>
         <div class="copytext">
-          <p>I built Kids Week with Claude in a single afternoon and evening. I made the design calls and reviewed every change on a real phone. Claude read our family calendar and the school's club calendar, wrote the code, and pushed each update to both repositories so the family link stayed current.</p>
+          <p>I built the first version of Kids Week with Claude in a single afternoon and evening, and I keep refining it the same way. I made the design calls and reviewed every change on a real phone. Claude read our family calendar and the school's club calendar, wrote the code, and pushed each update to both repositories so the family link stayed current.</p>
           <p>That loop of asking for a change, seeing it live within minutes and keeping or reverting it is what made the round of deletions practical. Trying something cost almost nothing, so I could judge it on the device instead of in my head.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cs-sec wrap">
+    <div class="cs-text">
+      <p class="step"><span class="ms" aria-hidden="true">history</span>Revisions</p>
+      <div>
+        <h2>What changed since launch</h2>
+        <div class="copytext">
+          <p><b>New features</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>The schedule is built from the family and club calendars instead of being typed by hand.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Spirit Week and no-school days are marked across the whole column, with outfit cards for each child.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Delayed-opening and early-dismissal times for every child sit under the grid.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>A Today button, a bottom control bar on phones, and click-and-drag on desktop.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Light and dark mode follow sunrise and sunset.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Home-screen copies update themselves when a new version is published.</span></li>
+          </ul>
+          <p><b>Improvements</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>The arrows move a full screen of days instead of one, and past days fade back.</span></li>
+            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>The drop-off toggle and the theme button moved under the grid, out of the title area.</span></li>
+            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>No-school amber and white outfit cards replaced colors that clashed with a child's color and with Today.</span></li>
+          </ul>
+          <p><b>Fixes</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">build</span><span>On desktop, refreshing could leave the passphrase screen stacked on top of the schedule.</span></li>
+            <li><span class="ms" aria-hidden="true">build</span><span>Saved home-screen apps kept showing an old week.</span></li>
+          </ul>
+          <p><b>Tried and taken back out</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">undo</span><span>A sync button, a next-day button, a full-width banner for special weeks, and one-line descriptions under each special day. Each added something to read without adding anything to know.</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -193,8 +258,10 @@
         <h2>Things to improve</h2>
         <div class="copytext">
           <ul>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Updates without a rebuild.</b> The page shows a snapshot of the family calendar, so a change to the week means publishing a new version. Reading from the calendar directly would keep it current on its own.</span></li>
+            <li class="done"><span class="ms" aria-hidden="true">check_circle</span><span><b>Updates without a rebuild.</b> Done: the page is now built from the family and club calendars, and open copies refresh themselves when a new version is published.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Fully hands-off sync.</b> A job that rebuilds the page every three hours is written but not switched on yet, so today a sync still starts with a request.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Flag what changed.</b> A moved pickup or a cancelled practice looks like every other card. A small marker on anything that changed since yesterday would help the people doing pickups notice it.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Special days by hand.</b> Spirit Week outfits and other one-off notes are still typed into the rules file. Reading them from the school's newsletters would remove that step.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Access per person.</b> Everyone shares one passphrase, so removing one person's access means changing it for the whole family.</span></li>
           </ul>
         </div>
