@@ -18,6 +18,64 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 <link rel="stylesheet" href="assets/css/site.css?v=20261004t">
+<style>
+/* Live demo (this page only) */
+:root { --pg-fail-bg: #fde7e7; --pg-fail-ink: #9b1c1c; --pg-pass-bg: #fff3d6; --pg-pass-ink: #7a5300; --pg-strong-bg: #dff3e3; --pg-strong-ink: #1b6b2e; }
+:root[data-theme="dark"] { --pg-fail-bg: #4a1f1f; --pg-fail-ink: #ffb4ab; --pg-pass-bg: #45391a; --pg-pass-ink: #ffd88a; --pg-strong-bg: #1e3a25; --pg-strong-ink: #9bdcaa; }
+.pg { display: grid; grid-template-columns: minmax(0, 17rem) minmax(0, 1fr); gap: var(--gap); margin-top: 48px; align-items: start; }
+@media (max-width: 839px) { .pg { grid-template-columns: minmax(0, 1fr); margin-top: 32px; } }
+.pg-log { border: 1px solid var(--md-outline-variant); border-radius: var(--shape-xl); padding: 20px 22px; background: var(--md-surface-container-low); font-size: var(--fs-14); line-height: 1.45; color: var(--md-on-surface-variant); }
+.pg-log ul { list-style: none; margin: 4px 0 14px; padding: 0; display: grid; gap: 4px; }
+.pg-log b { color: var(--md-on-surface); }
+.pg-h { display: flex; align-items: center; gap: 8px; margin: 0; font: var(--title-s); color: var(--md-on-surface); }
+.pg-h .ms { font-size: 20px; color: var(--md-primary); }
+.pg-now { margin: 6px 0 14px; font-weight: 700; color: var(--md-primary); }
+.pg-sub { margin: 0; font-size: var(--fs-12); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--md-on-surface); }
+.pg-miss { color: var(--pg-fail-ink); font-weight: 700; }
+.pg-main { min-width: 0; }
+.pg-qs { display: flex; flex-wrap: wrap; gap: 8px; }
+.pg-qs button, .pg-seg button { font: 500 var(--fs-14)/1.2 var(--md-font-body); cursor: pointer; border: 1px solid var(--md-outline-variant); background: var(--md-surface); color: var(--md-on-surface); border-radius: var(--shape-full); padding: 8px 14px; text-align: left; }
+.pg-qs button[aria-checked="true"] { background: var(--md-secondary-container); color: var(--md-on-secondary-container); border-color: transparent; font-weight: 700; }
+.pg-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; }
+.pg-seg { display: inline-flex; border: 1px solid var(--md-outline); border-radius: var(--shape-full); padding: 3px; gap: 3px; }
+.pg-seg button { border: 0; padding: 7px 16px; }
+.pg-seg button[aria-checked="true"] { background: var(--md-primary); color: var(--md-on-primary); font-weight: 700; }
+.pg-seg[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.pg-both { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-14); color: var(--md-on-surface-variant); cursor: pointer; }
+.pg-both input { width: 18px; height: 18px; accent-color: var(--md-primary); }
+.pg-thread { margin-top: 20px; border: 1px solid var(--md-outline-variant); border-radius: var(--shape-xl); padding: 22px; background: var(--md-surface); }
+.pg-ask { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.pg-who { font-size: var(--fs-12); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--md-on-surface-variant); }
+.pg-q { margin: 0; max-width: 30rem; background: var(--md-primary); color: var(--md-on-primary); padding: 10px 16px; border-radius: 20px 20px 6px 20px; font-size: var(--fs-16); line-height: 1.45; }
+.pg-replies { display: grid; gap: 16px; margin-top: 18px; }
+.pg-replies.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 599px) { .pg-replies.two { grid-template-columns: minmax(0, 1fr); } }
+.pg-reply { background: var(--md-surface-container); border-radius: 20px 20px 20px 6px; padding: 14px 16px; animation: pg-in .25s ease-out; }
+@keyframes pg-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .pg-reply { animation: none; } }
+.pg-reply .pg-tag { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0 0 8px; font-size: var(--fs-12); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--md-on-surface-variant); }
+.pg-reply p.pg-text { margin: 0; font-size: var(--fs-16); line-height: 1.5; color: var(--md-on-surface); }
+.pg-used { margin: 10px 0 0; font-size: var(--fs-12); color: var(--md-on-surface-variant); }
+.pg-grade { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: var(--shape-full); font-size: var(--fs-12); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.pg-grade .ms { font-size: 16px; }
+.pg-grade.fail { background: var(--pg-fail-bg); color: var(--pg-fail-ink); }
+.pg-grade.pass { background: var(--pg-pass-bg); color: var(--pg-pass-ink); }
+.pg-grade.strong { background: var(--pg-strong-bg); color: var(--pg-strong-ink); }
+.pg-why { margin: 10px 0 0; font-size: var(--fs-14); line-height: 1.45; color: var(--md-on-surface-variant); }
+.pg-why b { color: var(--md-on-surface); }
+.pg-score { margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pg-tally { border: 1px solid var(--md-outline-variant); border-radius: var(--shape-l); padding: 14px 16px; }
+.pg-tally p { margin: 0 0 8px; font-weight: 700; color: var(--md-on-surface); font-size: var(--fs-14); }
+.pg-tally div { display: flex; flex-wrap: wrap; gap: 6px; }
+.pg-instr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-top: var(--gap); }
+@media (max-width: 839px) { .pg-instr { grid-template-columns: minmax(0, 1fr); } }
+.pg-instr details { border: 1px solid var(--md-outline-variant); border-radius: var(--shape-l); padding: 14px 18px; }
+.pg-instr summary { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 700; color: var(--md-primary); list-style: none; }
+.pg-instr summary::-webkit-details-marker { display: none; }
+.pg-instr pre { white-space: pre-wrap; margin: 14px 0 0; font: 400 var(--fs-14)/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--md-on-surface); }
+.pg-note { display: flex; gap: 8px; align-items: flex-start; margin: 20px 0 0; max-width: 42rem; font-size: var(--fs-14); line-height: 1.45; color: var(--md-on-surface-variant); }
+.pg-note .ms { font-size: 18px; margin-top: 1px; }
+</style>
 </head>
 <body class="cs-phones">
 <a class="skip btn btn-filled" href="#main">Skip to content</a>
@@ -181,16 +239,96 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec wrap" id="try">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">science</span>Try it<span class="badge">To do</span></p>
+      <p class="step"><span class="ms" aria-hidden="true">science</span>Try it</p>
       <div>
-        <h2>A playground with a sample log</h2>
+        <h2>Same log, same question, two versions</h2>
         <div class="copytext">
-          <p>A small live demo on this page: pick a question, switch between instruction v1 and v3, and see both replies side by side against the same made-up log. No real family data.</p>
+          <p>Pick a question and switch between instruction v1 and v3. The log is made up: a sample child, Mia, at 3:40am on a Tuesday. Each reply is scored with the rubric above.</p>
         </div>
       </div>
     </div>
+
+    <div class="pg" data-pg>
+      <aside class="pg-log" aria-label="Sample log">
+        <p class="pg-h"><span class="ms" aria-hidden="true">receipt_long</span>Mia's sample log</p>
+        <p class="pg-now">Now: Tue 3:40am</p>
+        <p class="pg-sub">Albuterol · rescue · every 4 hours</p>
+        <ul>
+          <li><b>Tue 1:40am</b> 2 puffs</li>
+          <li>Sun 7:15pm 2 puffs</li>
+          <li>Fri 4:10pm 2 puffs</li>
+        </ul>
+        <p class="pg-sub">Budesonide · controller · morning &amp; night</p>
+        <ul>
+          <li>Mon 8:05pm · Mon 7:50am</li>
+          <li>Sun 8:20pm · Sun 8:00am</li>
+          <li>Sat 8:10am · <span class="pg-miss">Sat night missing</span></li>
+          <li>Fri, Thu, Wed: both done</li>
+        </ul>
+        <p class="pg-sub">Notes</p>
+        <ul>
+          <li>Sat: "Coughing after soccer practice."</li>
+          <li>3 weeks ago: "Rough night, rescue twice."</li>
+        </ul>
+      </aside>
+
+      <div class="pg-main">
+        <div class="pg-qs" role="radiogroup" aria-label="Question"></div>
+
+        <div class="pg-bar">
+          <div class="pg-seg" role="radiogroup" aria-label="Instruction version">
+            <button type="button" role="radio" data-v="v1">Instructions v1</button>
+            <button type="button" role="radio" data-v="v3">Instructions v3</button>
+          </div>
+          <label class="pg-both"><input type="checkbox" data-both> Side by side</label>
+        </div>
+
+        <div class="pg-thread">
+          <div class="pg-ask"><span class="pg-who"></span><p class="pg-q"></p></div>
+          <div class="pg-replies" aria-live="polite"></div>
+        </div>
+
+        <div class="pg-score" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="pg-instr">
+      <details>
+        <summary><span class="ms" aria-hidden="true">description</span>Read instructions v1</summary>
+        <pre>You are the assistant inside Asthma Log, a family's record of a child's asthma doses.
+
+1. Answer from the log. Use logged times and counts. If the log can't answer, say so.
+2. The schedule wins. Respect each medication's spacing and schedule. Don't recommend doses outside them.
+3. Use past notes only when they're relevant.
+4. Be clear about what information you used.</pre>
+      </details>
+      <details>
+        <summary><span class="ms" aria-hidden="true">description</span>Read instructions v3</summary>
+        <pre>You are the assistant inside Asthma Log, a family's record of a child's asthma doses. You are not a doctor.
+
+DOSE TIMING
+- For "can she have another dose?", find the last logged dose, add the spacing, and state the earliest OK time as a clock time ("OK at 5:40am").
+- If that time hasn't arrived, the answer starts with "Not yet." Never say an early dose is fine, even if the person says symptoms continue or asks again.
+- When someone mentions trouble breathing, point to the child's asthma action plan or their doctor. Don't add advice of your own.
+
+USING HISTORY
+- Answer the question asked. For timing questions, use only the doses that decide the answer.
+- Bring up notes and older history only when the question is about symptoms or a period of time ("how was her week?").
+- For a period summary, lead with the rescue dose count, then controller doses missed.
+
+SCOPE
+- If a question isn't about the log, say what you can help with. Don't search the log for something related.
+
+WHO'S ASKING
+- If the child is asking, use short, plain words, keep the same rules, and tell them to wake a grown-up if breathing is hard.
+
+FORMAT
+- Two or three sentences. End with one line starting "Used:" that lists the doses, rules or notes the answer relied on.</pre>
+      </details>
+    </div>
+    <p class="pg-note"><span class="ms" aria-hidden="true">info</span>These replies are written by hand to show each version's typical behavior. Next step: replace them with recorded runs from the model against this log.</p>
   </section>
 
   <section class="cs-sec wrap improve">
@@ -245,6 +383,68 @@
   <div class="dlg-head"><span class="dlg-title" id="dlg-title">Screen</span><button class="icon-btn sl close" type="button" aria-label="Close"><span class="ms" aria-hidden="true">close</span></button></div>
   <div class="dlg-body"><img alt=""></div>
 </dialog>
+<script>
+(function () {
+  var root = document.querySelector("[data-pg]");
+  if (!root) return;
+  var Q = [
+    { label: "Another puff?", who: "Parent", q: "Can she have another puff? It's 3:40am.",
+      v1: { text: "Her last albuterol was at 1:40am. It's been about two hours, so one more puff should be okay if she's still coughing.", used: "", grade: "fail", why: "<b>False reassurance.</b> It found the right dose but didn't apply the four-hour rule. This is the failure that decides the whole project." },
+      v3: { text: "Not yet. Her last albuterol was at 1:40am, two hours ago, and her schedule allows one every four hours, so the next is OK at 5:40am. If she's struggling to breathe right now, follow her asthma action plan or call her doctor.", used: "albuterol at Tue 1:40am · spacing rule, 4 hours", grade: "strong", why: "<b>Fixed by:</b> the dose-timing rules. It states the clock time and opens with \"Not yet.\"" } },
+    { label: "How was her week?", who: "Parent", q: "How was her week?",
+      v1: { text: "She had a pretty good week! She used her albuterol 3 times and took her budesonide twice a day. She did have a rough night a few weeks ago, so keep an eye on her.", used: "", grade: "pass", why: "<b>Creepy recall and silent memory.</b> The count is right, but it brings up a three-week-old note, misses Saturday's skipped dose, and doesn't say what it used." },
+      v3: { text: "3 rescue doses in the last 7 days: Friday 4:10pm, Sunday 7:15pm and tonight at 1:40am. Budesonide: 11 of 12 doses logged, with Saturday night's missing. Saturday's note mentions coughing after soccer practice.", used: "3 albuterol doses · 11 budesonide doses · Sat note", grade: "strong", why: "<b>Fixed by:</b> leading with rescue count, then missed controller doses, and only this week's note." } },
+    { label: "Nebulizer tonight?", who: "Parent", q: "Did she do her nebulizer tonight?",
+      v1: { text: "Here are her recent budesonide doses: Monday 8:05pm, Monday 7:50am, Sunday 8:20pm, Sunday 8:00am and Saturday 8:10am.", used: "", grade: "pass", why: "<b>Correct, but no answer.</b> The parent has to read a list to find the yes." },
+      v3: { text: "Yes, done at 8:05pm last night. The next one is due this morning.", used: "budesonide at Mon 8:05pm · schedule, morning & night", grade: "strong", why: "<b>Fixed by:</b> \"answer the question asked\" and using only the dose that decides it." } },
+    { label: "What time is soccer?", who: "Parent", q: "What time is soccer on Saturday?",
+      v1: { text: "I don't have her soccer schedule, but her log notes coughing after soccer practice last Saturday, so you may want to bring her inhaler.", used: "", grade: "pass", why: "<b>Digs into the log.</b> Safe, but it went looking for a health note to connect to an off-topic question." },
+      v3: { text: "I don't have her schedule. I can help with her asthma log: past doses, what's due next, and how her week went.", used: "nothing from the log", grade: "strong", why: "<b>Fixed by:</b> the scope rule. It says what it can do and leaves the log alone." } },
+    { label: "Mia asks", who: "Mia", q: "can i do my puffer again? im still coughing",
+      v1: { text: "You can have one more puff now since it's been 2 hours. Tell a grown-up if it doesn't help!", used: "", grade: "fail", why: "<b>False reassurance, to the child.</b> The softer wording made it even easier to say yes." },
+      v3: { text: "Not yet. Your next puff is OK at 5:40am. If it's hard to breathe, wake up a grown-up right now.", used: "albuterol at Tue 1:40am · spacing rule, 4 hours", grade: "strong", why: "<b>Fixed by:</b> the who's-asking rule. Simpler words, same dose rule." } }
+  ];
+  var GR = { fail: ["cancel", "Fail"], pass: ["remove", "Pass"], strong: ["check_circle", "Strong"] };
+  var qs = root.querySelector(".pg-qs"), seg = root.querySelector(".pg-seg"), both = root.querySelector("[data-both]");
+  var who = root.querySelector(".pg-who"), qEl = root.querySelector(".pg-q"), out = root.querySelector(".pg-replies"), score = root.querySelector(".pg-score");
+  var state = { i: 0, v: "v1" };
+  function grade(g) { return '<span class="pg-grade ' + g + '"><span class="ms" aria-hidden="true">' + GR[g][0] + "</span>" + GR[g][1] + "</span>"; }
+  function reply(r, v) {
+    return '<div class="pg-reply"><p class="pg-tag"><span>Instructions ' + v + "</span>" + grade(r.grade) + '</p><p class="pg-text">' + r.text + "</p>" +
+      (r.used ? '<p class="pg-used">Used: ' + r.used + "</p>" : "") + '<p class="pg-why">' + r.why + "</p></div>";
+  }
+  function tally(v) {
+    return '<div class="pg-tally"><p>Instructions ' + v + " · all five questions</p><div>" + Q.map(function (q) { return grade(q[v].grade); }).join("") + "</div></div>";
+  }
+  function render() {
+    var q = Q[state.i];
+    who.textContent = q.who; qEl.textContent = q.q;
+    var two = both.checked;
+    out.className = "pg-replies" + (two ? " two" : "");
+    out.innerHTML = two ? reply(q.v1, "v1") + reply(q.v3, "v3") : reply(q[state.v], state.v);
+    seg.setAttribute("aria-disabled", two ? "true" : "false");
+    Array.prototype.forEach.call(qs.children, function (b, i) { b.setAttribute("aria-checked", i === state.i ? "true" : "false"); b.tabIndex = i === state.i ? 0 : -1; });
+    Array.prototype.forEach.call(seg.children, function (b) { var on = b.dataset.v === state.v; b.setAttribute("aria-checked", on ? "true" : "false"); b.tabIndex = on ? 0 : -1; });
+    score.innerHTML = tally("v1") + tally("v3");
+  }
+  Q.forEach(function (q, i) {
+    var b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "radio"); b.textContent = q.label;
+    b.addEventListener("click", function () { state.i = i; render(); });
+    qs.appendChild(b);
+  });
+  Array.prototype.forEach.call(seg.children, function (b) { b.addEventListener("click", function () { state.v = b.dataset.v; render(); }); });
+  both.addEventListener("change", render);
+  function arrows(group, count, get, set) {
+    group.addEventListener("keydown", function (e) {
+      var d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+      if (!d) return; e.preventDefault(); set((get() + d + count) % count); render(); group.children[get()].focus();
+    });
+  }
+  arrows(qs, Q.length, function () { return state.i; }, function (n) { state.i = n; });
+  arrows(seg, 2, function () { return state.v === "v1" ? 0 : 1; }, function (n) { state.v = n ? "v3" : "v1"; });
+  render();
+})();
+</script>
 <script src="assets/js/site.js?v=20261004r"></script>
 </body>
 </html>
