@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261010c">
+<link rel="stylesheet" href="assets/css/site.css?v=20261011a">
 </head>
 <body>
 <a class="skip btn btn-filled" href="index.html#main">Skip to content</a>
@@ -39,7 +39,7 @@
     <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
     <p class="overline"><span class="ms" aria-hidden="true">science</span>Case study · Personal tool</p>
     <h1>Resin <span class="accent">Matrix</span></h1>
-    <p class="lede">Anycubic sells 17 resins for its printers, and I'm not a materials engineer. Before buying my next bottle I wanted to see every option side by side and understand how they differ. The manufacturer's comparison page didn't make that easy, so I built my own: every resin, every published spec and the current price, sortable in one table.</p>
+    <p class="lede">Anycubic sells 17 resins, and its own comparison page made it hard to tell them apart. So I built a sortable table with every resin, every published spec and the current price.</p>
     <div class="meta">
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">person</span>Client</p><p>Me, and my 3D printer</p></div>
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">table_chart</span>Product</p><p>Comparison tool</p></div>
@@ -52,7 +52,7 @@
     </div>
     <figure class="fig">
         <button class="zoom" type="button" aria-label="Enlarge: the full matrix on desktop"><div class="media"><img src="assets/img/resin-desktop-light.webp" width="2000" height="1174" alt="The Resin Matrix on a desktop: leader cards for impact, flexibility, hardness, tensile strength, shrinkage, viscosity and price, family filter pills, then a table with one resin per row and sixteen property columns." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-        <figcaption><b>One resin per row, one property per column.</b> Leader cards up top answer the common questions before you touch the table.</figcaption>
+        <figcaption><b>One resin per row, one property per column.</b> Leader cards up top answer the common questions.</figcaption>
       </figure>
   </section>
 
@@ -62,8 +62,7 @@
       <div>
         <h2>The official comparison is built for browsing, not choosing</h2>
         <div class="copytext">
-          <p>Anycubic does publish a resin comparison page. It lists properties down the side and resins across the top, so the table runs about 4,160 pixels wide: close to three screen widths of sideways scrolling on a laptop. You can't sort it, it has no prices, and it was out of date. It still listed two resins the store no longer sells and left out two of the newest.</p>
-          <p>Coming in new to resins, I didn't yet know which numbers mattered. I wanted to see every option first and then work out what set each one apart. On that page, comparing even two resins meant scrolling back and forth and holding numbers in my head.</p>
+          <p>Anycubic's page puts resins across the top, so the table runs about 4,160 pixels wide: nearly three laptop screens of sideways scrolling. It can't be sorted, has no prices, still listed two discontinued resins and missed two new ones. Comparing even two resins meant scrolling back and forth and holding numbers in my head.</p>
         </div>
       </div>
     </div>
@@ -74,12 +73,11 @@
       <div>
         <h2>Seventeen spec sheets, one table</h2>
         <div class="copytext">
-          <p>I pulled every value from the Specification tab of each product page on Anycubic's US store: hardness, tensile strength, elongation, impact strength, flexural strength and modulus, Young's modulus, shrinkage, viscosity, density, exposure time, wash method, odor and the 1 kg price.</p>
-          <p>Putting the numbers side by side exposed problems you'd never notice one page at a time.</p>
+          <p>I pulled 14 properties plus the 1 kg price from each product's Specification tab, and side by side the numbers exposed problems.</p>
           <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Anycubic swaps two labels on every page. The figure called “bending modulus” (about 15–70 MPa) is really flexural strength, and “bending strength” (350–3,300 MPa) is really the modulus. The matrix uses the correct names.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Some store listings disagreed with the product's own spec sheet. Where they differed, I used the spec sheet and noted it on the page.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Every value is stored as a published range, like 35–45 MPa, rather than flattened to one number, so the table shows exactly what Anycubic claims.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Anycubic swaps “bending modulus” and “bending strength” on every page; the matrix uses the correct names.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Where a store listing disagreed with the spec sheet, I used the spec sheet and noted it.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Values stay as published ranges, like 35–45 MPa, not flattened to one number.</span></li>
           </ul>
         </div>
       </div>
@@ -91,8 +89,14 @@
       <div>
         <h2>Every option first, then the differences</h2>
         <div class="copytext">
-          <p>The page opens with all 17 resins on screen. Nothing is hidden behind a picker or a "select resins to compare" step, because when you don't know the category yet, seeing the whole range is how you learn it.</p>
-          <p>Flipping Anycubic's layout made that work. With one resin per row, every property becomes a sortable column, and all sixteen columns fit across a large desktop screen. A star marks the standout value in each column, whether that's the highest or the lowest, and seven cards above the table name the leader for the most common questions. Filters for each family, water-washable resins and sold-out stock narrow the list only when you ask them to.</p>
+          <p>All 17 resins are on screen from the start, with no picker, because seeing the whole range is how you learn it.</p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>One resin per row makes all sixteen properties sortable columns that fit a large desktop screen.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Comparing two resins takes a glance across rows, not three screens of scrolling.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A star marks each column's standout, and seven leader cards answer the common questions.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Family, water-wash and sold-out filters narrow the list only when you ask.</span></li>
+          </ul>
+          <div class="actions" style="margin-top:20px"><a class="btn btn-tonal sl" href="https://raysantos.github.io/anycubic-resin-matrix/" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">open_in_new</span>Try it yourself</a></div>
         </div>
       </div>
     </div>
@@ -103,30 +107,14 @@
       <div>
         <h2>Rows that move to their new place</h2>
         <div class="copytext">
-          <p>When the table re-sorts, each row slides from where it was to where it lands instead of jumping. You can follow a resin you were watching and see how far it moved, which makes the difference between two options something you see rather than read.</p>
-          <p>Clicking a leader card sorts by that property and scrolls the table into view. Hovering a column name first explains what it measures, so you know what you're sorting by before you click. All motion is skipped when a device asks for reduced motion.</p>
+          <p>When the table re-sorts, each row slides to its new spot, so you can follow a resin and see how far it moved. Clicking a leader card sorts by that property and scrolls to the table. All motion is skipped when a device asks for reduced motion.</p>
         </div>
       </div>
     </div>
     <figure class="fig">
       <div class="media"><video src="assets/video/resin-sort.mp4" poster="assets/img/resin-sort-poster.webp" width="1440" height="860" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: clicking the Most impact-resistant card sorts the table and scrolls to it, then hovering Elongation shows its tooltip, clicking it re-sorts the rows with a slide, and clicking Price sorts by cost." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Sort and follow.</b> A leader card, a column tooltip, then two sorts. Each row slides to its new position.</figcaption>
+      <figcaption><b>Sort and follow.</b> A leader card, a column tooltip, then two sorts with sliding rows.</figcaption>
     </figure>
-  </section>
-  <section class="cs-sec wrap">
-    <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">palette</span>Look and feel</p>
-      <div>
-        <h2>Styled like Anycubic's own store</h2>
-        <div class="copytext">
-          <p>I wanted the matrix to feel like it belonged next to the store it draws from, so I read the store's live styles in the browser and borrowed them: the #005AFF blue, the fully rounded pill buttons, light gray panels and MiSans Latin, with Inter as the fallback the store itself uses. Light and dark modes share the same blue, and a single sun and moon button in the corner switches between them.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: dark mode on desktop"><div class="media"><img src="assets/img/resin-desktop-dark.webp" width="2000" height="1174" alt="The same matrix in dark mode, with the blue accent kept for active filters and best values." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-        <figcaption><b>Dark mode</b> keeps the store's blue for active filters and best-in-column values.</figcaption>
-      </figure>
   </section>
   <section class="cs-sec wrap">
     <div class="cs-text">
@@ -134,10 +122,10 @@
       <div>
         <h2>Answers in place, not in a glossary</h2>
         <div class="copytext">
-          <p>A table full of MPa and J/m is only useful if you know what those numbers mean for a print. Rather than adding a glossary, I put the explanations where the questions come up.</p>
+          <p>MPa and J/m only help if you know what they mean for a print, so explanations appear where the questions come up.</p>
           <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Choosing a family fades in a short note on what that type of resin is good at and what it costs you, in plain words.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Hovering a column name explains the property, gives its unit and says whether higher or lower is better, or that neither end is better.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Choosing a family fades in a plain note on its strengths and tradeoffs.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Hovering a column explains the property, its unit and whether higher or lower is better.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span>Hovering a resin's name lists what it's recommended for.</span></li>
           </ul>
         </div>
@@ -145,7 +133,26 @@
     </div>
     <figure class="fig">
       <div class="media"><video src="assets/video/resin-filter.mp4" poster="assets/img/resin-filter-poster.webp" width="1440" height="860" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: selecting the Tough family fades in a note about its tradeoffs and narrows the table to two rows, then Water-Wash shows its own note and three rows, a Good for tooltip appears on a resin name, and All brings every resin back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Filter and learn.</b> Each family brings its own note, and the full list returns with one click.</figcaption>
+      <figcaption><b>Filter and learn.</b> Each family brings its own note; one click restores the full list.</figcaption>
+    </figure>
+  </section>
+  <section class="cs-sec wrap">
+    <div class="cs-text">
+      <p class="step"><span class="ms" aria-hidden="true">palette</span>Look and feel</p>
+      <div>
+        <h2>Styled like Anycubic's store, usable on a phone</h2>
+        <div class="copytext">
+          <p>I borrowed the store's live styles so the matrix feels like it belongs there: the #005AFF blue, pill buttons, light gray panels and MiSans Latin with Inter as fallback. Light and dark modes share the blue and switch with one button. On a phone the table scrolls sideways, snapping to columns, while resin names stay pinned on the left.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: dark mode on desktop"><div class="media"><img src="assets/img/resin-desktop-dark.webp" width="2000" height="1174" alt="The same matrix in dark mode, with the blue accent kept for active filters and best values." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Dark mode</b> keeps the store's blue for active filters and best-in-column values.</figcaption>
+      </figure>
+    <figure class="fig col" style="max-width:22rem">
+      <div class="media"><video src="assets/video/resin-phone.mp4" poster="assets/img/resin-phone-poster.webp" width="780" height="1520" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording on a phone: tapping the sun button fades the page to dark mode, then the table is swiped sideways twice, snapping to columns while resin names stay pinned, and swiped back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
+      <figcaption><b>Swipe and snap.</b> Names stay pinned while the columns move.</figcaption>
     </figure>
   </section>
   <section class="cs-sec wrap">
@@ -154,46 +161,13 @@
       <div>
         <h2>Most of the edits were deletions</h2>
         <div class="copytext">
-          <p>The first version said everything at once. Each resin's name carried its wash method, odor and a sentence of uses. Every value had a small bar underneath showing where its range sat against the lineup, every header had a line of units, and an intro paragraph and section headings sat above it all. I reviewed it as a buyer would and took things away.</p>
+          <p>The first version said everything at once, so I reviewed it as a buyer would and took things away.</p>
           <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>The range bars went first. They looked like data visualization but didn't change any decision I made, and they doubled the height of every cell.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Units and “higher is better” notes moved from under each header into its tooltip, so every header fits on one line.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>The use notes under each name became a hover tooltip, and wash method and odor got their own sortable columns.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>The intro paragraph, the eyebrow and the section heading came out. The title, a small last-updated date and the table say enough.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Range bars under each value went first: they changed no decision and doubled cell height.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Units and “higher is better” notes moved into header tooltips, so headers fit on one line.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Use notes became a name tooltip; wash method and odor got their own sortable columns.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>The intro, eyebrow and section heading came out; title, date and table say enough.</span></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="cs-sec wrap">
-    <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">smartphone</span>Small screens</p>
-      <div>
-        <h2>Still usable on a phone</h2>
-        <div class="copytext">
-          <p>Sixteen columns won't fit on a phone, so the table scrolls sideways there and snaps gently to column edges, while the resin name stays pinned on the left. You always know which row you're reading. Light and dark modes switch with one button and fade between palettes.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig col" style="max-width:22rem">
-      <div class="media"><video src="assets/video/resin-phone.mp4" poster="assets/img/resin-phone-poster.webp" width="780" height="1520" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording on a phone: tapping the sun button fades the page to dark mode, then the table is swiped sideways twice, snapping to columns while resin names stay pinned, and swiped back." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Swipe and snap.</b> Names stay pinned while the columns move.</figcaption>
-    </figure>
-  </section>
-  <section class="cs-sec wrap">
-    <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">insights</span>The result</p>
-      <div>
-        <h2>Differences you can see at a glance</h2>
-        <div class="copytext">
-          <p>The matrix doesn't add any data Anycubic doesn't publish. It changes how quickly the differences show up.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Comparing two resins takes a glance across one row, instead of three screens of sideways scrolling.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Finding the standout for any property takes one click on its column, and the star shows where each resin leads.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Each family's tradeoff is spelled out in a sentence, so the numbers come with a reason to care about them.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>A full 17-resin overview fits on one desktop screen, which is the view I wanted most before narrowing anything down.</span></li>
-          </ul>
-          <div class="actions" style="margin-top:20px"><a class="btn btn-tonal sl" href="https://raysantos.github.io/anycubic-resin-matrix/" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">open_in_new</span>Try it yourself</a></div>
         </div>
       </div>
     </div>
@@ -204,8 +178,7 @@
       <div>
         <h2>Researched, designed and shipped in a day</h2>
         <div class="copytext">
-          <p>I built the Resin Matrix with Claude over one day. Claude gathered the specs from all 17 product pages, read the store's styles, wrote the page and published it to its own GitHub repository. I set the direction and reviewed every change on the live page.</p>
-          <p>Because each change went live within a couple of minutes, the iteration stayed quick. I could ask for something, judge it on the real page and keep it or cut it. That made it easy to take things out once I saw they weren't helping.</p>
+          <p>I built the Resin Matrix with Claude in one day. Claude gathered the specs, read the store's styles, wrote the page and published it to GitHub; I set the direction and reviewed every change on the live page. With changes live in minutes, I could judge each one on the real page and cut what wasn't helping.</p>
         </div>
       </div>
     </div>
@@ -217,10 +190,10 @@
         <h2>Things to improve</h2>
         <div class="copytext">
           <ul>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Other brands.</b> Every resin here comes from Anycubic. Adding Elegoo, Siraya Tech, Phrozen and others to the same table would turn it into a true buyer's guide, with brand as one more filter.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A shortlist, after the full picture.</b> Seeing every option first is the right start. A second step that pins two or three favorites and compares only those would finish the decision.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Keep the data current.</b> Prices and specs are a snapshot from one day, and prices change often. A small script that re-reads the product pages on a schedule would keep the table fresh without manual edits.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A better phone layout.</b> Sideways scrolling works, but only a few columns are visible at once. Cards that show each resin's key numbers would suit a phone better.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Other brands.</b> Adding Elegoo, Siraya Tech, Phrozen and others, with brand as a filter, would make it a true buyer's guide.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A shortlist, after the full picture.</b> A step that pins two or three favorites and compares only those would finish the decision.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Keep the data current.</b> Prices and specs are a one-day snapshot, and a scheduled script that re-reads the product pages would keep them fresh.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A better phone layout.</b> Sideways scrolling shows only a few columns, and cards with each resin's key numbers would suit a phone better.</span></li>
           </ul>
         </div>
       </div>

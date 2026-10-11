@@ -320,6 +320,14 @@ a.card:hover .media img { transform: scale(1.015); }
 .cs-text .copytext li { display: flex; gap: 10px; }
 .cs-text .copytext li .ms { font-size: 20px; color: var(--md-primary); }
 @media (max-width: 839px) { .cs-text { grid-template-columns: minmax(0, 1fr); } .cs-text .step { padding-top: 0; } }
+/* Collapsed change log in the Revisions section */
+.cs-text details.changes { display: grid; gap: 12px; }
+.cs-text details.changes > summary { display: inline-flex; align-items: center; gap: 6px; width: fit-content; cursor: pointer; list-style: none; font: 600 .875rem/1.2 var(--md-font); color: var(--chip-ink, var(--md-primary)); padding: 8px 14px; border-radius: 999px; background: var(--md-surface-container-high, rgba(0,0,0,.05)); }
+.cs-text details.changes > summary::-webkit-details-marker { display: none; }
+.cs-text details.changes > summary .ms { font-size: 20px; transition: transform .2s; }
+.cs-text details.changes[open] > summary .ms { transform: rotate(180deg); }
+.cs-text details.changes[open] > summary { margin-bottom: 12px; }
+.cs-text details.changes > p + ul, .cs-text details.changes > ul + p { margin-top: 8px; }
 
 .fig { margin: 24px 0 0; }
 .fig figcaption { margin-top: 8px; font: var(--body-m); color: var(--md-on-surface-variant); max-width: 44rem; padding-inline: 4px; }
