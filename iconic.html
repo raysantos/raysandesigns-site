@@ -193,6 +193,73 @@
         <figcaption><b>Audit</b> marks problem points on the canvas and fixes them one at a time or all at once.</figcaption>
       </figure>
     </div>
+    <figure class="fig col tunni-demo">
+      <div class="media" style="padding:20px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
+            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Normal handles</span><span data-tv="a" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="a" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
+            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">Each handle is dragged on its own. The two tensions drift apart and the curve goes lopsided.</p>
+          </div>
+          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
+            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Tunni line</span><span data-tv="b" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="b" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
+            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">One drag on the dashed line moves both handles together, so the tension stays matched.</p>
+          </div>
+        </div>
+        <button type="button" class="tunni-toggle" style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px 6px 10px;border:1px solid var(--md-outline-variant);border-radius:999px;background:var(--md-surface);color:var(--md-on-surface);font:500 14px/1 var(--md-font-body);cursor:pointer"><span class="ms" aria-hidden="true" style="font-size:20px">pause</span><span>Pause</span></button>
+      </div>
+      <figcaption><b>Normal handles vs. a Tunni line.</b> The percentages show each handle's length as a share of the distance to the Tunni point (the diamond), where the two handle directions meet.</figcaption>
+    </figure>
+    <script>
+    (function(){
+      var fig=document.querySelector(".tunni-demo"); if(!fig) return;
+      var NS="http://www.w3.org/2000/svg", P0=[40,190], P3=[300,30], T=[40,30];
+      var HAND="var(--md-secondary)", TUN="#e0457b";
+      function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t];}
+      function mk(svg,tag,at){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);svg.appendChild(e);return e;}
+      function build(svg,tunni){
+        var g={}, guide={stroke:"var(--md-outline)","stroke-width":1,"stroke-dasharray":"2 4",opacity:.6};
+        mk(svg,"line",Object.assign({x1:P0[0],y1:P0[1],x2:T[0],y2:T[1]},guide));
+        mk(svg,"line",Object.assign({x1:P3[0],y1:P3[1],x2:T[0],y2:T[1]},guide));
+        if(tunni) mk(svg,"rect",{x:T[0]-5,y:T[1]-5,width:10,height:10,fill:TUN,transform:"rotate(45 "+T[0]+" "+T[1]+")"});
+        g.h1=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
+        g.h2=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
+        if(tunni) g.tl=mk(svg,"line",{stroke:TUN,"stroke-width":2.5,"stroke-dasharray":"7 5"});
+        g.c=mk(svg,"path",{fill:"none",stroke:"var(--md-on-surface)","stroke-width":4,"stroke-linecap":"round"});
+        [P0,P3].forEach(function(p){mk(svg,"rect",{x:p[0]-6,y:p[1]-6,width:12,height:12,fill:HAND});});
+        g.k1=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
+        g.k2=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
+        return g;
+      }
+      function set(e,a){for(var k in a)e.setAttribute(k,a[k]);}
+      function draw(g,t0,t1){
+        var c1=lerp(P0,T,t0), c2=lerp(P3,T,t1);
+        set(g.h1,{x1:P0[0],y1:P0[1],x2:c1[0],y2:c1[1]}); set(g.h2,{x1:P3[0],y1:P3[1],x2:c2[0],y2:c2[1]});
+        set(g.k1,{cx:c1[0],cy:c1[1]}); set(g.k2,{cx:c2[0],cy:c2[1]});
+        if(g.tl) set(g.tl,{x1:c1[0],y1:c1[1],x2:c2[0],y2:c2[1]});
+        g.c.setAttribute("d","M"+P0+" C"+c1+" "+c2+" "+P3);
+      }
+      var A=build(fig.querySelector('[data-tp="a"]'),false), B=build(fig.querySelector('[data-tp="b"]'),true);
+      var la=fig.querySelector('[data-tv="a"]'), lb=fig.querySelector('[data-tv="b"]');
+      function ease(x){return .5-.5*Math.cos(x);}
+      function pct(v){return Math.round(v*100)+"%";}
+      var time=1.2, playing=!matchMedia("(prefers-reduced-motion: reduce)").matches, visible=false, last=0, raf=0;
+      function render(){
+        var a0=.25+.7*ease(time*1.3), a1=.25+.7*ease(time*.8+2), s=.3+.62*ease(time*1.1);
+        draw(A,a0,a1); la.textContent=pct(a0)+" / "+pct(a1);
+        draw(B,s,s); lb.textContent=pct(s)+" / "+pct(s);
+      }
+      function frame(now){ raf=0; if(!(playing&&visible)) return; if(last) time+=Math.min(now-last,100)/1000; last=now; render(); raf=requestAnimationFrame(frame); }
+      function kick(){ last=0; if(playing&&visible&&!raf) raf=requestAnimationFrame(frame); }
+      var btn=fig.querySelector(".tunni-toggle");
+      function label(){ btn.firstChild.textContent=playing?"pause":"play_arrow"; btn.lastChild.textContent=playing?"Pause":"Play"; }
+      btn.addEventListener("click",function(){ playing=!playing; label(); kick(); });
+      label(); render();
+      if("IntersectionObserver" in window) new IntersectionObserver(function(es){ visible=es[0].isIntersecting; kick(); }).observe(fig);
+      else { visible=true; kick(); }
+    })();
+    </script>
   </section>
 
   <section class="cs-sec wrap">
