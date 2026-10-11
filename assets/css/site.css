@@ -400,6 +400,11 @@ a.card-elevated:hover, a.card-filled:hover { box-shadow: var(--elev-2); }
 .feature .chip { border-color: rgb(97 206 112 / .55); color: var(--green); }
 .feature .btn-tonal { background: #fff; color: var(--navy); }
 .feature .media { background: rgb(255 255 255 / .08); }
+/* Flagship: the centerpiece project, stacked with a full-width clip */
+.feature.flagship { grid-template-columns: minmax(0, 1fr); gap: 28px; padding: 40px; }
+.feature.flagship .feature-text { max-width: 60ch; }
+.feature.flagship .media { padding: 16px; }
+@media (max-width: 839px) { .feature.flagship { padding: 20px; gap: 20px; } .feature.flagship .media { padding: 8px; } }
 
 /* Pill tags from the original site */
 .chip { height: 32px; border-radius: var(--shape-full); border: 1px solid var(--green-line); background: var(--chip-fill); color: var(--chip-ink); font: 700 .875rem/1 var(--md-font); padding: 0 14px; }
