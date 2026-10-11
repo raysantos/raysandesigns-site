@@ -6,6 +6,14 @@ Plain static site: HTML, one stylesheet (`assets/css/site.css`), one script (`as
 
 Every case study page follows the same shape. Use an existing one (`asthma-log.html`, `kids-week.html`) as the template.
 
+**Keep it short.** A reader should get the whole story by skimming headings, first sentences and captions.
+- Lede: two sentences at most (about 40 words).
+- Six to eight story sections, not counting Revisions and Things to improve. Merge thin sections rather than adding new ones.
+- Each section body: one short paragraph (about 60 words) **or** one lead sentence plus up to four one-line bullets. Lead with the decision or outcome, not the backstory.
+- The `h2` carries the point on its own; the body backs it up rather than restating it.
+- Captions: one line, about 15 words, starting with a bold phrase.
+- Revisions and Things to improve items: one sentence each after the bold title.
+
 1. Hero: back link, overline, title, lede, meta cards, lead image.
 2. Story sections (`<section class="cs-sec wrap">` with a `.step` label, an `h2` and `.copytext`).
 3. **Things to improve** (always the last content section, right before the contact block). Use this markup:
@@ -30,7 +38,7 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 
    **Keep it current.** When a project gets revised, check off the items the revision addresses: give the `<li>` `class="done"`, swap the icon to `check_circle`, and start the text with "Done:" plus what shipped. Never delete a checked item. If only part is done, check off the done part and add a new unchecked item for what's left. Add new items as new gaps show up.
 
-   **Revisions section.** Right before Things to improve, a `<section class="cs-sec wrap">` with step label `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date.
+   **Revisions section.** Right before Things to improve, a `<section class="cs-sec wrap">` with step label `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date. To keep the page short, the `.copytext` opens with one sentence naming the biggest changes, and the grouped lists sit inside a collapsed `<details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All N changes (or "1 change")</summary> … </details>`. Update N when adding items.
 4. Contact block and footer, copied from the home page.
 
 ## Working rules
