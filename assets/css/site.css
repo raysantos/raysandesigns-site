@@ -807,3 +807,19 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 @media (prefers-reduced-motion: reduce) {
   :root.theme-fading, :root.theme-fading *, :root.theme-fading *::before, :root.theme-fading *::after { transition: none !important; }
 }
+
+/* Touch screens: no tap highlight and no sticky hover states (nav, Contact me, buttons) */
+html { -webkit-tap-highlight-color: transparent; }
+@media (hover: none) {
+  .sl:hover::before, .sl:active::before { opacity: 0; }
+  .top-nav .nav-pill:hover:not(:focus-visible) { padding-right: 12px; color: var(--md-on-surface); }
+  .top-nav .nav-li:hover:not(:focus-visible) { padding-right: 11px; }
+  .top-nav .nav-pill:hover:not(:focus-visible) .nav-label { max-width: 0; opacity: 0; margin-left: 0; }
+  .fab:hover:not(:focus-visible)::after { opacity: 0; }
+  .fab:hover:not(:focus-visible) { color: #7a3d12; }
+  :root[data-theme="dark"] .fab:hover:not(:focus-visible) { color: #1f1206; }
+  :root[data-theme="dark"] .top-nav .nav-pill:not([aria-current]):hover:not(:focus-visible),
+  :root[data-theme="dark"] .top-nav .nav-pill:not([aria-current]):hover:not(:focus-visible) .ms,
+  :root[data-theme="dark"] .top-nav .nav-pill:not([aria-current]):hover:not(:focus-visible) .ico { color: var(--md-on-surface); }
+  .theme-toggle:hover { background: transparent; }
+}
