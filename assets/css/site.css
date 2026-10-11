@@ -405,6 +405,13 @@ a.card-elevated:hover, a.card-filled:hover { box-shadow: var(--elev-2); }
 .feature.flagship .feature-text { max-width: 60ch; }
 .feature.flagship .media { padding: 16px; }
 @media (max-width: 839px) { .feature.flagship { padding: 20px; gap: 20px; } .feature.flagship .media { padding: 8px; } }
+/* App grid: the other case studies as half-width cards */
+.app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap, 24px); margin-top: var(--gap, 24px); }
+.app-grid .feature { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; align-items: start; gap: 24px; padding: 28px; margin-top: 0; }
+.app-grid .feature h3, .app-grid .card.feature h3 { font-size: var(--fs-24); line-height: 2rem; }
+.app-grid .feature .media { align-self: end; }
+.app-grid .feature .media.bare video { width: min(100%, 200px) !important; }
+@media (max-width: 839px) { .app-grid { grid-template-columns: minmax(0, 1fr); } .app-grid .feature { padding: 20px; } }
 
 /* Pill tags from the original site */
 .chip { height: 32px; border-radius: var(--shape-full); border: 1px solid var(--green-line); background: var(--chip-fill); color: var(--chip-ink); font: 700 .875rem/1 var(--md-font); padding: 0 14px; }
