@@ -185,61 +185,93 @@
       </figure>
     </div>
     <figure class="fig col tunni-demo">
-      <div class="media" style="padding:20px">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
-            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Normal handles</span><span data-tv="a" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
-            <svg data-tp="a" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
-            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">Each handle is dragged on its own. The two tensions drift apart and the curve goes lopsided.</p>
+      <div class="media" style="padding:16px;background:#2a2b2e">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+          <div style="background:#1f2023;border:1px solid #303134;border-radius:var(--shape-s);padding:14px 14px 12px;color:#e3e3e3">
+            <p style="margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;font:600 14px/1.4 var(--md-font)"><span>Normal handles</span><span data-tv="a" style="font:400 12px/1.4 var(--md-font-body);color:#9aa0a6;font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="a" viewBox="0 0 280 280" width="100%" aria-hidden="true" style="display:block;background:#131314;border-radius:6px"></svg>
+            <p style="margin:10px 0 0;font:400 13px/1.5 var(--md-font-body);color:#bdc1c6">Each handle is dragged on its own. The two lengths drift apart and the curve goes lopsided.</p>
           </div>
-          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
-            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Tunni line</span><span data-tv="b" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
-            <svg data-tp="b" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
-            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">One drag on the dashed line moves both handles together, so the tension stays matched.</p>
+          <div style="background:#1f2023;border:1px solid #303134;border-radius:var(--shape-s);padding:14px 14px 12px;color:#e3e3e3">
+            <p style="margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;font:600 14px/1.4 var(--md-font)"><span>Tunni line</span><span data-tv="b" style="font:400 12px/1.4 var(--md-font-body);color:#9aa0a6;font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="b" viewBox="0 0 280 280" width="100%" aria-hidden="true" style="display:block;background:#131314;border-radius:6px"></svg>
+            <p style="margin:10px 0 0;font:400 13px/1.5 var(--md-font-body);color:#bdc1c6">One drag on the dashed line moves both handles together, so the curve keeps its balance.</p>
           </div>
         </div>
-        <button type="button" class="tunni-toggle" style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px 6px 10px;border:1px solid var(--md-outline-variant);border-radius:999px;background:var(--md-surface);color:var(--md-on-surface);font:500 14px/1 var(--md-font-body);cursor:pointer"><span class="ms" aria-hidden="true" style="font-size:20px">pause</span><span>Pause</span></button>
+        <div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <button type="button" class="tunni-toggle" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px 6px 10px;border:1px solid #5f6368;border-radius:999px;background:#1f2023;color:#e3e3e3;font:500 14px/1 var(--md-font-body);cursor:pointer"><span class="ms" aria-hidden="true" style="font-size:20px">pause</span><span>Pause</span></button>
+          <span class="tunni-icon" style="font:400 13px/1.4 var(--md-font-body);color:#bdc1c6"></span>
+        </div>
       </div>
-      <figcaption><b>Normal handles vs. a Tunni line.</b> The percentages show each handle's length as a share of the distance to the Tunni point (the diamond), where the two handle directions meet.</figcaption>
+      <figcaption><b>Normal handles vs. a Tunni line</b> on Material icons. The percentages show each handle's length as a share of the distance to the Tunni point (the pink diamond), where the two handle directions meet.</figcaption>
     </figure>
     <script>
     (function(){
       var fig=document.querySelector(".tunni-demo"); if(!fig) return;
-      var NS="http://www.w3.org/2000/svg", P0=[40,190], P3=[300,30], T=[40,30];
-      var HAND="var(--md-secondary)", TUN="#e0457b";
-      function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t];}
-      function mk(svg,tag,at){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);svg.appendChild(e);return e;}
+      var NS="http://www.w3.org/2000/svg", S=10, O=20;
+      var BLUE="#8ab4f8", PINK="#f06292";
+      var ICONS=[
+        {name:"person", pre:"M12 14", post:"L4 20L20 20L20 18C20 15.34 14.67 14 12 14Z", extra:'<circle cx="12" cy="8" r="4"/>', seg:[[12,14],[9.33,14],[4,15.34],[4,18]]},
+        {name:"favorite", pre:"M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5", post:"C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04Z", extra:"", seg:[[2,8.5],[2,5.42],[4.42,3],[7.5,3]]}
+      ];
+      ICONS.forEach(function(ic){
+        var P0=ic.seg[0],C1=ic.seg[1],C2=ic.seg[2],P3=ic.seg[3];
+        var d1=[C1[0]-P0[0],C1[1]-P0[1]], d2=[C2[0]-P3[0],C2[1]-P3[1]];
+        var den=d1[0]*d2[1]-d1[1]*d2[0];
+        var s=((P3[0]-P0[0])*d2[1]-(P3[1]-P0[1])*d2[0])/den;
+        ic.T=[P0[0]+d1[0]*s,P0[1]+d1[1]*s];
+        ic.t0=1/s; ic.t1=Math.hypot(d2[0],d2[1])/Math.hypot(ic.T[0]-P3[0],ic.T[1]-P3[1]);
+      });
+      function X(p){return [p[0]*S+O,p[1]*S+O];}
+      function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+      function mk(par,tag,at){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);par.appendChild(e);return e;}
+      function set(e,a){for(var k in a)e.setAttribute(k,a[k]);}
       function build(svg,tunni){
-        var g={}, guide={stroke:"var(--md-outline)","stroke-width":1,"stroke-dasharray":"2 4",opacity:.6};
-        mk(svg,"line",Object.assign({x1:P0[0],y1:P0[1],x2:T[0],y2:T[1]},guide));
-        mk(svg,"line",Object.assign({x1:P3[0],y1:P3[1],x2:T[0],y2:T[1]},guide));
-        if(tunni) mk(svg,"rect",{x:T[0]-5,y:T[1]-5,width:10,height:10,fill:TUN,transform:"rotate(45 "+T[0]+" "+T[1]+")"});
-        g.h1=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
-        g.h2=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
-        if(tunni) g.tl=mk(svg,"line",{stroke:TUN,"stroke-width":2.5,"stroke-dasharray":"7 5"});
-        g.c=mk(svg,"path",{fill:"none",stroke:"var(--md-on-surface)","stroke-width":4,"stroke-linecap":"round"});
-        [P0,P3].forEach(function(p){mk(svg,"rect",{x:p[0]-6,y:p[1]-6,width:12,height:12,fill:HAND});});
-        g.k1=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
-        g.k2=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
+        var g={};
+        var grid=mk(svg,"g",{stroke:"#ffffff","stroke-opacity":.06,"stroke-width":1});
+        for(var i=0;i<=24;i++){var v=i*S+O;mk(grid,"line",{x1:v,y1:O,x2:v,y2:O+240});mk(grid,"line",{x1:O,y1:v,x2:O+240,y2:v});}
+        mk(svg,"rect",{x:O,y:O,width:240,height:240,fill:"none",stroke:"#5f6368","stroke-width":1});
+        g.icon=mk(svg,"g",{transform:"translate("+O+" "+O+") scale("+S+")",fill:"#e3e3e3","fill-opacity":.9});
+        g.shape=mk(g.icon,"path",{});
+        g.extra=mk(g.icon,"g",{});
+        g.outline=mk(svg,"path",{fill:"none",stroke:BLUE,"stroke-width":1.25,transform:"translate("+O+" "+O+") scale("+S+")","vector-effect":"non-scaling-stroke"});
+        g.g1=mk(svg,"line",{stroke:"#9aa0a6","stroke-width":1,"stroke-dasharray":"2 4"});
+        g.g2=mk(svg,"line",{stroke:"#9aa0a6","stroke-width":1,"stroke-dasharray":"2 4"});
+        g.h1=mk(svg,"line",{stroke:BLUE,"stroke-width":1.5});
+        g.h2=mk(svg,"line",{stroke:BLUE,"stroke-width":1.5});
+        if(tunni){ g.tl=mk(svg,"line",{stroke:PINK,"stroke-width":2.5,"stroke-dasharray":"7 5"}); g.tp=mk(svg,"rect",{width:10,height:10,fill:PINK}); }
+        g.a=mk(svg,"rect",{width:10,height:10,fill:BLUE,stroke:"#131314","stroke-width":1});
+        g.b=mk(svg,"rect",{width:10,height:10,fill:BLUE,stroke:"#131314","stroke-width":1});
+        g.k1=mk(svg,"circle",{r:5,fill:"#131314",stroke:BLUE,"stroke-width":2});
+        g.k2=mk(svg,"circle",{r:5,fill:"#131314",stroke:BLUE,"stroke-width":2});
         return g;
       }
-      function set(e,a){for(var k in a)e.setAttribute(k,a[k]);}
-      function draw(g,t0,t1){
-        var c1=lerp(P0,T,t0), c2=lerp(P3,T,t1);
-        set(g.h1,{x1:P0[0],y1:P0[1],x2:c1[0],y2:c1[1]}); set(g.h2,{x1:P3[0],y1:P3[1],x2:c2[0],y2:c2[1]});
-        set(g.k1,{cx:c1[0],cy:c1[1]}); set(g.k2,{cx:c2[0],cy:c2[1]});
-        if(g.tl) set(g.tl,{x1:c1[0],y1:c1[1],x2:c2[0],y2:c2[1]});
-        g.c.setAttribute("d","M"+P0+" C"+c1+" "+c2+" "+P3);
+      function draw(g,ic,t0,t1){
+        var P0=ic.seg[0],P3=ic.seg[3],c1=lerp(P0,ic.T,t0),c2=lerp(P3,ic.T,t1);
+        var d=ic.pre+"C"+c1+" "+c2+" "+P3+ic.post;
+        g.shape.setAttribute("d",d); g.outline.setAttribute("d","M"+P0+"C"+c1+" "+c2+" "+P3);
+        if(g.cur!==ic){ g.cur=ic; g.extra.innerHTML=ic.extra; }
+        var A=X(P0),B=X(P3),C1=X(c1),C2=X(c2),T=X(ic.T);
+        set(g.g1,{x1:C1[0],y1:C1[1],x2:T[0],y2:T[1]}); set(g.g2,{x1:C2[0],y1:C2[1],x2:T[0],y2:T[1]});
+        set(g.h1,{x1:A[0],y1:A[1],x2:C1[0],y2:C1[1]}); set(g.h2,{x1:B[0],y1:B[1],x2:C2[0],y2:C2[1]});
+        set(g.a,{x:A[0]-5,y:A[1]-5}); set(g.b,{x:B[0]-5,y:B[1]-5});
+        set(g.k1,{cx:C1[0],cy:C1[1]}); set(g.k2,{cx:C2[0],cy:C2[1]});
+        if(g.tl){ set(g.tl,{x1:C1[0],y1:C1[1],x2:C2[0],y2:C2[1]}); set(g.tp,{x:T[0]-5,y:T[1]-5,transform:"rotate(45 "+T[0]+" "+T[1]+")"}); }
       }
-      var A=build(fig.querySelector('[data-tp="a"]'),false), B=build(fig.querySelector('[data-tp="b"]'),true);
-      var la=fig.querySelector('[data-tv="a"]'), lb=fig.querySelector('[data-tv="b"]');
+      var GA=build(fig.querySelector('[data-tp="a"]'),false), GB=build(fig.querySelector('[data-tp="b"]'),true);
+      var la=fig.querySelector('[data-tv="a"]'), lb=fig.querySelector('[data-tv="b"]'), ln=fig.querySelector(".tunni-icon");
       function ease(x){return .5-.5*Math.cos(x);}
+      function clamp(v){return Math.max(.08,Math.min(.95,v));}
       function pct(v){return Math.round(v*100)+"%";}
+      var CYCLE=2*Math.PI/1.1*2;
       var time=1.2, playing=!matchMedia("(prefers-reduced-motion: reduce)").matches, visible=false, last=0, raf=0;
       function render(){
-        var a0=.25+.7*ease(time*1.3), a1=.25+.7*ease(time*.8+2), s=.3+.62*ease(time*1.1);
-        draw(A,a0,a1); la.textContent=pct(a0)+" / "+pct(a1);
-        draw(B,s,s); lb.textContent=pct(s)+" / "+pct(s);
+        var ic=ICONS[Math.floor(time/CYCLE)%ICONS.length];
+        var a0=.15+.8*ease(time*1.3), a1=.15+.8*ease(time*.8+2);
+        draw(GA,ic,a0,a1); la.textContent=pct(a0)+" / "+pct(a1);
+        var k=.4+.9*ease(time*1.1), b0=clamp(1-k*(1-ic.t0)), b1=clamp(1-k*(1-ic.t1));
+        draw(GB,ic,b0,b1); lb.textContent=pct(b0)+" / "+pct(b1);
+        ln.textContent="Material icon: "+ic.name;
       }
       function frame(now){ raf=0; if(!(playing&&visible)) return; if(last) time+=Math.min(now-last,100)/1000; last=now; render(); raf=requestAnimationFrame(frame); }
       function kick(){ last=0; if(playing&&visible&&!raf) raf=requestAnimationFrame(frame); }
