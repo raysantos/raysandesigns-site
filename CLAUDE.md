@@ -20,8 +20,9 @@ This file is the single source of truth for the site. Keep **Current state** and
 
 **Live home page.** Focused on Ray's own apps, with Iconic as the centerpiece (it supports his Google Senior Icon Designer application).
 - Flagship: Iconic (`iconic.html`), full-width `.feature.flagship` card, overline "FEATURED · ICON DESIGN SOFTWARE".
-- Then a two-column `.app-grid` (one column on phones), image on top in a 16:9 frame: Asthma Log, Kids Week, Resin Matrix, AppFill.
-- Card chips are varied on purpose; never repeat "AI-assisted build" or "Mobile web app". Iconic: Icon design, Icon systems, Tool design. Asthma Log: Health UX, Mobile UX, Real-time sync. Kids Week: Information design, Schedule design, Mobile UX. Resin Matrix: Data design, Comparison UX, Decision support. AppFill: Interaction design, Chrome extension, Automation.
+- Then a two-column `.app-grid` (one column on phones), image on top in a 16:9 frame: The Iconic logo, Asthma Log, Kids Week, Resin Matrix, AppFill.
+- `iconic-logo.html` (live 2026-10-12): the Iconic logo case study. Its lead figure is an inline SVG that morphs through six real versions (JS at the bottom of the page; respects reduced motion). Icons live in `assets/img/iconic-logo/` as SVG, pulled from the Iconic repo history. Linked from its home card and a "The logo story" button on `iconic.html`.
+- Card chips are varied on purpose; The Iconic logo: Logo design, Icon design, Brand. never repeat "AI-assisted build" or "Mobile web app". Iconic: Icon design, Icon systems, Tool design. Asthma Log: Health UX, Mobile UX, Real-time sync. Kids Week: Information design, Schedule design, Mobile UX. Resin Matrix: Data design, Comparison UX, Decision support. AppFill: Interaction design, Chrome extension, Automation.
 - Unlinked but still live: `document-system.html`, plus the old small work-card grid (Fintech Icon System, Three Brand Launches, Painting Pro Platform, Interactive Statements with Orion AI, Agency Website Refresh, Websites & Intranets, Ventilation & IAQ Launches). To bring any back, restore it from `index.html` at commit `5246477`.
 
 **On dev only, waiting for Ray's approval.**
