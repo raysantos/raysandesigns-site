@@ -441,7 +441,25 @@ a.card-elevated:hover, a.card-filled:hover { box-shadow: var(--elev-2); }
 a.feature:hover .btn-tonal .ms, a.feature:focus-visible .btn-tonal .ms { transform: translateX(4px); }
 a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02); }
 .feature .media img, .feature .media video { transition: transform var(--dur-l) var(--ease-emph); }
+/* No card fill: each project sits on the page background, grouped by whitespace.
+   The rounded media is the only shape; text uses the theme tokens so both modes work. */
+#work .feature { background: none; border: 0; box-shadow: none; color: var(--md-on-surface); border-radius: 0; overflow: visible; }
+#work .feature h3 { color: var(--md-on-surface); }
+#work .feature p { color: var(--md-on-surface-variant); }
+#work .feature .supporting { color: var(--chip-ink); }
+#work .feature .chip { color: var(--chip-ink); }
+#work .feature .btn-tonal { color: var(--md-primary); }
+#work .feature .media { border-radius: var(--shape-xl); overflow: hidden; background: var(--md-surface-container); outline: 1px solid var(--md-outline-variant); outline-offset: -1px; }
+#work .feature.flagship { padding: 0; }
+#work .feature.flagship .media { margin: 0; }
+#work .app-grid { gap: 64px 40px; margin-top: 64px; }
+#work .app-grid .feature .feature-text { padding: 24px 0 0; }
+#work .app-grid .feature .media.bare { background: var(--md-surface-container); }
+#work .app-grid .feature .media.bare > video { border-bottom: 0 !important; }
+a.feature:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 @media (max-width: 839px) {
+  #work .app-grid { gap: 48px; margin-top: 48px; }
+  #work .app-grid .feature .feature-text { padding: 20px 0 0; }
   .app-grid .feature { padding: 0; }
   .app-grid .feature .feature-text { padding: 20px 20px 24px; }
   .feature.flagship .media { margin: 0 -20px -20px; padding: 0; }
