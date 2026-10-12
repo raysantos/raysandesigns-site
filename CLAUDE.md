@@ -4,6 +4,21 @@ Plain static site: HTML, one stylesheet (`assets/css/site.css`), one script (`as
 
 This file is the single source of truth for the site. Keep **Current state** and **Open items** up to date whenever a change lands, so the next session starts from the facts.
 
+## How Ray works on this site
+
+- **Where the work happens.** Since 2026-10-11 every site change is made in Claude Code on this repo. Before that, it was done in Ray's claude.ai Project "Raysan Designs"; that Project's `raysandesigns-site-handoff.md` is a frozen snapshot, and this file wins if they disagree.
+- **Why the site is hand-coded.** It used to be WordPress with an Elementor template whose license expired. Ray chose a lightweight hand-coded rebuild on Material Design fundamentals that keeps his original site's look. Don't suggest moving back to a CMS or adding a build step.
+- **How a request runs.**
+  1. Ray describes the change and says **dev** or **live**. If he doesn't, ask before touching anything.
+  2. Pull, make the change, bump `?v=` if CSS or JS changed, commit and push.
+  3. If it went live, re-apply it on `dev` (see Hosting and branches).
+  4. Update **Current state** / **Open items** below in the same push.
+  5. Reply with one or two sentences on what changed and the URL to check (dev preview or live). No step-by-step recap.
+- **Portfolio direction.** Fewer portfolio items, focused on Ray's own apps, with Iconic as the centerpiece for his Google icon designer application. Some pages are built for a specific job application (e.g. `asthma-assistant.html`); keep those unlisted until he says otherwise.
+- **Source material Ray supplies.** The 37 CheQRboard Figma screen exports (low resolution) live in his claude.ai Project "Raysan Designs", not in this repo; ask him to attach any you need. He also has OSG icon set files for showing icon work. ProAxion = the Industrial IoT App (Zero Copy Labs client work), where he refined the icons.
+- **His own conventions.** The icon-only sun/moon theme toggle (no words) is Ray's signature element across all his projects; keep it as is.
+- **GitHub account:** `raysantos` (username raydiculous; same account).
+
 ## Hosting and branches
 
 - **Cloudflare Pages** project `raysandesigns-site`, deploying automatically on push.
@@ -16,7 +31,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - **Caching** (`_headers`): HTML is no-cache, `/assets/*` caches for 5 minutes. That's why the `?v=` bump below matters.
 - **DNS** is on Cloudflare; the registrar is Bluehost. The mail, imap, pop, smtp and ftp records point to Bluehost and must stay "DNS only". Don't touch them, and don't suggest cancelling Bluehost without checking whether @raysandesigns.com email is in use.
 
-## Current state (2026-10-11)
+## Current state (2026-10-12)
 
 **Live home page.** Focused on Ray's own apps, with Iconic as the centerpiece (it supports his Google Senior Icon Designer application).
 - Flagship: Iconic (`iconic.html`), full-width `.feature.flagship` card, overline "FEATURED · ICON DESIGN SOFTWARE".
