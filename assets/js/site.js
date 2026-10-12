@@ -90,6 +90,25 @@
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
   }
 
+  // Work section: show the first row of stories, the rest behind "Show more work"
+  const moreBtn = document.querySelector('.more-work');
+  const workGrid = moreBtn && document.getElementById(moreBtn.getAttribute('aria-controls'));
+  if (workGrid) {
+    const label = moreBtn.querySelector('.label');
+    const set = (open) => {
+      workGrid.classList.toggle('collapsed', !open);
+      moreBtn.setAttribute('aria-expanded', String(open));
+      label.textContent = open ? 'Show less' : 'Show more work';
+    };
+    set(false);
+    moreBtn.hidden = false;
+    moreBtn.addEventListener('click', () => {
+      const open = moreBtn.getAttribute('aria-expanded') !== 'true';
+      set(open);
+      if (!open) workGrid.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  }
+
   // Hero word rotator: Icon → Brand → Product
   const rot = document.querySelector('.rot');
   if (rot) {
