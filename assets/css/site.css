@@ -486,6 +486,23 @@ a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02
   #work .app-grid .feature h3, #work .app-grid .card.feature h3 { font-size: 1.125rem; line-height: 1.5rem; }
   #work .app-grid .feature .media.bare { padding-top: 12px; }
 }
+/* Tablets: two across instead of one column */
+@media (min-width: 600px) and (max-width: 839px) { #work .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; } }
+/* Older work without an image: text-only stories; on phones they span the row and keep their description */
+@media (max-width: 599px) {
+  #work .app-grid .feature.text-only { grid-column: 1 / -1; }
+  #work .app-grid .feature.text-only .feature-text { padding-bottom: 16px; border-bottom: 1px solid var(--md-outline-variant); }
+  #work .app-grid .feature.text-only .supporting, #work .app-grid .feature.text-only p:not(.supporting) { display: block; }
+}
+/* Show more: only the first row shows until the button opens the rest (JS adds .collapsed) */
+#work .app-grid.collapsed > :nth-child(n+4) { display: none; }
+@media (max-width: 1099px) { #work .app-grid.collapsed > :nth-child(n+3) { display: none; } }
+#work .more-work { display: flex; align-items: center; gap: 8px; margin: 40px auto 0; height: 40px; padding: 0 20px 0 24px; border: 1px solid var(--md-outline); border-radius: var(--shape-full); background: none; color: var(--md-primary); font: 600 .875rem/1 var(--md-font); cursor: pointer; transition: background var(--dur-s) var(--ease-std); }
+#work .more-work[hidden] { display: none; }
+#work .more-work:hover { background: var(--md-surface-container); }
+#work .more-work .ms { transition: transform var(--dur-s) var(--ease-std); }
+#work .more-work[aria-expanded="true"] .ms { transform: rotate(180deg); }
+@media (max-width: 599px) { #work .more-work { margin-top: 28px; } }
 /* Iconic logo card: the tile centered in its frame, wearing the header's sliding gradient */
 #work .feature .media.logo-media { display: flex; align-items: center; justify-content: center; }
 #work .logo-tile { display: block; height: 38%; max-height: 112px; aspect-ratio: 1; border-radius: 20.8%; background: var(--hero-grad); background-size: 400% 400%; animation: gradientShift 15s ease infinite; box-shadow: 0 3px 10px rgb(0 0 0 / .08); }
