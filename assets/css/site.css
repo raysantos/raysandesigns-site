@@ -486,6 +486,12 @@ a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02
   #work .app-grid .feature h3, #work .app-grid .card.feature h3 { font-size: 1.125rem; line-height: 1.5rem; }
   #work .app-grid .feature .media.bare { padding-top: 12px; }
 }
+/* Iconic logo card: the tile centered in its frame, wearing the header's sliding gradient */
+#work .feature .media.logo-media { display: flex; align-items: center; justify-content: center; }
+#work .logo-tile { display: block; height: 62%; aspect-ratio: 1; border-radius: 20.8%; background: var(--hero-grad); background-size: 400% 400%; animation: gradientShift 15s ease infinite; box-shadow: 0 6px 20px rgb(0 0 0 / .12); }
+#work .logo-tile svg { display: block; width: 100%; height: 100%; }
+a.feature:hover .logo-tile { transform: scale(1.03); }
+#work .logo-tile { transition: transform var(--dur-l) var(--ease-emph); }
 a.feature:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 @media (max-width: 839px) {
   .app-grid .feature { padding: 0; }
