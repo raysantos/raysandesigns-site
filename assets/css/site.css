@@ -449,17 +449,43 @@ a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02
 #work .feature .supporting { color: var(--chip-ink); }
 #work .feature .chip { color: var(--chip-ink); }
 #work .feature .btn-tonal { color: var(--md-primary); }
-#work .feature .media { border-radius: var(--shape-xl); overflow: hidden; background: var(--md-surface-container); outline: 1px solid var(--md-outline-variant); outline-offset: -1px; }
-#work .feature.flagship { padding: 0; }
+#work .feature .media { border-radius: var(--shape-xs); overflow: hidden; background: var(--md-surface-container); outline: 1px solid var(--md-outline-variant); outline-offset: -1px; }
+#work .feature .btn-tonal { display: none; }
+/* Lead story: text left, big media right, like a news front page */
+#work .feature.flagship { padding: 0; grid-template-columns: minmax(0, 5fr) minmax(0, 8fr); gap: 40px; align-items: center; }
 #work .feature.flagship .media { margin: 0; }
-#work .app-grid { gap: 64px 40px; margin-top: 64px; }
-#work .app-grid .feature .feature-text { padding: 24px 0 0; }
+#work .feature.flagship .feature-text { max-width: none; gap: 16px; }
+#work .feature.flagship h3 { font-size: var(--fs-36); line-height: 2.75rem; }
+/* Story row: three across, each closed by a thin rule, tags as a quiet meta line */
+#work .app-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 32px; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--md-outline-variant); }
+#work .app-grid .feature { grid-template-rows: auto 1fr; }
+#work .app-grid .feature .feature-text { padding: 16px 0 20px; gap: 10px; height: 100%; border-bottom: 1px solid var(--md-outline-variant); }
+#work .app-grid .feature h3, #work .app-grid .card.feature h3 { font-size: var(--fs-24); line-height: 2rem; }
+#work .app-grid .feature p:not(.supporting) { font-size: .9375rem; line-height: 1.5rem; }
 #work .app-grid .feature .media.bare { background: var(--md-surface-container); }
 #work .app-grid .feature .media.bare > video { border-bottom: 0 !important; }
+#work .feature .chips { margin-top: auto; padding-top: 6px; gap: 4px 21px; overflow: hidden; }
+#work .feature .chip { color: var(--md-on-surface-variant); font: 400 .8125rem/1.25rem var(--md-font); }
+/* Divider before every tag; the one that starts a row falls outside the list and is clipped */
+#work .feature .chip { position: relative; }
+#work .feature .chip::before { content: ""; position: absolute; left: -11px; top: 3px; bottom: 3px; border-left: 1px solid var(--md-outline-variant); }
+@media (max-width: 1099px) { #work .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 839px) {
+  #work .feature.flagship { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  #work .feature.flagship .media { order: -1; }
+  #work .feature.flagship h3 { font-size: var(--fs-24); line-height: 2rem; }
+  #work .app-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 32px; padding-top: 32px; }
+}
+/* Phones: lead story stacked full width, then the rest two across as image + headline only */
+@media (max-width: 599px) {
+  #work .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; margin-top: 24px; padding-top: 24px; }
+  #work .app-grid .feature .feature-text { padding: 12px 0 0; border-bottom: 0; }
+  #work .app-grid .feature .supporting, #work .app-grid .feature p:not(.supporting), #work .app-grid .feature .chips { display: none; }
+  #work .app-grid .feature h3, #work .app-grid .card.feature h3 { font-size: 1.125rem; line-height: 1.5rem; }
+  #work .app-grid .feature .media.bare { padding-top: 12px; }
+}
 a.feature:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
 @media (max-width: 839px) {
-  #work .app-grid { gap: 48px; margin-top: 48px; }
-  #work .app-grid .feature .feature-text { padding: 20px 0 0; }
   .app-grid .feature { padding: 0; }
   .app-grid .feature .feature-text { padding: 20px 20px 24px; }
   .feature.flagship .media { margin: 0 -20px -20px; padding: 0; }
