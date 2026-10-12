@@ -422,6 +422,31 @@ a.card-elevated:hover, a.card-filled:hover { box-shadow: var(--elev-2); }
 .app-grid .feature h3, .app-grid .card.feature h3 { font-size: var(--fs-24); line-height: 2rem; }
 @media (max-width: 839px) { .app-grid { grid-template-columns: minmax(0, 1fr); } .app-grid .feature { padding: 20px; } }
 
+/* Work cards, one boundary each (Gestalt common region): the navy card is the only box.
+   Media runs full-bleed to the card edge instead of sitting in its own inset panel,
+   chips become a plain tag line, and the CTA is a text link, since the whole card is the link. */
+.feature { overflow: hidden; }
+.feature .media, .feature .media.bare { background: transparent; padding: 0; border-radius: 0; }
+.feature .media img, .feature .media video { border-radius: 0 !important; }
+.app-grid .feature { padding: 0; gap: 0; }
+.app-grid .feature .feature-text { padding: 28px 32px 32px; }
+.app-grid .feature .media { background: rgb(255 255 255 / .06); }
+.app-grid .feature .media.bare { padding-top: 28px; align-items: flex-start; overflow: hidden; }
+.app-grid .feature .media.bare > video { width: min(62%, 260px) !important; height: auto !important; border-bottom: 0 !important; border-radius: 24px 24px 0 0 !important; }
+.feature.flagship .media { margin: 0 -40px -40px; padding: 0; }
+.feature .chips { gap: 4px 20px; padding-top: 0; }
+.feature .chip { height: auto; padding: 0; border: 0; background: none; border-radius: 0; color: var(--green); font: 600 .875rem/1.5rem var(--md-font); }
+.feature .btn-tonal { background: none; color: #fff; padding: 0; height: auto; gap: 8px; margin-top: 0; }
+.feature .btn-tonal .ms { margin-left: 0; order: 2; transition: transform var(--dur-s) var(--ease-std); }
+a.feature:hover .btn-tonal .ms, a.feature:focus-visible .btn-tonal .ms { transform: translateX(4px); }
+a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02); }
+.feature .media img, .feature .media video { transition: transform var(--dur-l) var(--ease-emph); }
+@media (max-width: 839px) {
+  .app-grid .feature { padding: 0; }
+  .app-grid .feature .feature-text { padding: 20px 20px 24px; }
+  .feature.flagship .media { margin: 0 -20px -20px; padding: 0; }
+}
+
 /* Pill tags from the original site */
 .chip { height: 32px; border-radius: var(--shape-full); border: 1px solid var(--green-line); background: var(--chip-fill); color: var(--chip-ink); font: 700 .875rem/1 var(--md-font); padding: 0 14px; }
 .chip .ms { color: currentColor; }
