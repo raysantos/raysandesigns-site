@@ -70,7 +70,7 @@
       <div>
         <h2>Start from the right-click</h2>
         <div class="copytext">
-          <p>Autofill lives in the menu already under your hand: no toolbar popup, no per-site setup, and it works inside embedded application frames.</p>
+          <p>Autofill lives in the menu already under your hand: no toolbar popup, no per-site setup, and it works inside embedded application frames. It fills only the frame I right-click in.</p>
           <ul>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Fill blanks, never overwrite.</b> Only empty fields are touched, so running it twice is harmless.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Show the gaps.</b> Fields it can't place get a dashed amber outline, not a best guess.</span></li>
@@ -145,7 +145,12 @@
       <div>
         <h2>Everything stays on this computer</h2>
         <div class="copytext">
-          <p>An autofill tool holds the details you'd least want leaking. The profile, custom answers and remembered sites live in local extension storage. Nothing is synced, sent or logged; export and import handle moving to a new machine.</p>
+          <p>An autofill tool holds the details you'd least want leaking. The profile, custom answers and remembered sites live in Chrome's local storage on one computer. There's no account, sync or server, and the code makes no network requests. Version 1.1 also closed three ways a page could still get at the data:</p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Only the form I point at.</b> Ads, chat widgets and other embedded frames on the same page are never filled.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No trap fields.</b> Inputs that are hidden, see-through, a few pixels wide or pushed off the page are skipped, so a page can't collect details I never see.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Private answers aren't remembered.</b> Saving a site skips Social Security, tax ID, date of birth, bank, card, license and passport fields.</span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -178,10 +183,17 @@
       <div>
         <h2>What changed since launch</h2>
         <div class="copytext">
-          <p>One fix so far: radio questions now highlight the option that was actually selected.</p>
-          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>1 change</summary>
+          <p>Version 1.1 tightened privacy: fills stay in the frame I right-click, hidden trap fields are skipped, and private answers are never remembered. One earlier fix corrected the radio-button highlight.</p>
+          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>5 changes</summary>
+            <p><b>Improvements</b></p>
+            <ul>
+              <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Fill, Remember and Forget now act only on the frame I right-click in, so other embedded frames on the page never receive my details.</span></li>
+              <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Remember my answers on this site skips private fields such as Social Security, date of birth, bank and card numbers, and says how many it skipped.</span></li>
+              <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>The settings page says up front that everything stays on this computer, and warns that the backup file isn't encrypted.</span></li>
+            </ul>
             <p><b>Fixes</b></p>
             <ul>
+              <li><span class="ms" aria-hidden="true">build</span><span>Hidden, see-through, tiny or off-page fields could be filled. They're now skipped.</span></li>
               <li><span class="ms" aria-hidden="true">build</span><span>Radio questions now outline the checked option, not the first one.</span></li>
             </ul>
           </details>
@@ -199,6 +211,7 @@
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Custom dropdowns.</b> Workday and type-to-search pickers get outlined, not filled; an adapter that opens each picker and picks the match would close the biggest gap.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Resume uploads.</b> Extensions can't attach files, but the notice could flag an empty upload field.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Keyboard shortcut.</b> One key to fill the page would suit applications I finish without the mouse.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Passphrase lock.</b> Chrome keeps the saved details unencrypted in its profile folder. An optional passphrase that encrypts them would protect against anyone who gets into the computer itself.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>More than one profile.</b> Switching profiles from the menu would cover full-time and freelance applications, which want different titles, links and rates.</span></li>
           </ul>
         </div>
