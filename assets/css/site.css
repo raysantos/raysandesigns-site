@@ -917,3 +917,6 @@ html { -webkit-tap-highlight-color: transparent; }
   :root[data-theme="dark"] .top-nav .nav-pill:not([aria-current]):hover:not(:focus-visible) .ico { color: var(--md-on-surface); }
   .theme-toggle:hover { background: transparent; }
 }
+
+/* Brand app-icon tiles on "What I bring" cards (2026-10-18) */
+.card-icon-brand { display: block; width: 48px; height: 48px; }
