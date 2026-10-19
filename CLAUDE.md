@@ -31,7 +31,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - **Caching** (`_headers`): HTML is no-cache, `/assets/*` caches for 5 minutes. That's why the `?v=` bump below matters.
 - **DNS** is on Cloudflare; the registrar is Bluehost. The mail, imap, pop, smtp and ftp records point to Bluehost and must stay "DNS only". Don't touch them, and don't suggest cancelling Bluehost without checking whether @raysandesigns.com email is in use.
 
-## Current state (2026-10-12)
+## Current state (2026-10-19)
 
 **Live home page.** Focused on Ray's own apps, with Iconic as the centerpiece (it supports his Google Senior Icon Designer application).
 - Flagship: Iconic (`iconic.html`), full-width `.feature.flagship` card, overline "FEATURED · ICON DESIGN SOFTWARE".
@@ -42,7 +42,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - After Branded Document System (live 2026-10-19): Error-Proof Revisions (`error-proof-revisions.html`, formerly `markup-to-revision.html` titled Markup to Revision, which now 301s here via `_redirects`; title only, no lede; kicker CASE STUDY · AI WORKFLOW, chips Workflow design, Print production, Human + AI). An anonymized case study of a price-list revision round run with AI: no client, product, project numbers or people named, and the page says "AI", never "Claude" (Ray's call). Keep it that way. Ray chose a short format on 2026-10-19: hero plus one section of two paragraphs framed around eliminating human error (no story sections, no Things to improve). Lead image `assets/img/error-proof-diagram-light.webp` (simplified node-graph diagram in the site palette, styled after an n8n-type agent canvas Ray liked, rendered from HTML; Ray asked for it simple) is also the card image.
 - **Show more work:** only the first row of `#work-grid` shows (3 on desktop, 2 under 1100px, including tablets and phones); a pill button under the grid opens the rest and turns into "Show less". `site.js` adds `.collapsed`, so without JS everything shows.
 
-**Work section layout (live since 2026-10-12, Ray's BBC news reference).** No card fills. Iconic is the lead story: text left, big media right (stacked, media first, under 840px). The rest sit three across (two under 1100px; exactly four items go four across), each with a small-radius image, green kicker, title, description and a gray meta line of tags split by thin dividers, closed by a hairline rule; a rule separates the lead from the row. No "Read the case study" link; the title underlines on hover. 600–839px goes two across. Under 600px the row goes two across with image and title only (text-only stories span the row and keep their description). CSS block after `.app-grid` in `site.css`, `?v=20261012g`; `site.js?v=20261012a`. Earlier tries: navy cards with full-bleed media (dev `3b4bb45`), no-fill single column (dev `74766ac`).
+**Work section layout (live since 2026-10-12, Ray's BBC news reference).** No card fills. Iconic is the lead story: text left, big media right (stacked, media first, under 840px). The rest sit three across (two under 1100px; exactly four items go four across), each with a small-radius image, green kicker, title, description and a gray meta line of tags split by thin dividers, closed by a hairline rule; a rule separates the lead from the row. No "Read the case study" link; the title underlines on hover. 600–839px goes two across. Under 600px the row goes two across with image and title only (text-only stories span the row and keep their description). CSS block after `.app-grid` in `site.css`. Current versions: `site.css?v=20261019a`, `site.js?v=20261019a`. Earlier tries: navy cards with full-bleed media (dev `3b4bb45`), no-fill single column (dev `74766ac`).
 
 **On dev only, waiting for Ray's approval.**
 - `cheqrboard.html`, rebuilt short: client work (Zero Copy Labs, 2025), 8 story sections plus Things to improve, no Revisions section (client work, like `industrial-iot.html`). Seven looping clips (`cheq-build`, `cheq-poll`, `cheq-warning`, `cheq-schedule`, `cheq-presets`, `cheq-sidebar`, `cheq-card`), each with a `-poster.webp`. The clips are soft because the Figma exports are low resolution.
@@ -85,14 +85,15 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 - Captions: one line, about 15 words, starting with a bold phrase.
 - Revisions and Things to improve items: one sentence each after the bold title.
 
-1. Hero: back link, overline, title, lede, meta cards, lead image.
-2. Story sections (`<section class="cs-sec wrap">` with a `.step` label, an `h2` and `.copytext`).
+**Sidebar layout (live 2026-10-19, Ray's pick).** Every case study uses `.cs-layout`: a sticky left `aside.cs-side` (icon-only back arrow, overline, Title Case h1 in Sofia Sans 400 with a `--md-secondary` accent, lede, any `.actions` buttons, a `dl.cs-meta` of details, and `nav.cs-toc`, a table of contents of the section labels with icons) and a right `div.cs-main` (lead media, then every section). Section labels live only in the contents list, not above each h2. Stacks under 960px, where the contents list hides. `site.js` highlights the contents link for the section in view. CSS block at the end of `site.css`. Pages were converted with a script; the old `.cs-hero` / `.step` markup is gone from case studies.
+
+1. Sidebar: back arrow, overline, title, lede, meta, contents.
+2. Story sections (`<section class="cs-sec" id="…">` with `.cs-text` > `div` > `h2` + `.copytext`, inside `.cs-main`). Each section's label and icon go in the contents list as `<li><a href="#id"><span class="ms">icon</span>Label</a></li>`.
 3. **Things to improve** (always the last content section, right before the contact block). Use this markup:
 
 ```html
-<section class="cs-sec wrap improve">
+<section class="cs-sec improve" id="whats-next">
   <div class="cs-text">
-    <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
     <div>
       <h2>Things to improve</h2>
       <div class="copytext">
@@ -109,7 +110,7 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 
    **Keep it current.** When a project gets revised, check off the items the revision addresses: give the `<li>` `class="done"`, swap the icon to `check_circle`, and start the text with "Done:" plus what shipped. Never delete a checked item. If only part is done, check off the done part and add a new unchecked item for what's left. Add new items as new gaps show up.
 
-   **Revisions section.** Right before Things to improve, a `<section class="cs-sec wrap">` with step label `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date. To keep the page short, the `.copytext` opens with one sentence naming the biggest changes, and the grouped lists sit inside a collapsed `<details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All N changes (or "1 change")</summary> … </details>`. Update N when adding items.
+   **Revisions section.** Right before Things to improve, a `<section class="cs-sec" id="revisions">` listed in the contents as `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date. To keep the page short, the `.copytext` opens with one sentence naming the biggest changes, and the grouped lists sit inside a collapsed `<details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All N changes (or "1 change")</summary> … </details>`. Update N when adding items.
 4. Contact block and footer, copied from the home page.
 
 ## Working rules

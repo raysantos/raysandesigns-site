@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261019a">
 </head>
 <body>
 <a class="skip btn btn-filled" href="index.html#main">Skip to content</a>
@@ -35,30 +35,45 @@
 </header>
 
 <main id="main">
-  <section class="cs-hero wrap">
-    <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
-    <p class="overline"><span class="ms" aria-hidden="true">science</span>Case study · Personal tool</p>
-    <h1>Resin <span class="accent">Matrix</span></h1>
-    <p class="lede">Anycubic sells 17 resins, and its own comparison page made it hard to tell them apart. So I built a sortable table with every resin, every published spec and the current price.</p>
-    <div class="meta">
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">person</span>Client</p><p>Me, and my 3D printer</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">table_chart</span>Product</p><p>Comparison tool</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Research, design &amp; build</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">open_in_new</span>Live tool</p><p><a href="https://raysantos.github.io/anycubic-resin-matrix/" target="_blank" rel="noopener">Resin Matrix</a></p></div>
-    </div>
-    <div class="actions" style="margin-top:24px">
+    <div class="cs-layout wrap">
+    <aside class="cs-side">
+      <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
+      <p class="overline"><span class="ms" aria-hidden="true">science</span>Case study · Personal tool</p>
+      <h1>Resin <span class="accent">Matrix</span></h1>
+      <p class="lede">Anycubic sells 17 resins, and its own comparison page made it hard to tell them apart. So I built a sortable table with every resin, every published spec and the current price.</p>
+      <div class="actions" style="margin-top:24px">
       <a class="btn btn-filled btn-lg sl" href="https://raysantos.github.io/anycubic-resin-matrix/" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">open_in_new</span>Open the Resin Matrix</a>
       <a class="btn btn-outlined btn-lg sl" href="https://github.com/raysantos/anycubic-resin-matrix" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">code</span>View the code</a>
     </div>
-    <figure class="fig">
+      <dl class="cs-meta">
+          <div><dt><span class="ms" aria-hidden="true">person</span>Client</dt><dd>Me, and my 3D printer</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">table_chart</span>Product</dt><dd>Comparison tool</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Research, design &amp; build</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">open_in_new</span>Live tool</dt><dd><a href="https://raysantos.github.io/anycubic-resin-matrix/" target="_blank" rel="noopener">Resin Matrix</a></dd></div>
+      </dl>
+      <nav class="cs-toc" aria-label="On this page">
+        <ol>
+            <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
+            <li><a href="#the-data"><span class="ms" aria-hidden="true">database</span>The data</a></li>
+            <li><a href="#the-core-pattern"><span class="ms" aria-hidden="true">table_rows</span>The core pattern</a></li>
+            <li><a href="#motion"><span class="ms" aria-hidden="true">animation</span>Motion</a></li>
+            <li><a href="#explaining-the-numbers"><span class="ms" aria-hidden="true">lightbulb</span>Explaining the numbers</a></li>
+            <li><a href="#look-and-feel"><span class="ms" aria-hidden="true">palette</span>Look and feel</a></li>
+            <li><a href="#iteration"><span class="ms" aria-hidden="true">content_cut</span>Iteration</a></li>
+            <li><a href="#process"><span class="ms" aria-hidden="true">auto_awesome</span>Process</a></li>
+            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <div class="cs-main">
+      <figure class="fig">
         <button class="zoom" type="button" aria-label="Enlarge: the full matrix on desktop"><div class="media"><img src="assets/img/resin-desktop-light.webp" width="2000" height="1174" alt="The Resin Matrix on a desktop: leader cards for impact, flexibility, hardness, tensile strength, shrinkage, viscosity and price, family filter pills, then a table with one resin per row and sixteen property columns." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>One resin per row, one property per column.</b> Leader cards up top answer the common questions.</figcaption>
       </figure>
-  </section>
 
-  <section class="cs-sec wrap">
+
+  <section class="cs-sec" id="the-problem">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">report</span>The problem</p>
       <div>
         <h2>The official comparison is built for browsing, not choosing</h2>
         <div class="copytext">
@@ -67,9 +82,8 @@
       </div>
     </div>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="the-data">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">database</span>The data</p>
       <div>
         <h2>Seventeen spec sheets, one table</h2>
         <div class="copytext">
@@ -83,9 +97,8 @@
       </div>
     </div>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="the-core-pattern">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">table_rows</span>The core pattern</p>
       <div>
         <h2>Every option first, then the differences</h2>
         <div class="copytext">
@@ -101,9 +114,8 @@
       </div>
     </div>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="motion">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">animation</span>Motion</p>
       <div>
         <h2>Rows that move to their new place</h2>
         <div class="copytext">
@@ -116,9 +128,8 @@
       <figcaption><b>Sort and follow.</b> A leader card, a column tooltip, then two sorts with sliding rows.</figcaption>
     </figure>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="explaining-the-numbers">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">lightbulb</span>Explaining the numbers</p>
       <div>
         <h2>Answers in place, not in a glossary</h2>
         <div class="copytext">
@@ -136,9 +147,8 @@
       <figcaption><b>Filter and learn.</b> Each family brings its own note; one click restores the full list.</figcaption>
     </figure>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="look-and-feel">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">palette</span>Look and feel</p>
       <div>
         <h2>Styled like Anycubic's store, usable on a phone</h2>
         <div class="copytext">
@@ -155,9 +165,8 @@
       <figcaption><b>Swipe and snap.</b> Names stay pinned while the columns move.</figcaption>
     </figure>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="iteration">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">content_cut</span>Iteration</p>
       <div>
         <h2>Most of the edits were deletions</h2>
         <div class="copytext">
@@ -172,9 +181,8 @@
       </div>
     </div>
   </section>
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="process">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">auto_awesome</span>Process</p>
       <div>
         <h2>Researched, designed and shipped in a day</h2>
         <div class="copytext">
@@ -183,9 +191,8 @@
       </div>
     </div>
   </section>
-  <section class="cs-sec wrap improve">
+  <section class="cs-sec improve" id="what-s-next">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
@@ -199,6 +206,9 @@
       </div>
     </div>
   </section>
+    </div>
+  </div>
+
   <section class="contact wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact-card">
       <div>
@@ -238,6 +248,6 @@
   <a href="index.html#about"><span class="ind"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21v-3.5a7 7 0 1 1 9-10.8L20.4 13a.7.7 0 0 1-.6 1.1h-2.3v2.3a1.7 1.7 0 0 1-1.7 1.7H13V21"/><circle cx="14.8" cy="10.6" r="1.15" fill="currentColor" stroke="none"/></svg></span>About</a>
   <a href="index.html#contact"><span class="ind"><span class="ms" aria-hidden="true">mail</span></span>Contact</a>
 </nav>
-<script src="assets/js/site.js?v=20261012a"></script>
+<script src="assets/js/site.js?v=20261019a"></script>
 </body>
 </html>
