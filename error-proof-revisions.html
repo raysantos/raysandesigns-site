@@ -20,8 +20,8 @@
 <style>
 .ep { display: grid; gap: 32px; padding-block: 32px 48px; }
 .ep-side { display: grid; gap: 16px; align-content: start; }
-.ep-side .back { justify-self: start; }
-.ep-side h1 { font-weight: 800; font-variation-settings: "wdth" 40, "opsz" 144; font-size: clamp(2.75rem, 8vw, 3.1rem); line-height: .95; letter-spacing: -.02em; text-transform: uppercase; color: var(--md-on-surface); }
+.ep-side .back { justify-self: start; margin: 0 0 8px -10px; color: var(--md-primary); }
+.ep-side h1 { font-weight: 800; font-variation-settings: "wdth" 40, "opsz" 144; font-size: clamp(2.75rem, 8vw, 3.1rem); line-height: 1; letter-spacing: -.01em; color: var(--md-on-surface); }
 .ep-side h1 .accent { color: var(--md-primary); }
 .ep-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; margin: 8px 0 0; padding-top: 20px; border-top: 1px solid var(--md-outline-variant); }
 .ep-meta dt { display: flex; align-items: center; gap: 6px; font: var(--label-m); letter-spacing: .06em; text-transform: uppercase; color: var(--chip-ink); }
@@ -57,7 +57,7 @@
 <main id="main">
   <div class="ep wrap">
     <aside class="ep-side">
-      <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
+      <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
       <p class="overline"><span class="ms" aria-hidden="true">account_tree</span>Case study · AI workflow</p>
       <h1>Error-Proof <span class="accent">Revisions</span></h1>
       <dl class="ep-meta">
