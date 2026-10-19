@@ -58,7 +58,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - **Hero:** left-aligned, vertically centered. Eyebrow "— HI, I'M A", then a rotating Sofia Sans Light word (Product / Visual / Icon, every 4.6s) above "Designer". Status line: "Currently designing at Panasonic North America." No buttons, no down arrow.
 - **Never call Ray "Senior"** in his own voice (hero, About). Past job titles in Experience keep their real names.
 - **Anonymized projects** (e.g. `error-proof-revisions.html`): no Client field in the meta, and no client, product or people named anywhere.
-- **Code links:** "View the code" is an icon-only GitHub circle (`.gh-btn`), not a text button.
+- **Code links:** "View the code" is GitHub's official mark on its own as the link (`.gh-btn`, no button outline), not a text button. Use the official mark, never a hand-drawn Octocat.
 - **Work cards:** title-case titles, then the description. No logos.
 - **Case studies:** multi-step flows are looping MP4 clips, not wide strips of frames.
 - **Experience:** company logo bubbles. Raysan Designs is a cream-fade bubble with a black R, which is also the favicon. Education: Pratt and SVA NYC, stacked.
