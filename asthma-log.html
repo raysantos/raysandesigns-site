@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261019a">
 </head>
 <body class="cs-phones">
 <a class="skip btn btn-filled" href="#main">Skip to content</a>
@@ -35,26 +35,42 @@
 </header>
 
 <main id="main">
-  <section class="cs-hero wrap">
-    <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
-    <p class="overline"><span class="ms" aria-hidden="true">pulmonology</span>Case study · Personal project</p>
-    <h1>Asthma <span class="accent">Log</span></h1>
-    <p class="lede">With caregivers trading night shifts, the 2am question was always: when was the last asthma dose, and is another OK now? I designed and built a family web app that answers it at a glance, simple enough for the child to log doses too.</p>
-    <div class="meta">
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">family_home</span>Client</p><p>My family</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">smartphone</span>Product</p><p>Installable mobile web app</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Product design &amp; build</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">open_in_new</span>Live app</p><p><a href="https://raysantos.github.io/asthma-log/" target="_blank" rel="noopener">Asthma Log</a></p></div>
-    </div>
-    <figure class="fig">
+    <div class="cs-layout wrap">
+    <aside class="cs-side">
+      <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
+      <p class="overline"><span class="ms" aria-hidden="true">pulmonology</span>Case study · Personal project</p>
+      <h1>Asthma <span class="accent">Log</span></h1>
+      <p class="lede">With caregivers trading night shifts, the 2am question was always: when was the last asthma dose, and is another OK now? I designed and built a family web app that answers it at a glance, simple enough for the child to log doses too.</p>
+      
+      <dl class="cs-meta">
+          <div><dt><span class="ms" aria-hidden="true">family_home</span>Client</dt><dd>My family</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">smartphone</span>Product</dt><dd>Installable mobile web app</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Product design &amp; build</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">open_in_new</span>Live app</dt><dd><a href="https://raysantos.github.io/asthma-log/" target="_blank" rel="noopener">Asthma Log</a></dd></div>
+      </dl>
+      <nav class="cs-toc" aria-label="On this page">
+        <ol>
+            <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
+            <li><a href="#walkthrough"><span class="ms" aria-hidden="true">play_circle</span>Walkthrough</a></li>
+            <li><a href="#the-core-pattern"><span class="ms" aria-hidden="true">schedule</span>The core pattern</a></li>
+            <li><a href="#logging"><span class="ms" aria-hidden="true">touch_app</span>Logging</a></li>
+            <li><a href="#history"><span class="ms" aria-hidden="true">bar_chart</span>History</a></li>
+            <li><a href="#sharing"><span class="ms" aria-hidden="true">lock</span>Sharing</a></li>
+            <li><a href="#details"><span class="ms" aria-hidden="true">tune</span>Details</a></li>
+            <li><a href="#process"><span class="ms" aria-hidden="true">auto_awesome</span>Process</a></li>
+            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <div class="cs-main">
+      <figure class="fig">
       <button class="zoom" type="button" aria-label="Enlarge: Dosage, History and Medications screens"><div class="media bare"><img src="assets/img/asthma-hero.webp?v=4" width="1658" height="900" alt="Three phone screens of Asthma Log: Dosage with next-dose cards, History with a seven-day chart of rescue and controller doses, and the Medications list."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>Three tabs, one job each.</b> Dosage says if a dose is OK, History shows the week, Medications lists what's taken.</figcaption>
     </figure>
-  </section>
 
-  <section class="cs-sec wrap">
+
+  <section class="cs-sec" id="the-problem">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">report</span>The problem</p>
       <div>
         <h2>Three questions, asked half asleep</h2>
         <div class="copytext">
@@ -64,9 +80,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="walkthrough">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">play_circle</span>Walkthrough</p>
       <div>
         <h2>A morning, start to finish</h2>
         <div class="copytext">
@@ -80,9 +95,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="the-core-pattern">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">schedule</span>The core pattern</p>
       <div>
         <h2>The answer first, the form second</h2>
         <div class="copytext">
@@ -96,9 +110,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="logging">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">touch_app</span>Logging</p>
       <div>
         <h2>Clear enough for a child to log a dose</h2>
         <div class="copytext">
@@ -114,9 +127,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="history">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">bar_chart</span>History</p>
       <div>
         <h2>A week at a glance, ready for the doctor</h2>
         <div class="copytext">
@@ -130,9 +142,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="sharing">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">lock</span>Sharing</p>
       <div>
         <h2>Anyone can look, only family can log</h2>
         <div class="copytext">
@@ -146,9 +157,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="details">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">tune</span>Details</p>
       <div>
         <h2>Built for 2am</h2>
         <div class="copytext">
@@ -168,9 +178,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="process">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">auto_awesome</span>Process</p>
       <div>
         <h2>Shipped in an evening, refined by real use</h2>
         <div class="copytext">
@@ -184,9 +193,8 @@
       <div class="card card-outlined"><div class="card-icon s" aria-hidden="true"><span class="ms">shield_lock</span></div><h3>Security</h3><p>Anyone can read; only the family account can write, via Firebase Auth and rules.</p></div>
     </div>
   </section>
-  <section class="cs-sec wrap improve">
+  <section class="cs-sec improve" id="what-s-next">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
@@ -201,6 +209,9 @@
       </div>
     </div>
   </section>
+    </div>
+  </div>
+
   <section class="contact wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact-card">
       <div>
@@ -239,6 +250,6 @@
   <a href="index.html#about"><span class="ind"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21v-3.5a7 7 0 1 1 9-10.8L20.4 13a.7.7 0 0 1-.6 1.1h-2.3v2.3a1.7 1.7 0 0 1-1.7 1.7H13V21"/><circle cx="14.8" cy="10.6" r="1.15" fill="currentColor" stroke="none"/></svg></span>About</a>
   <a href="index.html#contact"><span class="ind"><span class="ms" aria-hidden="true">mail</span></span>Contact</a>
 </nav>
-<script src="assets/js/site.js?v=20261012a"></script>
+<script src="assets/js/site.js?v=20261019a"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261019a">
 </head>
 <body class="cs-phones">
 <a class="skip btn btn-filled" href="#main">Skip to content</a>
@@ -35,26 +35,42 @@
 </header>
 
 <main id="main">
-  <section class="cs-hero wrap">
-    <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
-    <p class="overline"><span class="ms" aria-hidden="true">description</span>Case study · Studio system</p>
-    <h1>Branded Document <span class="accent">System</span></h1>
-    <p class="lede">My invoices came out of FreshBooks and looked nothing like my website. I turned my studio paperwork into a small design system with code behind it. Invoices, quotes, my resume and letters now come from the same brand rules, built from data instead of redrawn by hand.</p>
-    <div class="meta">
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">storefront</span>Client</p><p>Raysan Designs, my studio</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">picture_as_pdf</span>Product</p><p>PDF templates + AI skills</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Design &amp; art direction, AI-assisted build</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">folder_copy</span>Documents</p><p>Invoice, quote, resume, letter</p></div>
-    </div>
-    <figure class="fig">
+    <div class="cs-layout wrap">
+    <aside class="cs-side">
+      <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
+      <p class="overline"><span class="ms" aria-hidden="true">description</span>Case study · Studio system</p>
+      <h1>Branded Document <span class="accent">System</span></h1>
+      <p class="lede">My invoices came out of FreshBooks and looked nothing like my website. I turned my studio paperwork into a small design system with code behind it. Invoices, quotes, my resume and letters now come from the same brand rules, built from data instead of redrawn by hand.</p>
+      
+      <dl class="cs-meta">
+          <div><dt><span class="ms" aria-hidden="true">storefront</span>Client</dt><dd>Raysan Designs, my studio</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">picture_as_pdf</span>Product</dt><dd>PDF templates + AI skills</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Design &amp; art direction, AI-assisted build</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">folder_copy</span>Documents</dt><dd>Invoice, quote, resume, letter</dd></div>
+      </dl>
+      <nav class="cs-toc" aria-label="On this page">
+        <ol>
+            <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
+            <li><a href="#the-approach"><span class="ms" aria-hidden="true">account_tree</span>The approach</a></li>
+            <li><a href="#the-rules"><span class="ms" aria-hidden="true">format_paint</span>The rules</a></li>
+            <li><a href="#details"><span class="ms" aria-hidden="true">tune</span>Details</a></li>
+            <li><a href="#quotes"><span class="ms" aria-hidden="true">draw</span>Quotes</a></li>
+            <li><a href="#process"><span class="ms" aria-hidden="true">auto_awesome</span>Process</a></li>
+            <li><a href="#system"><span class="ms" aria-hidden="true">extension</span>System</a></li>
+            <li><a href="#extending-it"><span class="ms" aria-hidden="true">add_circle</span>Extending it</a></li>
+            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <div class="cs-main">
+      <figure class="fig">
       <button class="zoom" type="button" aria-label="Enlarge: invoice, quote, resume and letter"><div class="media bare"><img src="assets/img/docs-hero.webp" width="1668" height="556" alt="Four branded pages side by side: an invoice, the closing page of a quote, page one of a resume and a one-page letter. Each has the same cream wordmark bar and coral color bar."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>One brand, four documents.</b> The same wordmark bar, color bar, type scale and footer, filled with different data. All client details shown are samples.</figcaption>
     </figure>
-  </section>
 
-  <section class="cs-sec wrap">
+
+  <section class="cs-sec" id="the-problem">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">report</span>The problem</p>
       <div>
         <h2>My paperwork didn't look like my work</h2>
         <div class="copytext">
@@ -65,9 +81,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="the-approach">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">account_tree</span>The approach</p>
       <div>
         <h2>One brand, one pipeline</h2>
         <div class="copytext">
@@ -82,9 +97,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="the-rules">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">format_paint</span>The rules</p>
       <div>
         <h2>The brand, written down as rules</h2>
         <div class="copytext">
@@ -101,9 +115,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="details">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">tune</span>Details</p>
       <div>
         <h2>Small decisions that make it feel finished</h2>
         <div class="copytext">
@@ -118,9 +131,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="quotes">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">draw</span>Quotes</p>
       <div>
         <h2>Long quotes that still sign cleanly</h2>
         <div class="copytext">
@@ -135,9 +147,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="process">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">auto_awesome</span>Process</p>
       <div>
         <h2>I directed it; Claude wrote the code</h2>
         <div class="copytext">
@@ -154,9 +165,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="system">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">extension</span>System</p>
       <div>
         <h2>Each document became a skill</h2>
         <div class="copytext">
@@ -172,9 +182,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="extending-it">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">add_circle</span>Extending it</p>
       <div>
         <h2>A new document is a data file and a page of layout</h2>
         <div class="copytext">
@@ -188,9 +197,8 @@
     </figure>
   </section>
 
-  <section class="cs-sec wrap improve">
+  <section class="cs-sec improve" id="what-s-next">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
@@ -205,6 +213,9 @@
       </div>
     </div>
   </section>
+    </div>
+  </div>
+
   <section class="contact wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact-card">
       <div>
@@ -243,6 +254,6 @@
   <a href="index.html#about"><span class="ind"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21v-3.5a7 7 0 1 1 9-10.8L20.4 13a.7.7 0 0 1-.6 1.1h-2.3v2.3a1.7 1.7 0 0 1-1.7 1.7H13V21"/><circle cx="14.8" cy="10.6" r="1.15" fill="currentColor" stroke="none"/></svg></span>About</a>
   <a href="index.html#contact"><span class="ind"><span class="ms" aria-hidden="true">mail</span></span>Contact</a>
 </nav>
-<script src="assets/js/site.js?v=20261012a"></script>
+<script src="assets/js/site.js?v=20261019a"></script>
 </body>
 </html>

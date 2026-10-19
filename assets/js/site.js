@@ -159,3 +159,21 @@
     setTimeout(() => root.classList.remove('theme-fading'), 350);
   }));
 })();
+
+// Case study sidebar: highlight the contents link for the section in view.
+(() => {
+  const links = [...document.querySelectorAll('.cs-toc a[href^="#"]')];
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+  const visible = new Set();
+  const mark = () => {
+    const first = [...byId.keys()].find((id) => visible.has(id));
+    links.forEach((a) => a.removeAttribute('aria-current'));
+    if (first) byId.get(first).setAttribute('aria-current', 'true');
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => (e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id)));
+    mark();
+  }, { rootMargin: '-96px 0px -55% 0px' });
+  byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+})();

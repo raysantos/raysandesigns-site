@@ -31,7 +31,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - **Caching** (`_headers`): HTML is no-cache, `/assets/*` caches for 5 minutes. That's why the `?v=` bump below matters.
 - **DNS** is on Cloudflare; the registrar is Bluehost. The mail, imap, pop, smtp and ftp records point to Bluehost and must stay "DNS only". Don't touch them, and don't suggest cancelling Bluehost without checking whether @raysandesigns.com email is in use.
 
-## Current state (2026-10-12)
+## Current state (2026-10-19)
 
 **Live home page.** Focused on Ray's own apps, with Iconic as the centerpiece (it supports his Google Senior Icon Designer application).
 - Flagship: Iconic (`iconic.html`), full-width `.feature.flagship` card, overline "FEATURED · ICON DESIGN SOFTWARE".
@@ -43,7 +43,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - **Show more work:** only the first row of `#work-grid` shows (3 on desktop, 2 under 1100px, including tablets and phones); a pill button under the grid opens the rest and turns into "Show less". `site.js` adds `.collapsed`, so without JS everything shows.
 
 **On dev only, waiting for Ray's approval.**
-- `error-proof-revisions.html` sidebar layout (2026-10-19): sticky left sidebar (icon-only back arrow, overline, Title Case title, meta as a list) with the diagram and two paragraphs on the right; stacks under 960px. Page-scoped `<style>` in the head, no site.css change. Live still has the standard case study layout.
+- Sidebar case study layout is live (see Case studies); dev carries the same CSS, JS and page conversions, plus `cheqrboard.html` and `asthma-assistant.html` converted the same way.
 - Work section news-style layout is live (see Current state in `main`'s CLAUDE.md); dev carries the same CSS and the Show more work change, `?v=20261012g`.
 - `cheqrboard.html`, rebuilt short: client work (Zero Copy Labs, 2025), 8 story sections plus Things to improve, no Revisions section (client work, like `industrial-iot.html`). Seven looping clips (`cheq-build`, `cheq-poll`, `cheq-warning`, `cheq-schedule`, `cheq-presets`, `cheq-sidebar`, `cheq-card`), each with a `-poster.webp`. The clips are soft because the Figma exports are low resolution.
 - Home page: CheQRboard and Industrial IoT App are the first two `.app-grid` cards (six cards total). Chips: CheQRboard: Design systems, Product UI, Icon set. Industrial IoT: IoT, Dashboards, Icon design. Industrial IoT is real client work (ProAxion via Zero Copy Labs).
@@ -85,14 +85,15 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 - Captions: one line, about 15 words, starting with a bold phrase.
 - Revisions and Things to improve items: one sentence each after the bold title.
 
-1. Hero: back link, overline, title, lede, meta cards, lead image.
-2. Story sections (`<section class="cs-sec wrap">` with a `.step` label, an `h2` and `.copytext`).
+**Sidebar layout (live 2026-10-19, Ray's pick).** Every case study uses `.cs-layout`: a sticky left `aside.cs-side` (icon-only back arrow, overline, Title Case h1 in Sofia Sans 400 with a `--md-secondary` accent, lede, any `.actions` buttons, a `dl.cs-meta` of details, and `nav.cs-toc`, a table of contents of the section labels with icons) and a right `div.cs-main` (lead media, then every section). Section labels live only in the contents list, not above each h2. Stacks under 960px, where the contents list hides. `site.js` highlights the contents link for the section in view. CSS block at the end of `site.css`. Pages were converted with a script; the old `.cs-hero` / `.step` markup is gone from case studies.
+
+1. Sidebar: back arrow, overline, title, lede, meta, contents.
+2. Story sections (`<section class="cs-sec" id="…">` with `.cs-text` > `div` > `h2` + `.copytext`, inside `.cs-main`). Each section's label and icon go in the contents list as `<li><a href="#id"><span class="ms">icon</span>Label</a></li>`.
 3. **Things to improve** (always the last content section, right before the contact block). Use this markup:
 
 ```html
-<section class="cs-sec wrap improve">
+<section class="cs-sec improve" id="whats-next">
   <div class="cs-text">
-    <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
     <div>
       <h2>Things to improve</h2>
       <div class="copytext">
@@ -109,7 +110,7 @@ Every case study page follows the same shape. Use an existing one (`asthma-log.h
 
    **Keep it current.** When a project gets revised, check off the items the revision addresses: give the `<li>` `class="done"`, swap the icon to `check_circle`, and start the text with "Done:" plus what shipped. Never delete a checked item. If only part is done, check off the done part and add a new unchecked item for what's left. Add new items as new gaps show up.
 
-   **Revisions section.** Right before Things to improve, a `<section class="cs-sec wrap">` with step label `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date. To keep the page short, the `.copytext` opens with one sentence naming the biggest changes, and the grouped lists sit inside a collapsed `<details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All N changes (or "1 change")</summary> … </details>`. Update N when adding items.
+   **Revisions section.** Right before Things to improve, a `<section class="cs-sec" id="revisions">` listed in the contents as `history` / "Revisions" and the h2 "What changed since launch" lists changes in groups, each a `<p><b>Group</b></p>` followed by a `<ul>`: New features (icon `new_releases`), Improvements (`auto_fix_high`), Fixes (`build`), and Tried and taken back out (`undo`). Add to it on every revision, and update any story section, caption, screenshot or clip the change made out of date. To keep the page short, the `.copytext` opens with one sentence naming the biggest changes, and the grouped lists sit inside a collapsed `<details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All N changes (or "1 change")</summary> … </details>`. Update N when adding items.
 4. Contact block and footer, copied from the home page.
 
 ## Working rules
