@@ -44,7 +44,11 @@
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">person_search</span>Client</p><p>My own job search</p></div>
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">extension</span>Product</p><p>Chrome extension</p></div>
       <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Design &amp; build</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">auto_awesome</span>Built with</p><p>Claude</p></div>
+      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">open_in_new</span>App page</p><p><a href="https://raysantos.github.io/appfill/" target="_blank" rel="noopener">AppFill</a></p></div>
+    </div>
+    <div class="actions" style="margin-top:24px">
+      <a class="btn btn-filled btn-lg sl" href="https://raysantos.github.io/appfill/" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">download</span>Get AppFill</a>
+      <a class="btn btn-outlined btn-lg sl" href="https://github.com/raysantos/appfill" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">code</span>View the code</a>
     </div>
     <figure class="fig">
       <div class="media"><video src="assets/video/appfill-fill.mp4" poster="assets/img/appfill-fill-poster.webp" width="1440" height="792" autoplay muted loop playsinline preload="metadata" aria-label="Animation: right-clicking on a job application, choosing Fill this application, and watching eight fields fill with green outlines while the one dropdown it can't answer gets a dashed amber outline and a notice reads Filled 8 fields, 1 left for you." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
@@ -148,7 +152,7 @@
           <p>An autofill tool holds the details you'd least want leaking. The profile, custom answers and remembered sites live in Chrome's local storage on one computer. There's no account, sync or server, and the code makes no network requests. Version 1.1 also closed three ways a page could still get at the data:</p>
           <ul>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Only the form I point at.</b> Ads, chat widgets and other embedded frames on the same page are never filled.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No trap fields.</b> Inputs that are hidden, see-through, a few pixels wide or pushed off the page are skipped, so a page can't collect details I never see.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No trap fields.</b> Hidden, see-through, tiny or off-page inputs are skipped, and AppFill names what they were asking for.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Private answers aren't remembered.</b> Saving a site skips Social Security, tax ID, date of birth, bank, card, license and passport fields.</span></li>
           </ul>
         </div>
@@ -183,8 +187,13 @@
       <div>
         <h2>What changed since launch</h2>
         <div class="copytext">
-          <p>Version 1.1 tightened privacy: fills stay in the frame I right-click, hidden trap fields are skipped, and private answers are never remembered. One earlier fix corrected the radio-button highlight.</p>
-          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>5 changes</summary>
+          <p>Version 1.2 reports trap fields and has its own app page with a download; 1.1 kept fills in the frame I right-click and stopped private answers being remembered.</p>
+          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All 7 changes</summary>
+            <p><b>New features</b></p>
+            <ul>
+              <li><span class="ms" aria-hidden="true">new_releases</span><span>Check this form for hidden fields lists any trap fields asking for my details, and every fill warns about them too.</span></li>
+              <li><span class="ms" aria-hidden="true">new_releases</span><span>An app page with the download, install steps and the source code.</span></li>
+            </ul>
             <p><b>Improvements</b></p>
             <ul>
               <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Fill, Remember and Forget now act only on the frame I right-click in, so other embedded frames on the page never receive my details.</span></li>
