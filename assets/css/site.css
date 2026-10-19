@@ -958,7 +958,7 @@ html { -webkit-tap-highlight-color: transparent; }
   .cs-main .cs-sec:first-of-type { padding-top: 64px; }
 }
 .cs-side .actions { margin-top: 0 !important; display: flex; flex-wrap: wrap; gap: 8px; }
-.gh-btn { width: 48px; height: 56px; flex: none; display: inline-grid; place-items: center; color: var(--md-on-surface); text-decoration: none; border-radius: 50%; transition: color var(--dur-s), transform var(--dur-s); }
-.gh-btn svg { width: 36px; height: 36px; }
+.gh-btn { width: 56px; height: 56px; flex: none; display: inline-grid; place-items: center; color: var(--md-on-surface); text-decoration: none; border-radius: 50%; transition: color var(--dur-s), transform var(--dur-s); }
+.gh-btn img { width: 46px; height: auto; image-rendering: pixelated; }
 .gh-btn:hover { color: var(--md-primary); transform: scale(1.06); }
 .gh-btn:focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
