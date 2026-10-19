@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<link rel="stylesheet" href="assets/css/site.css?v=20261019a">
 <style>
 /* Live demo (this page only) */
 :root { --pg-fail-bg: #fde7e7; --pg-fail-ink: #9b1c1c; --pg-pass-bg: #fff3d6; --pg-pass-ink: #7a5300; --pg-strong-bg: #dff3e3; --pg-strong-ink: #1b6b2e; }
@@ -94,22 +94,39 @@
 </header>
 
 <main id="main">
-  <section class="cs-hero wrap">
-    <a class="text-btn sl back" href="asthma-log.html"><span class="ms" aria-hidden="true">arrow_back</span>Asthma Log</a>
-    <p class="overline"><span class="ms" aria-hidden="true">neurology</span>Case study · Model UX · In progress</p>
-    <h1>Asthma Log <span class="accent">Assistant</span></h1>
-    <p class="lede">Asthma Log already answers "is another dose OK?" with a card. The next step is letting the family ask in plain words, like "can she have another puff?" or "how was her week?" This case study is about designing how that assistant behaves: what it remembers about a child's health, when it uses that memory, how it handles dose questions safely, and how I tested whether it got better.</p>
-    <div class="meta">
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">family_home</span>Client</p><p>My family</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">forum</span>Product</p><p>AI assistant in Asthma Log</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Model behavior, evals &amp; controls</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">pending</span>Status</p><p>Outline · building now</p></div>
-    </div>
-  </section>
+    <div class="cs-layout wrap">
+    <aside class="cs-side">
+      <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
+      <p class="overline"><span class="ms" aria-hidden="true">neurology</span>Case study · Model UX · In progress</p>
+      <h1>Asthma Log <span class="accent">Assistant</span></h1>
+      <p class="lede">Asthma Log already answers "is another dose OK?" with a card. The next step is letting the family ask in plain words, like "can she have another puff?" or "how was her week?" This case study is about designing how that assistant behaves: what it remembers about a child's health, when it uses that memory, how it handles dose questions safely, and how I tested whether it got better.</p>
+      
+      <dl class="cs-meta">
+          <div><dt><span class="ms" aria-hidden="true">family_home</span>Client</dt><dd>My family</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">forum</span>Product</dt><dd>AI assistant in Asthma Log</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Model behavior, evals &amp; controls</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">pending</span>Status</dt><dd>Outline · building now</dd></div>
+      </dl>
+      <nav class="cs-toc" aria-label="On this page">
+        <ol>
+            <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
+            <li><a href="#principles"><span class="ms" aria-hidden="true">rule</span>Principles</a></li>
+            <li><a href="#golden-conversations"><span class="ms" aria-hidden="true">chat</span>Golden conversations</a></li>
+            <li><a href="#conversationsto-do"><span class="ms" aria-hidden="true">list</span>Conversations<span class="badge">To do</span></a></li>
+            <li><a href="#failure-modes"><span class="ms" aria-hidden="true">bug_report</span>Failure modes</a></li>
+            <li><a href="#instructionsto-do"><span class="ms" aria-hidden="true">edit_note</span>Instructions<span class="badge">To do</span></a></li>
+            <li><a href="#evaluationto-do"><span class="ms" aria-hidden="true">fact_check</span>Evaluation<span class="badge">To do</span></a></li>
+            <li><a href="#controlsto-do"><span class="ms" aria-hidden="true">toggle_on</span>Controls<span class="badge">To do</span></a></li>
+            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+        </ol>
+      </nav>
+    </aside>
+    <div class="cs-main">
+      
 
-  <section class="cs-sec wrap">
+
+  <section class="cs-sec" id="the-problem">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">report</span>The problem</p>
       <div>
         <h2>An assistant that knows too much, or not enough</h2>
         <div class="copytext">
@@ -120,9 +137,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="principles">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">rule</span>Principles</p>
       <div>
         <h2>Four rules before any prompt</h2>
         <div class="copytext">
@@ -138,9 +154,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="golden-conversations">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">chat</span>Golden conversations</p>
       <div>
         <h2>The answer I want, written before the prompt</h2>
         <div class="copytext">
@@ -154,9 +169,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="conversationsto-do">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">list</span>Conversations<span class="badge">To do</span></p>
       <div>
         <h2>Four more questions to write</h2>
         <div class="copytext"><ul>
@@ -169,9 +183,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="failure-modes">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">bug_report</span>Failure modes</p>
       <div>
         <h2>Four ways it goes wrong</h2>
         <div class="copytext">
@@ -187,9 +200,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="instructionsto-do">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">edit_note</span>Instructions<span class="badge">To do</span></p>
       <div>
         <h2>Three drafts and why each changed</h2>
         <div class="copytext">
@@ -204,9 +216,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="evaluationto-do">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">fact_check</span>Evaluation<span class="badge">To do</span></p>
       <div>
         <h2>Thirty conversations, scored the same way every time</h2>
         <div class="copytext">
@@ -222,9 +233,8 @@
     </div>
   </section>
 
-  <section class="cs-sec wrap">
+  <section class="cs-sec" id="controlsto-do">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">toggle_on</span>Controls<span class="badge">To do</span></p>
       <div>
         <h2>The screens follow the behavior</h2>
         <div class="copytext">
@@ -331,9 +341,8 @@ FORMAT
     <p class="pg-note"><span class="ms" aria-hidden="true">info</span>These replies are written by hand to show each version's typical behavior. Next step: replace them with recorded runs from the model against this log.</p>
   </section>
 
-  <section class="cs-sec wrap improve">
+  <section class="cs-sec improve" id="what-s-next">
     <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">flag</span>What's next</p>
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
@@ -346,6 +355,9 @@ FORMAT
       </div>
     </div>
   </section>
+    </div>
+  </div>
+
   <section class="contact wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact-card">
       <div>
@@ -446,6 +458,6 @@ FORMAT
   <a href="index.html#about"><span class="ind"><svg class="ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21v-3.5a7 7 0 1 1 9-10.8L20.4 13a.7.7 0 0 1-.6 1.1h-2.3v2.3a1.7 1.7 0 0 1-1.7 1.7H13V21"/><circle cx="14.8" cy="10.6" r="1.15" fill="currentColor" stroke="none"/></svg></span>About</a>
   <a href="index.html#contact"><span class="ind"><span class="ms" aria-hidden="true">mail</span></span>Contact</a>
 </nav>
-<script src="assets/js/site.js?v=20261012a"></script>
+<script src="assets/js/site.js?v=20261019a"></script>
 </body>
 </html>
