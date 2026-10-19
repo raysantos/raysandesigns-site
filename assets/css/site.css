@@ -957,3 +957,6 @@ html { -webkit-tap-highlight-color: transparent; }
   .cs-main .cs-sec:first-of-type { padding-top: 64px; }
 }
 .cs-side .actions { margin-top: 0 !important; display: flex; flex-wrap: wrap; gap: 8px; }
+.gh-btn { width: 56px; height: 56px; flex: none; display: inline-grid; place-items: center; border-radius: 50%; border: 1px solid var(--md-outline); color: var(--md-on-surface); text-decoration: none; transition: background var(--dur-s); }
+.gh-btn:hover { background: var(--md-surface-container); }
+.gh-btn:focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
