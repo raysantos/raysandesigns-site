@@ -17,6 +17,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
 <link rel="stylesheet" href="assets/css/site.css?v=20261018a">
+<style>
+.ep { display: grid; gap: 32px; padding-block: 32px 48px; }
+.ep-side { display: grid; gap: 16px; align-content: start; }
+.ep-side .back { justify-self: start; }
+.ep-side h1 { font-weight: 800; font-variation-settings: "wdth" 40, "opsz" 144; font-size: clamp(2.75rem, 8vw, 3.1rem); line-height: .95; letter-spacing: -.02em; text-transform: uppercase; color: var(--md-on-surface); }
+.ep-side h1 .accent { color: var(--md-primary); }
+.ep-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; margin: 8px 0 0; padding-top: 20px; border-top: 1px solid var(--md-outline-variant); }
+.ep-meta dt { display: flex; align-items: center; gap: 6px; font: var(--label-m); letter-spacing: .06em; text-transform: uppercase; color: var(--chip-ink); }
+.ep-meta dt .ms { font-size: 18px; }
+.ep-meta dd { margin: 4px 0 0; font: var(--body-m); color: var(--md-on-surface); }
+.ep-main { display: grid; gap: 40px; min-width: 0; }
+.ep-copy { display: grid; gap: 12px; max-width: 42rem; }
+.ep-copy h2 { font: var(--headline-l); color: var(--md-on-surface); text-wrap: balance; }
+.ep-copy .copytext { display: grid; gap: 16px; }
+@media (min-width: 960px) {
+  .ep { grid-template-columns: minmax(0, 20rem) minmax(0, 1fr); gap: 56px; padding-block: 48px 64px; }
+  .ep-side { position: sticky; top: 88px; }
+  .ep-meta { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 <a class="skip btn btn-filled" href="index.html#main">Skip to content</a>
@@ -35,34 +55,33 @@
 </header>
 
 <main id="main">
-  <section class="cs-hero wrap">
-    <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
-    <p class="overline"><span class="ms" aria-hidden="true">account_tree</span>Case study · AI workflow</p>
-    <h1>Error-Proof <span class="accent">Revisions</span></h1>
-    <div class="meta">
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">apartment</span>Client</p><p>In-house marketing (anonymized)</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">description</span>Deliverable</p><p>28-page price list, two versions</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">design_services</span>Role</p><p>Production design &amp; direction</p></div>
-      <div class="card card-filled"><p class="supporting"><span class="ms" aria-hidden="true">auto_awesome</span>Built with</p><p>AI · InDesign scripting</p></div>
-    </div>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: the workflow"><div class="media"><img src="assets/img/error-proof-diagram-light.webp" width="1920" height="1080" alt="A simple node diagram: reviewer markup flows into AI revisions, then designer review, then two finished versions. The AI step has two supports: exact-match edits and a check against the markup."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>AI edits and checks;</b> designer review stays in the main line before anything ships.</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-sec wrap">
-    <div class="cs-text">
-      <p class="step"><span class="ms" aria-hidden="true">verified</span>The process</p>
-      <div>
-        <h2>Take the error-prone steps out of human hands</h2>
+  <div class="ep wrap">
+    <aside class="ep-side">
+      <a class="text-btn sl back" href="index.html#work"><span class="ms" aria-hidden="true">arrow_back</span>All work</a>
+      <p class="overline"><span class="ms" aria-hidden="true">account_tree</span>Case study · AI workflow</p>
+      <h1>Error-Proof <span class="accent">Revisions</span></h1>
+      <dl class="ep-meta">
+        <div><dt><span class="ms" aria-hidden="true">apartment</span>Client</dt><dd>In-house marketing (anonymized)</dd></div>
+        <div><dt><span class="ms" aria-hidden="true">description</span>Deliverable</dt><dd>28-page price list, two versions</dd></div>
+        <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Production design &amp; direction</dd></div>
+        <div><dt><span class="ms" aria-hidden="true">auto_awesome</span>Built with</dt><dd>AI · InDesign scripting</dd></div>
+      </dl>
+    </aside>
+    <div class="ep-main">
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: the workflow"><div class="media"><img src="assets/img/error-proof-diagram-light.webp" width="1920" height="1080" alt="A simple node diagram: reviewer markup flows into AI revisions, then designer review, then two finished versions. The AI step has two supports: exact-match edits and a check against the markup."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>AI edits and checks;</b> designer review stays in the main line before anything ships.</figcaption>
+      </figure>
+      <section class="ep-copy" aria-labelledby="ep-h">
+        <p class="overline"><span class="ms" aria-hidden="true">verified</span>The process</p>
+        <h2 id="ep-h">Take the error-prone steps out of human hands</h2>
         <div class="copytext">
           <p>Most mistakes in a price list come from the same few steps: retyping numbers, keeping two versions in sync, and proofreading after an hour of tedious edits. So I redesigned the process to take those steps out of human hands. Nobody retypes a price. AI applies every change straight from the reviewer's markup, and only where the old value matches exactly. Anything unclear is flagged, not guessed. Both versions are built from one set of changes, so they can't drift apart.</p>
           <p>Proofreading is no longer someone reading a page and hoping to spot a slip. The finished files are checked against the markup, change by change, before anything goes out. That frees me to focus on what a checklist can't cover. In this round, that was an outdated version number the reviewer never marked. The result is a repeatable process where the tedious, error-prone work is handled by the system, and my attention goes to the calls only I can make.</p>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
   <section class="contact wrap" id="contact" aria-labelledby="contact-h">
     <div class="contact-card">
