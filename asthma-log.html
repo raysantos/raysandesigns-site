@@ -55,9 +55,10 @@
             <li><a href="#the-core-pattern"><span class="ms" aria-hidden="true">schedule</span>The core pattern</a></li>
             <li><a href="#logging"><span class="ms" aria-hidden="true">touch_app</span>Logging</a></li>
             <li><a href="#history"><span class="ms" aria-hidden="true">bar_chart</span>History</a></li>
-            <li><a href="#sharing"><span class="ms" aria-hidden="true">lock</span>Sharing</a></li>
+            <li><a href="#sharing"><span class="ms" aria-hidden="true">lock</span>Accounts</a></li>
             <li><a href="#details"><span class="ms" aria-hidden="true">tune</span>Details</a></li>
             <li><a href="#process"><span class="ms" aria-hidden="true">auto_awesome</span>Process</a></li>
+            <li><a href="#revisions"><span class="ms" aria-hidden="true">history</span>Revisions</a></li>
             <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
         </ol>
       </nav>
@@ -145,15 +146,15 @@
   <section class="cs-sec" id="sharing">
     <div class="cs-text">
       <div>
-        <h2>Anyone can look, only family can log</h2>
+        <h2>Private, with a login for each caregiver</h2>
         <div class="copytext">
-          <p>Anyone with the link sees the same live log, so a grandparent can check the last dose without calling. Logging, deleting and editing medications take a family password, entered once per phone, which also unlocks a floating Log dose button on every tab. The database's sign-in and security rules enforce it, so editing the page can't get around it.</p>
+          <p>Each caregiver signs in with their own email and password. New accounts wait on an approval screen until I approve them from a shield icon only the admin sees, with a badge for anyone waiting. Removing someone cuts off access right away. The database rules enforce every step, so no one outside the family can read or change the log.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: locked phone"><div class="media bare"><img src="assets/img/asthma-lock.webp?v=4" width="1092" height="900" alt="Two phone screens on a locked device: the dose form with a password box in place of the Save button, and the History tab still open to view."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>A locked phone</b> swaps Save for a password box, while History stays open to everyone.</figcaption>
+      <button class="zoom" type="button" aria-label="Enlarge: sign-in and admin screens"><div class="media bare"><img src="assets/img/asthma-accounts.webp?v=1" width="1092" height="900" alt="Two phone screens: the Sign in screen with email and password fields and a Create an account link, and the Admin screen listing a waiting person with Approve and Deny buttons and an approved person with Remove."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Sign in, then get approved.</b> The admin screen lists who's waiting, with Approve and Deny.</figcaption>
     </figure>
   </section>
 
@@ -190,7 +191,35 @@
     <div class="grid grid3 types">
       <div class="card card-outlined"><div class="card-icon" aria-hidden="true"><span class="ms">code</span></div><h3>Front end</h3><p>One HTML file, no build step, installable and offline-ready.</p></div>
       <div class="card card-outlined"><div class="card-icon t" aria-hidden="true"><span class="ms">cloud</span></div><h3>Data</h3><p>Firebase Firestore syncs one shared log live across every phone.</p></div>
-      <div class="card card-outlined"><div class="card-icon s" aria-hidden="true"><span class="ms">shield_lock</span></div><h3>Security</h3><p>Anyone can read; only the family account can write, via Firebase Auth and rules.</p></div>
+      <div class="card card-outlined"><div class="card-icon s" aria-hidden="true"><span class="ms">shield_lock</span></div><h3>Security</h3><p>Only approved accounts can read or write, enforced by Firebase Auth and rules.</p></div>
+    </div>
+  </section>
+  <section class="cs-sec" id="revisions">
+    <div class="cs-text">
+      <div>
+        <h2>What changed since launch</h2>
+        <div class="copytext">
+          <p>The biggest change: the log went private, with a login for each caregiver and an admin who approves every account.</p>
+          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All 7 changes</summary>
+          <p><b>New features</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Personal logins: each caregiver signs in with their own email and password, with a reset link if they forget it.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Admin approval: new accounts wait until approved from a shield icon that shows a badge for anyone waiting.</span></li>
+            <li><span class="ms" aria-hidden="true">new_releases</span><span>Links in verify-email and reset-password emails open on screens styled like the app.</span></li>
+          </ul>
+          <p><b>Improvements</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Reading the log now needs an approved account too; before, anyone with the link could look.</span></li>
+            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Backup tools moved to the admin screen, and everyone else gets a simple Your account box with Sign out.</span></li>
+          </ul>
+          <p><b>Fixes</b></p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">build</span><span>Medications can't be saved before the list loads, since the whole list saves at once and could drop entries.</span></li>
+            <li><span class="ms" aria-hidden="true">build</span><span>The admin's sign-in refreshes on open, so a just-verified email counts with the new rules.</span></li>
+          </ul>
+          </details>
+        </div>
+      </div>
     </div>
   </section>
   <section class="cs-sec improve" id="what-s-next">
@@ -200,9 +229,11 @@
         <div class="copytext">
           <ul>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Reminders.</b> The app shows when a dose is due but notifies no one, so an alert for the controller or an allowed rescue dose would close the loop.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Who gave it.</b> One shared password means the log can't tell a parent's entry from the child's, which separate sign-ins would fix without extra steps.</span></li>
+            <li class="done"><span class="ms" aria-hidden="true">check_circle</span><span><b>Who gave it.</b> Done: every caregiver now has their own login, approved by the admin, in place of one shared password.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Name each dose.</b> Doses don't yet save who logged them, so History still can't show who gave each one.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Real schedules.</b> Morning and night split at noon, so a 2am dose counts as morning, and per-medication windows like 6 to 10am would fit real use.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Test the fast path first.</b> Double taps saved duplicate doses until a save lock, Undo and two-second cooldown fixed it, so next time rapid-tap testing comes before launch.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Test access with a second account.</b> The new rules went live before my own sign-in was verified, which briefly hid the log, so a test-account check comes before publishing next time.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A report for the doctor.</b> The 30-day summary is plain text, and a one-page chart of monthly rescue use would make checkups faster.</span></li>
           </ul>
         </div>
