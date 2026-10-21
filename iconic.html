@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Iconic Case Study · Raysan Designs</title>
-<meta name="description" content="How Ray Santos designed and built Iconic, a vector editor for Google Material icons that runs in the browser on PC and phone.">
+<meta name="description" content="How Ray Santos designed and built Iconic, a vector editor for Google Material icons that runs in the browser.">
 <meta property="og:title" content="Iconic · Case study by Ray Santos">
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#ffffff">
@@ -39,8 +39,8 @@
     <aside class="cs-side">
       <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
       <p class="overline"><span class="ms" aria-hidden="true">edit_note</span>Case study · Personal product</p>
-      <h1>Icon<span class="accent">ic</span></h1>
-      <p class="lede">General design tools don't know Material's rules, so I designed and built Iconic, a vector editor made only for Google Material icons. It runs in the browser on PC and phone and exports the single-path format Google ships.</p>
+      <h1>Iconic</h1>
+      <p class="lede">General design tools don't know Material's rules, so I designed and built Iconic, a vector editor made only for Google Material icons. It runs in the browser and exports the single-path format Google ships.</p>
       <div class="actions" style="margin-top:24px">
       <a class="btn btn-filled btn-lg sl" href="https://raysantos.github.io/iconic/" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">open_in_new</span>Open Iconic</a>
       <a class="gh-btn sl" href="https://github.com/raysantos/iconic" target="_blank" rel="noopener" aria-label="View the code on GitHub (opens in a new tab)" title="View the code on GitHub"><svg viewBox="0 0 16 16" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
@@ -48,20 +48,16 @@
     </div>
       <dl class="cs-meta">
           <div><dt><span class="ms" aria-hidden="true">person</span>Client</dt><dd>My own icon work</dd></div>
-          <div><dt><span class="ms" aria-hidden="true">draw</span>Product</dt><dd>Vector editor (installable web app)</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">draw</span>Product</dt><dd>Vector editor (web app)</dd></div>
           <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>Product design &amp; build</dd></div>
           <div><dt><span class="ms" aria-hidden="true">auto_awesome</span>Built with</dt><dd>Claude · Skia (WebAssembly)</dd></div>
       </dl>
       <nav class="cs-toc" aria-label="On this page">
         <ol>
             <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
-            <li><a href="#process"><span class="ms" aria-hidden="true">route</span>Process</a></li>
             <li><a href="#material-mode"><span class="ms" aria-hidden="true">category</span>Material mode</a></li>
             <li><a href="#booleans-and-badges"><span class="ms" aria-hidden="true">join</span>Booleans and badges</a></li>
-            <li><a href="#export"><span class="ms" aria-hidden="true">ios_share</span>Export</a></li>
             <li><a href="#borrowed-from-type-design"><span class="ms" aria-hidden="true">font_download</span>Borrowed from type design</a></li>
-            <li><a href="#pc-and-phone"><span class="ms" aria-hidden="true">smartphone</span>PC and phone</a></li>
-            <li><a href="#testing"><span class="ms" aria-hidden="true">science</span>Testing</a></li>
             <li><a href="#revisions"><span class="ms" aria-hidden="true">history</span>Revisions</a></li>
             <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
         </ol>
@@ -69,8 +65,8 @@
     </aside>
     <div class="cs-main">
       <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: Iconic with an icon set open"><div class="media"><img src="assets/img/iconic-hero.webp" width="1600" height="1000" alt="Iconic in a desktop browser: a dark top toolbar, artboards and layers on the left, a canvas holding sixteen 24 by 24 icons, including file and folder icons with plus, minus, check and download badges, and the Design panel on the right showing the selected badge's gap, corner and style." ></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>A whole icon set on one canvas.</b> Six base icons, ten variants, and a plus badge cutting its own 1.5dp gap.</figcaption>
+      <button class="zoom" type="button" aria-label="Enlarge: Iconic with an icon set open"><div class="media"><img src="assets/img/iconic-hero-ui.webp" width="1600" height="1000" alt="Iconic in a desktop browser: a dark top toolbar, artboards and layers on the left, and a canvas holding sixteen 24 by 24 icons from Iconic's own interface, each a different shape: select arrow, pen, pencil, hand, zoom, path, eye, lock, layers, design, rotate, artboard, copy, trash, component and keyboard." ></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>A whole icon set on one canvas.</b> Sixteen of Iconic's own interface icons, each a different shape.</figcaption>
     </figure>
 
 
@@ -79,24 +75,8 @@
       <div>
         <h2>Material icons have rules general tools don't know</h2>
         <div class="copytext">
-          <p>A Material icon is a 24dp square with 2dp padding, drawn to keylines in Outlined, Rounded or Sharp, and shipped as one filled path on a 960-unit grid. Illustrator and Figma can draw that but don't know it, so I fixed exports by hand: strokes, overlaps and white fake holes shifted or filled in elsewhere. I wanted to draw once and get Google's format out, on PC or phone.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cs-sec" id="process">
-    <div class="cs-text">
-      <div>
-        <h2>Live in an hour, shaped over 28 commits</h2>
-        <div class="copytext">
-          <p>I built Iconic with Claude in one day: I made the product calls, Claude wrote and tested the code, and each feature shipped to the live app as its own commit.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Ship first.</b> A basic editor was live on GitHub Pages in hour one; I reviewed every build by using it.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Figma panels, Illustrator keys.</b> V, A, P, Ctrl+D and Alt-drag work as expected, so nothing new to learn.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Fast over pure.</b> TypeScript plus Google's Skia in WebAssembly instead of Rust, with that option kept open.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Questions before features.</b> Asking first produced the export plan, Roboto Flex as the UI font and a GPL v3 license.</span></li>
-          </ul>
+          <p>A Material icon is a 24dp square with 2dp padding, drawn to keylines in Outlined, Rounded or Sharp, and shipped as one filled path on a 960-unit grid. Illustrator and Figma can draw that but don't know it, so I fixed exports by hand. I wanted to draw once and get Google's format out.</p>
+          <p>So I built Iconic with Claude in one day. I made the product calls, Claude wrote and tested the code, and a basic editor was live in the first hour. Figma-style panels and Illustrator shortcuts mean there's nothing new to learn.</p>
         </div>
       </div>
     </div>
@@ -115,15 +95,10 @@
   <section class="cs-sec" id="material-mode">
     <div class="cs-text">
       <div>
-        <h2>The specs are built in</h2>
+        <h2>The specs are built in, all the way to export</h2>
         <div class="copytext">
-          <p>Material rules are defaults in Iconic, not things to remember.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>24dp artboards, whole-pixel snapping and a keyline template with padding, live area and base shapes.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>One choice of Outlined, Rounded or Sharp sets line ends, corners and corner radius.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>snake_case names, exported as <code>arrow_back_24dp.svg</code> the way Material Symbols names them.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>A Material mode switch hides it all for other icon work: sizes 16 to 64, no dp suffix.</span></li>
-          </ul>
+          <p>Material rules are defaults, not things to remember: 24dp artboards with pixel snapping and keylines, one Outlined, Rounded or Sharp choice that sets corners and line ends, and Material Symbols naming. A Material mode switch turns it all off for other icon work.</p>
+          <p>Export outlines strokes, merges every shape and clips to the artboard, giving Google's single filled path while the working file stays editable. A pixel check compares the two before export, and every feature was tested in a real browser, which caught bugs like badges exporting in the wrong color.</p>
         </div>
       </div>
     </div>
@@ -134,13 +109,7 @@
       <div>
         <h2>Combined shapes stay editable</h2>
         <div class="copytext">
-          <p>Combining shapes never destroys them, so one base icon can carry a whole family of badges.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Live booleans.</b> Union, Subtract, Intersect and Exclude stay editable, computed by Skia PathOps, Chrome and Android's path engine.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Components.</b> Any artboard or selection becomes a component; linked copies follow every edit.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Knockout badges.</b> Plus, minus, check, close, alert and arrows cut a shape-matched gap, exact in export.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Make variants.</b> Pick bases and badges to generate every combination, named like <code>file_add</code>.</span></li>
-          </ul>
+          <p>Combining shapes never destroys them. Live booleans stay editable, components update every linked copy, and knockout badges cut a shape-matched gap, so one base icon can carry a whole family of variants, generated and named for you.</p>
         </div>
       </div>
     </div>
@@ -154,104 +123,113 @@
     </figure>
   </section>
 
-  <section class="cs-sec" id="export">
-    <div class="cs-text">
-      <div>
-        <h2>What you draw is what Google gets</h2>
-        <div class="copytext">
-          <p>Export outlines strokes, merges every shape and clips to the artboard, giving one filled path on the 960-unit grid while the working file stays editable.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Pixel check.</b> The working icon and merged path are rendered and compared pixel by pixel before export.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Warnings.</b> Flags extra colors and off-artboard art, and turns white fake holes into a real Subtract.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Merged preview</b> (Ctrl+Y) shows every icon as it will export while you keep editing.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Formats:</b> SVG, Android Vector Drawable, PNG at every Android density, and an OTF/WOFF icon font.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="cs-sec" id="borrowed-from-type-design">
     <div class="cs-text">
       <div>
         <h2>Font tools, pointed at icons</h2>
         <div class="copytext">
-          <p>Type designers solved smooth curves and consistent weights long ago, so I picked eight FontLab 8 features and built them for icons.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Tunni lines.</b> Drag the dashed line between a curve's handles to make it fuller or flatter.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Power Nudge and Smart Corners.</b> Points move without flattening curves; rounded corners stay one point.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Audit.</b> Flags flat curves, missing extremes, tiny segments and off-grid points, each with a Fix button.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Weight masters.</b> Draw a base and bold master, matched point for point, and generate weights 100 to 700.</span></li>
-          </ul>
+          <p>Type designers solved smooth curves and consistent weights long ago, so I brought FontLab's ideas to icons: Tunni lines for balanced curves, Power Nudge and Smart Corners that keep curves and corners intact, an Audit that flags and fixes bad points, and weight masters that generate 100 to 700.</p>
         </div>
       </div>
     </div>
     <div class="pair">
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: Tunni lines"><div class="media"><img src="assets/img/iconic-tunni.webp" width="1400" height="994" alt="A person icon zoomed in with the shoulder curve selected: blue anchor points and handles, and dashed pink Tunni lines joining the handle ends on each side." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <button class="zoom" type="button" aria-label="Enlarge: Tunni lines"><div class="media"><img src="assets/img/iconic-tunni.webp?v=dark1" width="1400" height="994" alt="A person icon zoomed in with the shoulder curve selected: blue anchor points and handles, and dashed pink Tunni lines joining the handle ends on each side." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>Tunni lines</b> (dashed pink) shape both handles of a curve at once.</figcaption>
       </figure>
       <figure class="fig">
-        <button class="zoom" type="button" aria-label="Enlarge: Audit"><div class="media"><img src="assets/img/iconic-audit.webp" width="1400" height="994" alt="The same curve after a careless edit: orange markers on three points and an Audit panel listing three points off the pixel grid, each with a Fix button, plus Fix all." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <button class="zoom" type="button" aria-label="Enlarge: Audit"><div class="media"><img src="assets/img/iconic-audit.webp?v=dark1" width="1400" height="994" alt="The same curve after a careless edit: orange markers on three points and an Audit panel listing three points off the pixel grid, each with a Fix button, plus Fix all." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
         <figcaption><b>Audit</b> marks problem points and fixes them one at a time or all at once.</figcaption>
       </figure>
     </div>
     <figure class="fig col tunni-demo">
-      <div class="media" style="padding:20px">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
-            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Normal handles</span><span data-tv="a" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
-            <svg data-tp="a" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
-            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">Each handle is dragged on its own. The two tensions drift apart and the curve goes lopsided.</p>
+      <div class="media" style="padding:16px;background:#2a2b2e">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+          <div style="background:#1f2023;border:1px solid #303134;border-radius:var(--shape-s);padding:14px 14px 12px;color:#e3e3e3">
+            <p style="margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;font:600 14px/1.4 var(--md-font)"><span>Normal handles</span><span data-tv="a" style="font:400 12px/1.4 var(--md-font-body);color:#9aa0a6;font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="a" viewBox="0 0 280 280" width="100%" aria-hidden="true" style="display:block;background:#131314;border-radius:6px"></svg>
+            <p style="margin:10px 0 0;font:400 13px/1.5 var(--md-font-body);color:#bdc1c6">Each handle is dragged on its own. The two lengths drift apart and the curve goes lopsided.</p>
           </div>
-          <div style="background:var(--md-surface);border-radius:var(--shape-s);padding:16px">
-            <p style="margin:0 0 4px;display:flex;justify-content:space-between;gap:8px;font:600 15px/1.4 var(--md-font);color:var(--md-on-surface)"><span>Tunni line</span><span data-tv="b" style="font:400 13px/1.4 var(--md-font-body);color:var(--md-on-surface-variant);font-variant-numeric:tabular-nums"></span></p>
-            <svg data-tp="b" viewBox="0 0 340 210" width="100%" aria-hidden="true" style="display:block;overflow:visible"></svg>
-            <p style="margin:6px 0 0;font:400 13px/1.5 var(--md-font-body);color:var(--md-on-surface-variant)">One drag on the dashed line moves both handles together, so the tension stays matched.</p>
+          <div style="background:#1f2023;border:1px solid #303134;border-radius:var(--shape-s);padding:14px 14px 12px;color:#e3e3e3">
+            <p style="margin:0 0 8px;display:flex;justify-content:space-between;gap:8px;font:600 14px/1.4 var(--md-font)"><span>Tunni line</span><span data-tv="b" style="font:400 12px/1.4 var(--md-font-body);color:#9aa0a6;font-variant-numeric:tabular-nums"></span></p>
+            <svg data-tp="b" viewBox="0 0 280 280" width="100%" aria-hidden="true" style="display:block;background:#131314;border-radius:6px"></svg>
+            <p style="margin:10px 0 0;font:400 13px/1.5 var(--md-font-body);color:#bdc1c6">One drag on the dashed line moves both handles together, so the curve keeps its balance.</p>
           </div>
         </div>
-        <button type="button" class="tunni-toggle" style="margin-top:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px 6px 10px;border:1px solid var(--md-outline-variant);border-radius:999px;background:var(--md-surface);color:var(--md-on-surface);font:500 14px/1 var(--md-font-body);cursor:pointer"><span class="ms" aria-hidden="true" style="font-size:20px">pause</span><span>Pause</span></button>
+        <div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <button type="button" class="tunni-toggle" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px 6px 10px;border:1px solid #5f6368;border-radius:999px;background:#1f2023;color:#e3e3e3;font:500 14px/1 var(--md-font-body);cursor:pointer"><span class="ms" aria-hidden="true" style="font-size:20px">pause</span><span>Pause</span></button>
+          <span class="tunni-icon" style="font:400 13px/1.4 var(--md-font-body);color:#bdc1c6"></span>
+        </div>
       </div>
-      <figcaption><b>Normal handles vs. a Tunni line.</b> The percentages show each handle's length as a share of the distance to the Tunni point (the diamond), where the two handle directions meet.</figcaption>
+      <figcaption><b>Normal handles vs. a Tunni line</b> on Material icons. The percentages show each handle's length as a share of the distance to the Tunni point (the pink diamond), where the two handle directions meet.</figcaption>
     </figure>
     <script>
     (function(){
       var fig=document.querySelector(".tunni-demo"); if(!fig) return;
-      var NS="http://www.w3.org/2000/svg", P0=[40,190], P3=[300,30], T=[40,30];
-      var HAND="var(--md-secondary)", TUN="#e0457b";
-      function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t, a[1]+(b[1]-a[1])*t];}
-      function mk(svg,tag,at){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);svg.appendChild(e);return e;}
+      var NS="http://www.w3.org/2000/svg", S=10, O=20;
+      var BLUE="#8ab4f8", PINK="#f06292";
+      var ICONS=[
+        {name:"person", pre:"M12 14", post:"L4 20L20 20L20 18C20 15.34 14.67 14 12 14Z", extra:'<circle cx="12" cy="8" r="4"/>', seg:[[12,14],[9.33,14],[4,15.34],[4,18]]},
+        {name:"favorite", pre:"M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5", post:"C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04Z", extra:"", seg:[[2,8.5],[2,5.42],[4.42,3],[7.5,3]]}
+      ];
+      ICONS.forEach(function(ic){
+        var P0=ic.seg[0],C1=ic.seg[1],C2=ic.seg[2],P3=ic.seg[3];
+        var d1=[C1[0]-P0[0],C1[1]-P0[1]], d2=[C2[0]-P3[0],C2[1]-P3[1]];
+        var den=d1[0]*d2[1]-d1[1]*d2[0];
+        var s=((P3[0]-P0[0])*d2[1]-(P3[1]-P0[1])*d2[0])/den;
+        ic.T=[P0[0]+d1[0]*s,P0[1]+d1[1]*s];
+        ic.t0=1/s; ic.t1=Math.hypot(d2[0],d2[1])/Math.hypot(ic.T[0]-P3[0],ic.T[1]-P3[1]);
+      });
+      function X(p){return [p[0]*S+O,p[1]*S+O];}
+      function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t];}
+      function mk(par,tag,at){var e=document.createElementNS(NS,tag);for(var k in at)e.setAttribute(k,at[k]);par.appendChild(e);return e;}
+      function set(e,a){for(var k in a)e.setAttribute(k,a[k]);}
       function build(svg,tunni){
-        var g={}, guide={stroke:"var(--md-outline)","stroke-width":1,"stroke-dasharray":"2 4",opacity:.6};
-        mk(svg,"line",Object.assign({x1:P0[0],y1:P0[1],x2:T[0],y2:T[1]},guide));
-        mk(svg,"line",Object.assign({x1:P3[0],y1:P3[1],x2:T[0],y2:T[1]},guide));
-        if(tunni) mk(svg,"rect",{x:T[0]-5,y:T[1]-5,width:10,height:10,fill:TUN,transform:"rotate(45 "+T[0]+" "+T[1]+")"});
-        g.h1=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
-        g.h2=mk(svg,"line",{stroke:HAND,"stroke-width":1.5});
-        if(tunni) g.tl=mk(svg,"line",{stroke:TUN,"stroke-width":2.5,"stroke-dasharray":"7 5"});
-        g.c=mk(svg,"path",{fill:"none",stroke:"var(--md-on-surface)","stroke-width":4,"stroke-linecap":"round"});
-        [P0,P3].forEach(function(p){mk(svg,"rect",{x:p[0]-6,y:p[1]-6,width:12,height:12,fill:HAND});});
-        g.k1=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
-        g.k2=mk(svg,"circle",{r:6,fill:"var(--md-surface)",stroke:HAND,"stroke-width":2});
+        var g={};
+        var grid=mk(svg,"g",{stroke:"#ffffff","stroke-opacity":.06,"stroke-width":1});
+        for(var i=0;i<=24;i++){var v=i*S+O;mk(grid,"line",{x1:v,y1:O,x2:v,y2:O+240});mk(grid,"line",{x1:O,y1:v,x2:O+240,y2:v});}
+        mk(svg,"rect",{x:O,y:O,width:240,height:240,fill:"none",stroke:"#5f6368","stroke-width":1});
+        g.icon=mk(svg,"g",{transform:"translate("+O+" "+O+") scale("+S+")",fill:"#e3e3e3","fill-opacity":.9});
+        g.shape=mk(g.icon,"path",{});
+        g.extra=mk(g.icon,"g",{});
+        g.outline=mk(svg,"path",{fill:"none",stroke:BLUE,"stroke-width":1.25,transform:"translate("+O+" "+O+") scale("+S+")","vector-effect":"non-scaling-stroke"});
+        g.g1=mk(svg,"line",{stroke:"#9aa0a6","stroke-width":1,"stroke-dasharray":"2 4"});
+        g.g2=mk(svg,"line",{stroke:"#9aa0a6","stroke-width":1,"stroke-dasharray":"2 4"});
+        g.h1=mk(svg,"line",{stroke:BLUE,"stroke-width":1.5});
+        g.h2=mk(svg,"line",{stroke:BLUE,"stroke-width":1.5});
+        if(tunni){ g.tl=mk(svg,"line",{stroke:PINK,"stroke-width":2.5,"stroke-dasharray":"7 5"}); g.tp=mk(svg,"rect",{width:10,height:10,fill:PINK}); }
+        g.a=mk(svg,"rect",{width:10,height:10,fill:BLUE,stroke:"#131314","stroke-width":1});
+        g.b=mk(svg,"rect",{width:10,height:10,fill:BLUE,stroke:"#131314","stroke-width":1});
+        g.k1=mk(svg,"circle",{r:5,fill:"#131314",stroke:BLUE,"stroke-width":2});
+        g.k2=mk(svg,"circle",{r:5,fill:"#131314",stroke:BLUE,"stroke-width":2});
         return g;
       }
-      function set(e,a){for(var k in a)e.setAttribute(k,a[k]);}
-      function draw(g,t0,t1){
-        var c1=lerp(P0,T,t0), c2=lerp(P3,T,t1);
-        set(g.h1,{x1:P0[0],y1:P0[1],x2:c1[0],y2:c1[1]}); set(g.h2,{x1:P3[0],y1:P3[1],x2:c2[0],y2:c2[1]});
-        set(g.k1,{cx:c1[0],cy:c1[1]}); set(g.k2,{cx:c2[0],cy:c2[1]});
-        if(g.tl) set(g.tl,{x1:c1[0],y1:c1[1],x2:c2[0],y2:c2[1]});
-        g.c.setAttribute("d","M"+P0+" C"+c1+" "+c2+" "+P3);
+      function draw(g,ic,t0,t1){
+        var P0=ic.seg[0],P3=ic.seg[3],c1=lerp(P0,ic.T,t0),c2=lerp(P3,ic.T,t1);
+        var d=ic.pre+"C"+c1+" "+c2+" "+P3+ic.post;
+        g.shape.setAttribute("d",d); g.outline.setAttribute("d","M"+P0+"C"+c1+" "+c2+" "+P3);
+        if(g.cur!==ic){ g.cur=ic; g.extra.innerHTML=ic.extra; }
+        var A=X(P0),B=X(P3),C1=X(c1),C2=X(c2),T=X(ic.T);
+        set(g.g1,{x1:C1[0],y1:C1[1],x2:T[0],y2:T[1]}); set(g.g2,{x1:C2[0],y1:C2[1],x2:T[0],y2:T[1]});
+        set(g.h1,{x1:A[0],y1:A[1],x2:C1[0],y2:C1[1]}); set(g.h2,{x1:B[0],y1:B[1],x2:C2[0],y2:C2[1]});
+        set(g.a,{x:A[0]-5,y:A[1]-5}); set(g.b,{x:B[0]-5,y:B[1]-5});
+        set(g.k1,{cx:C1[0],cy:C1[1]}); set(g.k2,{cx:C2[0],cy:C2[1]});
+        if(g.tl){ set(g.tl,{x1:C1[0],y1:C1[1],x2:C2[0],y2:C2[1]}); set(g.tp,{x:T[0]-5,y:T[1]-5,transform:"rotate(45 "+T[0]+" "+T[1]+")"}); }
       }
-      var A=build(fig.querySelector('[data-tp="a"]'),false), B=build(fig.querySelector('[data-tp="b"]'),true);
-      var la=fig.querySelector('[data-tv="a"]'), lb=fig.querySelector('[data-tv="b"]');
+      var GA=build(fig.querySelector('[data-tp="a"]'),false), GB=build(fig.querySelector('[data-tp="b"]'),true);
+      var la=fig.querySelector('[data-tv="a"]'), lb=fig.querySelector('[data-tv="b"]'), ln=fig.querySelector(".tunni-icon");
       function ease(x){return .5-.5*Math.cos(x);}
+      function clamp(v){return Math.max(.08,Math.min(.95,v));}
       function pct(v){return Math.round(v*100)+"%";}
+      var CYCLE=2*Math.PI/1.1*2;
       var time=1.2, playing=!matchMedia("(prefers-reduced-motion: reduce)").matches, visible=false, last=0, raf=0;
       function render(){
-        var a0=.25+.7*ease(time*1.3), a1=.25+.7*ease(time*.8+2), s=.3+.62*ease(time*1.1);
-        draw(A,a0,a1); la.textContent=pct(a0)+" / "+pct(a1);
-        draw(B,s,s); lb.textContent=pct(s)+" / "+pct(s);
+        var ic=ICONS[Math.floor(time/CYCLE)%ICONS.length];
+        var a0=.15+.8*ease(time*1.3), a1=.15+.8*ease(time*.8+2);
+        draw(GA,ic,a0,a1); la.textContent=pct(a0)+" / "+pct(a1);
+        var k=.4+.9*ease(time*1.1), b0=clamp(1-k*(1-ic.t0)), b1=clamp(1-k*(1-ic.t1));
+        draw(GB,ic,b0,b1); lb.textContent=pct(b0)+" / "+pct(b1);
+        ln.textContent="Material icon: "+ic.name;
       }
       function frame(now){ raf=0; if(!(playing&&visible)) return; if(last) time+=Math.min(now-last,100)/1000; last=now; render(); raf=requestAnimationFrame(frame); }
       function kick(){ last=0; if(playing&&visible&&!raf) raf=requestAnimationFrame(frame); }
@@ -269,72 +247,12 @@
     </figure>
   </section>
 
-  <section class="cs-sec" id="pc-and-phone">
-    <div class="cs-text">
-      <div>
-        <h2>One app, installed anywhere</h2>
-        <div class="copytext">
-          <p>Iconic is a Progressive Web App: install it from Chrome or Edge, or add it to an iPhone or Android home screen. It works offline and saves as you go. On a phone the panels fold behind toolbar buttons, and pinch zoom, touch and stylus all work. There's no server or account, and the font library loads only when you export a font.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig col narrow" style="max-width:22rem">
-      <button class="zoom" type="button" aria-label="Enlarge: Iconic on a phone"><div class="media phone"><img src="assets/img/iconic-mobile.webp" width="780" height="1688" alt="Iconic on a phone: a compact dark toolbar with tool, layers, design, overview and Export buttons, and the canvas showing person, image, calendar, file and folder icons." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>On a phone,</b> layers and design panels open from the toolbar when you need them.</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-sec" id="testing">
-    <div class="cs-text">
-      <div>
-        <h2>Every feature checked in a real browser</h2>
-        <div class="copytext">
-          <p>Each feature was tested with scripted mouse and keyboard input and measured results, and the tests caught real bugs.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Smart Corners:</b> a pen-drawn square rounded to R&nbsp;2 matched a 2px rounded rectangle exactly.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Audit:</b> a deliberately messy path got 10 flags, and Fix all cleared every one.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Icon font:</b> typing <code>file_add</code> drew the plain file, so longer names now match first.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Pixel check:</b> it caught badges exporting in the wrong color; they now take the icon's color.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="cs-sec" id="revisions">
     <div class="cs-text">
       <div>
         <h2>What changed since launch</h2>
         <div class="copytext">
-          <p>After the first-hour version, the biggest changes were the Figma-style interface, Material specs, live booleans with Google-format export, badges and the type-design tools.</p>
-          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>All 17 changes</summary>
-          <p><b>New features</b></p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Figma-style interface with Illustrator keyboard shortcuts.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Artboards, grid controls and Material keylines, styles, sizes and naming.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Smart guides that snap to edges, centers and anchor points.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Live boolean groups and Google-format single-path export with a pixel check.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>A styled color picker with a Material palette and eyedropper.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Components, badges with knockout gaps, and the variant generator.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>A Material mode switch for general icon work.</span></li>
-            <li><span class="ms" aria-hidden="true">new_releases</span><span>Tunni lines, Power Nudge, Smart Corners, Audit, Overview, Elements, icon font and weight masters.</span></li>
-          </ul>
-          <p><b>Improvements</b></p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Roboto Flex as the interface font, bundled so it works offline.</span></li>
-            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>The view stays centered on your work when the window resizes.</span></li>
-            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Style, line-end and corner choices became icons, all at one stroke weight.</span></li>
-            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>Material options sit next to their switch and hide when it's off.</span></li>
-            <li><span class="ms" aria-hidden="true">auto_fix_high</span><span>The installed app shows updates right away, not on the next visit.</span></li>
-          </ul>
-          <p><b>Fixes</b></p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">build</span><span>Cramped icon size row and missing space above label rows.</span></li>
-            <li><span class="ms" aria-hidden="true">build</span><span>Holes cut with Subtract filled back in when exported.</span></li>
-            <li><span class="ms" aria-hidden="true">build</span><span>The Design panel didn't refresh after clicking a switch.</span></li>
-            <li><span class="ms" aria-hidden="true">build</span><span>Badges exported in the wrong color; the icon font matched short names first.</span></li>
-          </ul>
-          </details>
+          <p>After the first-hour version came the Figma-style interface, Material specs, live booleans with Google-format export, badges and variants, and the type-design tools. Smaller fixes kept Subtract holes from filling in on export and gave badges the icon's color.</p>
         </div>
       </div>
     </div>
@@ -345,13 +263,7 @@
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
-          <ul>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>SVG import.</b> Iconic exports cleanly to Figma and Illustrator but can't open their files yet, so import with round-trip tests would let me bring existing sets in.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Fill and optical-size axes.</b> Weight is the only axis today, and the masters system could also cover Material Symbols' fill and optical size.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Cleaner generated weights.</b> In-between weights land on fractional coordinates that Audit flags, so snapping during Generate would save a Fix all step.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>More export targets.</b> The font has no WOFF2 and there's no iOS asset export yet, and both would round out the developer handoff.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Real-device testing.</b> Testing used scripted input in a desktop browser, so a pass on an iPhone and an Android tablet with a stylus would show where touch needs work.</span></li>
-          </ul>
+          <p>Next up: SVG import with round-trip tests so I can bring existing sets in, fill and optical-size axes alongside weight, generated weights that snap to the grid, and WOFF2 and iOS exports to round out the developer handoff.</p>
         </div>
       </div>
     </div>
