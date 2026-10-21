@@ -155,8 +155,35 @@
     // After 10 seconds the headline glitches out and settles on "Reliable Human" for good
     const h1 = rot.closest('h1');
     const line2 = h1.querySelectorAll('.line')[1];
+    // ...and the gradient behind it glitches into a random New York graffiti photo from Unsplash, credited bottom right
+    const band = h1.closest('.hero-band');
+    const shots = [
+      ['2MLVM0P4_Qs', 'Rio Buziez'], ['IPV5X5ne1m8', 'Ankit Dembla'], ['NFvJwmGBo7Q', 'Diego Allen'],
+      ['TikO1K5MmXE', 'Ruben Abreu'], ['Urt2tOrxSV8', 'Julie Ricard'], ['oO-3KuebmyI', 'Sebastian Enrique'],
+      ['pShoRxLR_6Y', 'Julie Ricard'], ['zNC7mK3TD18', 'Paul Brake']
+    ];
+    const [shotId, shotBy] = shots[Math.floor(Math.random() * shots.length)];
+    const shotSrc = 'assets/img/graffiti/' + shotId + '.webp';
+    new Image().src = shotSrc;
+    const graffiti = () => {
+      if (!band) return;
+      const bg = document.createElement('div');
+      bg.className = 'graffiti' + (slow ? ' on' : ' glitch-in');
+      bg.style.backgroundImage = 'url("' + shotSrc + '")';
+      bg.setAttribute('aria-hidden', 'true');
+      band.prepend(bg);
+      band.classList.add('graffitied');
+      setTimeout(() => { bg.classList.remove('glitch-in'); bg.classList.add('on'); }, 1400);
+      const credit = document.createElement('p');
+      credit.className = 'graffiti-credit';
+      const utm = '?utm_source=raysandesigns&utm_medium=referral';
+      credit.innerHTML = 'Photo by <a href="https://unsplash.com/photos/' + shotId + utm + '" target="_blank" rel="noopener">' + shotBy +
+        '</a> on <a href="https://unsplash.com/' + utm + '" target="_blank" rel="noopener">Unsplash</a>';
+      band.append(credit);
+    };
     setTimeout(() => {
       clearInterval(spin);
+      graffiti();
       h1.classList.add('glitching');
       words.forEach((w) => w.classList.remove('out'));
       const sr = h1.querySelector('.sr-only');

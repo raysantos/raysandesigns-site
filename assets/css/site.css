@@ -830,6 +830,29 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 }
 @media (prefers-reduced-motion: reduce) { .hero h1.glitching .line { animation: none; text-shadow: none; } }
 
+/* Hero graffiti: the photo glitches in over the gradient with the headline, under a dark scrim so the white type reads */
+.hero-band { position: relative; isolation: isolate; }
+.hero-band .graffiti { position: absolute; inset: 0; z-index: -1; background: center / cover no-repeat; opacity: 0; }
+.hero-band .graffiti::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .62), rgba(0, 0, 0, .3)); }
+.hero-band .graffiti.on { opacity: 1; }
+.hero-band .graffiti.glitch-in { animation: graffiti-in 1400ms steps(1) both; }
+@keyframes graffiti-in {
+  0% { opacity: 1; clip-path: inset(20% 0 65% 0); transform: translateX(-12px); filter: hue-rotate(90deg) saturate(3); }
+  10% { opacity: 0; }
+  18% { opacity: 1; clip-path: inset(55% 0 20% 0); transform: translateX(18px); filter: invert(1); }
+  28% { opacity: 1; clip-path: inset(0 0 70% 0); transform: translateX(-6px); filter: none; }
+  36% { opacity: 0; }
+  46% { opacity: 1; clip-path: inset(35% 0 30% 0); transform: translateX(10px); filter: hue-rotate(-120deg) saturate(2); }
+  58% { opacity: 1; clip-path: inset(0 0 25% 0); transform: translateX(-4px); filter: none; }
+  70% { opacity: 1; clip-path: inset(60% 0 0 0); transform: translateX(8px); filter: contrast(2); }
+  82% { opacity: 1; clip-path: none; transform: translateX(-3px); filter: none; }
+  100% { opacity: 1; clip-path: none; transform: none; filter: none; }
+}
+.graffiti-credit { position: absolute; right: 16px; bottom: 12px; margin: 0; font: 400 .75rem/1rem var(--md-font); color: rgba(255, 255, 255, .75); animation: fadeIn 600ms 1400ms both; }
+.graffiti-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.graffiti-credit a:hover { color: #fff; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
 /* Phones: the wordmark's cream fade runs all the way to the left edge of the screen */
 @media (max-width: 839px) {
   .top-app-bar .brand { position: relative; }
