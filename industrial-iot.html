@@ -39,8 +39,8 @@
     <aside class="cs-side">
       <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
       <p class="overline"><span class="ms" aria-hidden="true">sensors</span>Case study · Client work</p>
-      <h1>Industrial IoT</h1>
-      <p class="lede">ProAxion puts wireless sensors on factory equipment to catch failing machines before they stop a line. I designed the features a technician uses at the machine: scanning a device's QR label, pairing it to a sensor or gateway, reading its alerts and auditing it. I also refined the icons that place every device in a plant.</p>
+      <h1>Industrial <span class="accent">IoT</span></h1>
+      <p class="lede">ProAxion's wireless sensors catch failing factory machines before they stop a line. I designed the phone flows a technician uses at the machine, the dashboard behind them, and the icons that place every device in a plant.</p>
       
       <dl class="cs-meta">
           <div><dt><span class="ms" aria-hidden="true">factory</span>Client</dt><dd>ProAxion, via Zero Copy Labs</dd></div>
@@ -55,8 +55,9 @@
             <li><a href="#alerts-and-audits"><span class="ms" aria-hidden="true">notifications_active</span>Alerts and audits</a></li>
             <li><a href="#icon-design"><span class="ms" aria-hidden="true">category</span>Icon design</a></li>
             <li><a href="#admin-dashboard"><span class="ms" aria-hidden="true">dashboard</span>Admin dashboard</a></li>
+            <li><a href="#sign-in"><span class="ms" aria-hidden="true">login</span>Sign-in</a></li>
             <li><a href="#process"><span class="ms" aria-hidden="true">forum</span>Process</a></li>
-            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>Things to improve</a></li>
         </ol>
       </nav>
     </aside>
@@ -68,7 +69,7 @@
     </figure>
       <figure class="fig">
       <button class="zoom" type="button" aria-label="Enlarge: sensors table on desktop"><div class="media"><img src="assets/img/proaxion-sensors.webp" width="1279" height="911" alt="The web dashboard's Sensors table: a customer and plant tree in the sidebar, and rows of sensors with location, label, BLE MAC address and ship date."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>At the desk,</b> the same devices in the admin dashboard. Customer names, labels and addresses in these screens are sample data.</figcaption>
+      <figcaption><b>At the desk,</b> the same devices in the admin dashboard, shown with sample data.</figcaption>
     </figure>
     </div>
 
@@ -78,9 +79,8 @@
       <div>
         <h2>A sticker, a sensor and a lot of guesswork</h2>
         <div class="copytext">
-          <p>Every ProAxion sensor and gateway ships with a printed QR label. In a plant, a technician mounts the sensor on a motor or bearing, and the label has to be tied to the right device and the right spot on the floor. Until that link exists, the data coming off the machine has nowhere to go.</p>
-          <p>The people doing this work stand next to loud equipment with a phone in one hand. They need to know in a second whether a device is new, already paired or reporting a problem, and they shouldn't have to type MAC addresses.</p>
-        </div>
+<p>Every sensor and gateway ships with a printed QR label, and until that label is tied to the right device and the right spot on the floor, its data has nowhere to go. The person doing it stands next to loud equipment, phone in hand, and needs to know in a second whether a device is new, paired or failing, without typing a MAC address.</p>
+</div>
       </div>
     </div>
 
@@ -91,14 +91,14 @@
       <div>
         <h2>One scan, three possible states</h2>
         <div class="copytext">
-          <p>Scanning a label opens the phone's camera, then lands on a screen built around the device's state. The label card stays pinned at the top, so the technician always knows which device they're holding.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Unassigned.</b> A yellow card explains that the label isn't paired yet and offers two clear actions: assign a gateway or assign a sensor.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Pick from live data.</b> Nearby devices are listed by MAC address with their heartbeats, boots and uptime for the last 24 hours, tinted green or red, so the healthy one stands out.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Confirm the pair.</b> The MAC address and the label sit side by side before anything is saved.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Assigned.</b> The screen becomes the device's detail view: where it lives in the plant, its recent telemetry and its active alarms.</span></li>
-          </ul>
-        </div>
+<p>Scanning a label lands on a screen built around the device's state, with the label card pinned on top.</p>
+<ul>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Unassigned:</b> a yellow card with two actions, assign a gateway or assign a sensor.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Pick from live data:</b> nearby devices show 24-hour health, tinted so the healthy one stands out.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Confirm:</b> the MAC address and the label sit side by side before anything saves.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Assigned:</b> the screen becomes the device view, with location, telemetry and alarms.</span></li>
+</ul>
+</div>
       </div>
     </div>
     <figure class="fig col">
@@ -112,9 +112,8 @@
       <div>
         <h2>Warnings that say what to do next</h2>
         <div class="copytext">
-          <p>A sensor can report rising vibration, rising temperature or a lost signal. Each alert pairs a severity with an action: a yellow warning says to monitor and inspect soon, and a red alert says to inspect now. Every card has its own icon, a time stamp and one plain sentence, so a technician can read it on the move.</p>
-          <p>From there, <b>Audit Device</b> opens a short form: mark the device end of life, correct where it sits in the plant, and add photos of the installation. Edits go out for approval instead of changing the record directly, and an audit history shows who submitted what.</p>
-        </div>
+<p>Each alert pairs a severity with an action: yellow means monitor and inspect soon, red means inspect now. Every card carries its own icon, a time stamp and one plain sentence, readable on the move. <b>Audit Device</b> then opens a short form for end of life, location fixes and photos, and edits go out for approval instead of changing the record.</p>
+</div>
       </div>
     </div>
     <figure class="fig narrow" style="max-width:26rem">
@@ -128,14 +127,13 @@
       <div>
         <h2>Icons for two ways of finding a machine</h2>
         <div class="copytext">
-          <p>Every device lives in two hierarchies. The <b>entity</b> hierarchy follows the business: customer, plant, line, machine, component. The <b>physical</b> hierarchy follows the building: plant, building, floor, area, location. Both appear everywhere, in breadcrumbs, the sidebar tree and the device cards, so each level needed an icon you can tell apart at a glance.</p>
-          <p>Where a Font Awesome icon already said the right thing, like plant and building, I started from it. The rest I drew for this product: a conveyor for a line, paired gears for a machine, steps for a floor. Then I refined the whole set to share one stroke weight, rounded ends and the same visual size, so a custom icon never looks like it came from a different family.</p>
-        </div>
+<p>Every device lives in two hierarchies: the business (customer, plant, line, machine, component) and the building (plant, building, floor, area, location). Both show up in breadcrumbs, the sidebar and device cards. I started from Font Awesome where it fit, drew the rest, then refined the set to one stroke weight, rounded ends and one visual size.</p>
+</div>
       </div>
     </div>
     <figure class="fig narrow" style="max-width:36rem">
       <button class="zoom" type="button" aria-label="Enlarge: hierarchy icons"><div class="media"><img src="assets/img/proaxion-hierarchy-icons.webp" width="1568" height="560" alt="Two rows of white line icons on navy. Physical hierarchy: Plant, Building, Floor, Area, Location. Entity hierarchy: Customer, Plant, Line, Machine, Component."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Physical hierarchy, then entity hierarchy.</b> Plant and Building start from Font Awesome. The others are custom.</figcaption>
+      <figcaption><b>Building, then business.</b> Plant and Building start from Font Awesome; the rest are custom.</figcaption>
     </figure>
     <figure class="fig narrow">
       <button class="zoom" type="button" aria-label="Enlarge: full icon set"><div class="media"><img src="assets/img/proaxion-icon-set.webp" width="1098" height="138" alt="The full icon set in one row: plant, building, customer, line, machine, component, floor, door, area, location pin, site, location, sensor and gateway."></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
@@ -148,18 +146,18 @@
       <div>
         <h2>The back office that keeps it all in sync</h2>
         <div class="copytext">
-          <p>The same devices are managed from a desktop dashboard. A customer, plant and line tree in the sidebar filters every page, and the breadcrumb at the top always shows where you are.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Sensors and gateways</b> live in tables with column controls and CSV or Excel export. Long location paths truncate, with a tooltip for the full name, and a searchable dropdown in the top bar filters every table to one customer, plant or line.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Ship to Customer</b> lets the team scan labels or type them in, then add customer, plant, date and tracking before shipping.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Publish</b> pushes sensor and gateway settings to the field. Because it restarts the application, the Publish button stays off until you tick a box acknowledging that.</span></li>
-          </ul>
-        </div>
+<p>A customer, plant and line tree in the sidebar filters every desktop page.</p>
+<ul>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Sensors and gateways</b> sit in exportable tables, with tooltips on truncated locations.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Ship to Customer</b> scans or types labels, then adds customer, plant, date and tracking.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span><b>Publish</b> stays off until you acknowledge it will restart the application.</span></li>
+</ul>
+</div>
       </div>
     </div>
     <figure class="fig narrow">
       <div class="media"><video src="assets/video/proaxion-filter.mp4" poster="assets/img/proaxion-filter-poster.webp" width="1440" height="1024" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: hovering a truncated location shows its full name, typing Kaba in the filter dropdown narrows the sensors table to one customer, and the Clean Filters tooltip appears on the clear button before the filter is cleared." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Filtering and tooltips.</b> Truncated names reveal themselves on hover, and the top bar filter narrows the table to one customer.</figcaption>
+      <figcaption><b>Filtering and tooltips.</b> Hover a truncated name, or narrow the table to one customer.</figcaption>
     </figure>
     <div class="pair col">
       <figure class="fig">
@@ -173,23 +171,43 @@
     </div>
     <figure class="fig narrow">
       <div class="media"><video src="assets/video/proaxion-publish.mp4" poster="assets/img/proaxion-publish-poster.webp" width="1440" height="1024" autoplay muted loop playsinline preload="metadata" aria-label="Screen recording: ticking the reboot acknowledgment turns the Publish button on; clicking Publish shows a Publishing spinner, a Successful publication toast and a Publishing in progress message." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Publish</b> stays off until you acknowledge the reboot, then reports back with a toast and a progress message.</figcaption>
+      <figcaption><b>Publish</b> waits for the reboot check, then reports back with a toast.</figcaption>
     </figure>
   </section>
 
-  <section class="cs-sec" id="process">
+  <section class="cs-sec" id="sign-in">
+<div class="cs-text">
+<div>
+<h2>Errors that point at the fix</h2>
+<div class="copytext">
+<p>Sign-in uses two kinds of feedback. A problem the form can catch, like a malformed email, shows in red under that field as you type. A problem only the server knows, like a wrong password, comes back as a toast that says what failed, while the button shows it's still working.</p>
+</div>
+</div>
+</div>
+<div class="pair col">
+<figure class="fig">
+<button class="zoom" type="button" aria-label="Enlarge: sign-in field error"><div class="media"><img src="assets/img/proaxion-login-error.webp" width="980" height="840" alt="The ProAxion sign-in card with the email field outlined in red and the message Please enter a valid email address under it." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+<figcaption><b>Field errors</b> sit under the field they belong to.</figcaption>
+</figure>
+<figure class="fig">
+<button class="zoom" type="button" aria-label="Enlarge: sign-in failed toast"><div class="media"><img src="assets/img/proaxion-login-toast.webp" width="980" height="840" alt="The sign-in card with a Loading spinner on the button and a red Log In Failed toast in the corner saying the email and password combination is incorrect." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+<figcaption><b>Server errors</b> arrive as a toast, with a loading state on the button.</figcaption>
+</figure>
+</div>
+</section>
+<section class="cs-sec" id="process">
     <div class="cs-text">
       <div>
         <h2>Reviewed in the open, in Figma</h2>
         <div class="copytext">
-          <p>I worked inside a small team: a product lead, another designer and the front-end engineers building the screens. Most reviews happened as comments on the Figma file, which kept every decision next to the screen it changed.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Engineers flagged input fields with slightly different heights, so every field moved to one size.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>The collapsed and expanded sidebar had to line up to the pixel, which shaped how the menu icons were spaced.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>The background moved from a blue-gray to a near-black, giving the status colors more contrast.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>When two versions of a screen existed, the team chose one and removed the rest, so the file stayed the single source of truth.</span></li>
-          </ul>
-        </div>
+<p>Most reviews happened as comments on the Figma file, next to the screen each one changed.</p>
+<ul>
+<li><span class="ms" aria-hidden="true">check_circle</span><span>Engineers caught fields of slightly different heights, so every input moved to one size.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span>The collapsed and expanded sidebar had to line up to the pixel, which set the icon spacing.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span>The background went from blue-gray to near-black, giving status colors more contrast.</span></li>
+<li><span class="ms" aria-hidden="true">check_circle</span><span>When two versions of a screen existed, the team kept one so the file stayed the source of truth.</span></li>
+</ul>
+</div>
       </div>
     </div>
     <figure class="fig narrow">
@@ -204,13 +222,13 @@
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
-          <ul>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Status beyond color.</b> Healthy and failing gateways are told apart mostly by green and red. An icon or a word next to each number would make the picker work for people with color blindness and under harsh factory lighting.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A light theme for the floor.</b> The dark interface suits the office, but a bright plant washes out a dark phone screen. A high-contrast light mode for the mobile flows would help.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Scanning without a signal.</b> Plants have dead zones. The association flow assumes a connection, and it should save a pairing and sync it later instead of failing.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Sharper alert copy.</b> The warning and alert versions of each alarm read almost the same. Naming the reading, such as how hot or how much vibration, would tell a technician how urgent it really is.</span></li>
-          </ul>
-        </div>
+<ul>
+<li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Status beyond color.</b> The gateway picker leans on green and red, so an icon or word beside each number would help color-blind users and harsh lighting.</span></li>
+<li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>A light theme for the floor.</b> Bright plants wash out a dark phone screen, so the mobile flows need a high-contrast light mode.</span></li>
+<li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Scanning without a signal.</b> Pairing assumes a connection, and it should save offline and sync later instead of failing in a dead zone.</span></li>
+<li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Sharper alert copy.</b> Naming the reading, such as how hot or how much vibration, would tell a technician how urgent an alert really is.</span></li>
+</ul>
+</div>
       </div>
     </div>
   </section>
