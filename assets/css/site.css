@@ -960,3 +960,7 @@ html { -webkit-tap-highlight-color: transparent; }
 .gh-btn svg { width: 36px; height: 36px; }
 .gh-btn:hover { color: var(--md-primary); transform: scale(1.06); }
 .gh-btn:focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
+/* Case study media panels: a light dot grid on the panel color, 20px corners, 30px padding
+   (same as the icon panels on iconic-logo.html). Bare phone clips keep their transparent frame. */
+.cs-main .fig .media:not(.bare) { background-color: var(--md-surface-container); background-image: radial-gradient(circle, color-mix(in srgb, var(--md-outline) 25%, transparent) 1px, transparent 1.5px); background-size: 16px 16px; background-position: 8px 8px; border-radius: var(--shape-l); padding: 30px; }
+@media (max-width: 599px) { .cs-main .fig .media:not(.bare) { padding: 16px; } }
