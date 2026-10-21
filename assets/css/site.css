@@ -364,10 +364,15 @@ dialog.lb img { max-width: none; width: max(100%, 1100px); border-radius: var(--
 @keyframes slide-in-left { from { transform: translateX(-100%); } to { transform: none; } }
 html:active-view-transition-type(back)::view-transition-old(root) { animation: slide-out-right 560ms var(--ease-emph) both; }
 html:active-view-transition-type(back)::view-transition-new(root) { animation: slide-in-left 560ms var(--ease-emph) both; }
+/* The header and phone nav bar are the same on both pages, so they stay put; only the Work highlight fades off */
+.top-app-bar { view-transition-name: site-header; }
+.nav-bar { view-transition-name: site-nav-bar; }
+html:active-view-transition-type(back)::view-transition-group(site-header),
+html:active-view-transition-type(back)::view-transition-group(site-nav-bar) { animation-duration: 560ms; }
 /* Fallback for browsers without cross-document view transitions */
 html.slide-back { overflow-x: hidden; }
-html.slide-back.out body > *:not(dialog):not(.snackbar) { animation: slide-out-right 320ms cubic-bezier(.3, 0, .8, .15) both; }
-html.slide-back.in body > *:not(dialog):not(.snackbar) { animation: slide-in-left 480ms var(--ease-emph) both; }
+html.slide-back.out body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-out-right 320ms cubic-bezier(.3, 0, .8, .15) both; }
+html.slide-back.in body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-in-left 480ms var(--ease-emph) both; }
 @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
 
 /* =========================================================
