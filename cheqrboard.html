@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CheQRboard Case Study · Raysan Designs</title>
-<meta name="description" content="How Ray Santos redesigned the UI and design system for CheQRboard, a platform venues use to build branded, interactive QR code experiences.">
+<meta name="description" content="How Ray Santos designed CheQRboard (first called TRAKID), a platform venues use to build branded QR code experiences, surveys and donation links.">
 <meta property="og:title" content="CheQRboard · Case study by Ray Santos">
 <meta property="og:type" content="article">
 <meta name="theme-color" content="#ffffff">
@@ -40,13 +40,13 @@
       <a class="icon-btn sl back" href="index.html#work" aria-label="Back to all work" title="Back to all work"><span class="ms" aria-hidden="true">arrow_back</span></a>
       <p class="overline"><span class="ms" aria-hidden="true">qr_code_2</span>Case study · Client work</p>
       <h1>CheQR<span class="accent">board</span></h1>
-      <p class="lede">CheQRboard lets zoos, museums and venues decide what happens after someone scans a QR code. I redesigned the UI and design system for the admin platform and the mobile screens visitors land on.</p>
-      
+      <p class="lede">CheQRboard, first called TRAKID, lets zoos, museums and venues decide what happens after someone scans a QR code. I designed the admin platform, its design system and the screens visitors land on.</p>
+
       <dl class="cs-meta">
           <div><dt><span class="ms" aria-hidden="true">apartment</span>Client</dt><dd>Zero Copy Labs</dd></div>
           <div><dt><span class="ms" aria-hidden="true">devices</span>Product</dt><dd>Web app + mobile visitor UX</dd></div>
           <div><dt><span class="ms" aria-hidden="true">design_services</span>Role</dt><dd>UI &amp; design system</dd></div>
-          <div><dt><span class="ms" aria-hidden="true">event</span>Year</dt><dd>2025 · Figma</dd></div>
+          <div><dt><span class="ms" aria-hidden="true">event</span>Year</dt><dd>2024–2025 · Figma</dd></div>
       </dl>
       <nav class="cs-toc" aria-label="On this page">
         <ol>
@@ -55,38 +55,37 @@
             <li><a href="#content-system"><span class="ms" aria-hidden="true">category</span>Content system</a></li>
             <li><a href="#qr-design"><span class="ms" aria-hidden="true">qr_code_2</span>QR design</a></li>
             <li><a href="#scheduling"><span class="ms" aria-hidden="true">event</span>Scheduling</a></li>
+            <li><a href="#surveys-payments"><span class="ms" aria-hidden="true">payments</span>Surveys &amp; payments</a></li>
             <li><a href="#design-system"><span class="ms" aria-hidden="true">tune</span>Design system</a></li>
             <li><a href="#ai-assistant"><span class="ms" aria-hidden="true">auto_awesome</span>AI assistant</a></li>
-            <li><a href="#handoff"><span class="ms" aria-hidden="true">handshake</span>Handoff</a></li>
-            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+            <li><a href="#whats-next"><span class="ms" aria-hidden="true">flag</span>Things to improve</a></li>
         </ol>
       </nav>
     </aside>
     <div class="cs-main">
       <figure class="fig narrow">
-      <div class="media"><video src="assets/video/cheq-build.mp4" poster="assets/img/cheq-build-poster.webp" width="952" height="980" autoplay muted loop playsinline preload="metadata" aria-label="The Open Response editor in three stages: an empty form with a blank phone preview, then a photo and question filled in, then brand colors applied and the preview updating to match." style="display:block;width:100%;height:auto"></video></div>
+      <div class="media"><video src="assets/video/cheq-build.mp4?v=2" poster="assets/img/cheq-build-poster.webp?v=2" width="1140" height="930" autoplay muted loop playsinline preload="metadata" aria-label="The Open Response editor in three stages: an empty form with a blank phone preview, then a concert photo and question filled in, then festival colors applied and the preview updating to match." style="display:block;width:100%;height:auto"></video></div>
       <figcaption><b>Build on the left, see it on the right.</b> An Open Response prompt goes from empty to on-brand.</figcaption>
     </figure>
-
 
   <section class="cs-sec" id="the-problem">
     <div class="cs-text">
       <div>
         <h2>A scan that went nowhere interesting</h2>
         <div class="copytext">
-          <p>The old visitor screen was a stock welcome graphic, a language menu and a name field, the same at every venue. Staff couldn't change it without a developer. The goal was to let a zoo educator or museum coordinator build an on-brand experience, attach it to a code and schedule it on their own.</p>
+          <p>The original TRAKID visitor screen was a stock welcome graphic, a language menu and a name field, the same at every venue, and staff couldn't change it without a developer. The goal was to let a zoo educator or museum coordinator build an on-brand experience, attach it to a code and schedule it on their own.</p>
         </div>
       </div>
     </div>
     <div class="duo">
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: original welcome screen"><div class="media"><img src="assets/img/before-welcome.webp" width="719" height="1258" alt="The original visitor welcome screen: a stock welcome flag graphic, language selector, name field and Let's Go button." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Before.</b> One template for every venue.</figcaption>
-    </figure>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: redesigned welcome settings"><div class="media"><img src="assets/img/settings-welcome.webp" width="1464" height="812" alt="Welcome screen settings for the Army Aviation Museum, from empty state to a branded preview with the museum's photo, logo and colors." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>After.</b> A branded welcome screen the venue sets up itself, with photo, logo, languages and colors.</figcaption>
-    </figure>
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: original welcome screen"><div class="media phone"><img src="assets/img/before-welcome.webp?v=2" width="496" height="1138" alt="The original visitor welcome screen: a stock welcome flag graphic, a language selector, a name field and a Let's Go button." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Before.</b> One template for every venue.</figcaption>
+      </figure>
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: redesigned welcome settings"><div class="media"><img src="assets/img/settings-welcome.webp?v=2" width="1440" height="1350" alt="Settings for the Army Aviation Museum: language, time zone, welcome screen, preset colors and design colors on the left, and a phone preview with the museum's photo, logo, a Let's Go button and a Show Park Map button." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>After.</b> A welcome screen the venue sets up itself, with photo, logo, languages and colors.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -95,19 +94,19 @@
       <div>
         <h2>Every editor shares one layout</h2>
         <div class="copytext">
-          <p>Collapsible sections sit on the left (Main Image, Logo, Content, Design, Results) and a phone preview on the right updates as you type. Staff learn the pattern once, and the preview always answers their real question: what will a visitor see?</p>
+          <p>Collapsible sections sit on the left (Main Image, Logo, Content, Design, Results) and a phone preview on the right updates as you type. Staff learn the pattern once, and the preview always answers their real question: what will a visitor see? Dots under the preview step through the screens that follow, like the answer and results pages.</p>
         </div>
       </div>
     </div>
-    <div class="pair">
-    <figure class="fig">
-      <div class="media"><video src="assets/video/cheq-poll.mp4" poster="assets/img/cheq-poll-poster.webp" width="588" height="608" autoplay muted loop playsinline preload="metadata" aria-label="Five stages of the Create a Poll editor: empty, options added, a red panda photo applied, brand colors set, then a results screen ranking the name options." style="display:block;width:100%;height:auto"></video></div>
-      <figcaption><b>Polls</b> run from a blank question to a results screen visitors see after voting.</figcaption>
-    </figure>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: multiple choice editor"><div class="media"><img src="assets/img/multiple-choice.webp" width="1568" height="357" alt="Multiple Choice editor stages ending in a That is correct confirmation screen." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Multiple Choice</b> ends on a custom answer screen that teaches a fact.</figcaption>
-    </figure>
+    <div class="pair" style="align-items:start">
+      <figure class="fig">
+        <div class="media phone"><video src="assets/video/cheq-poll.mp4?v=2" poster="assets/img/cheq-poll-poster.webp?v=2" width="386" height="808" autoplay muted loop playsinline preload="metadata" aria-label="The poll preview in five stages: empty, ranked choices turned on, six red panda names with a photo, zoo colors applied, then a results screen ranking the names." style="display:block;width:100%;height:auto"></video></div>
+        <figcaption><b>Polls</b> run from a blank question to the results visitors see after voting.</figcaption>
+      </figure>
+      <figure class="fig">
+        <div class="media phone"><video src="assets/video/cheq-mc.mp4" poster="assets/img/cheq-mc-poster.webp" width="386" height="808" autoplay muted loop playsinline preload="metadata" aria-label="The multiple choice preview in four stages: empty, a dinosaur question with a museum photo and logo, museum colors applied, then a That is correct screen with a fun fact and a Learn More button." style="display:block;width:100%;height:auto"></video></div>
+        <figcaption><b>Multiple Choice</b> ends on a custom answer screen that teaches a fact.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -116,17 +115,27 @@
       <div>
         <h2>Eight content types, one library</h2>
         <div class="copytext">
-          <p>Content falls into eight types, each with its own icon, and the template picker groups them by goal: interactive, navigation and multimedia. Everything lives in one library, so a single poll or video can sit behind many codes and be updated in one place.</p>
+          <p>Content falls into eight types, each with its own icon, and the template picker groups them by goal: interactive, navigation and multimedia. Everything lives in one library, so a single poll or link tree can sit behind many codes and be updated in one place.</p>
         </div>
       </div>
     </div>
     <figure class="fig">
-      <div class="media icon-strip"><img src="assets/img/content-types.webp" width="1280" height="150" alt="Content type icons: Image + Text, Multiple Choice, Open Response, Direct Link, Upcoming Events, Video, Audio and Poll." loading="lazy"></div>
+      <div class="media icon-strip"><img src="assets/img/content-types.webp?v=2" width="1292" height="160" alt="Content type icons: Image + Text, Multiple Choice, Open Response, Direct Link, Upcoming Events, Video, Audio and Poll." loading="lazy"></div>
       <figcaption><b>Eight content type icons,</b> matched in stroke and size so they read as one family.</figcaption>
     </figure>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: content library and template picker"><div class="media"><img src="assets/img/content-library.webp" width="1568" height="418" alt="The Content Library table, its row actions, and the Choose a Template screen with templates grouped by purpose." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Library and template picker.</b> Each template shows a live example before you pick it.</figcaption>
+    <div class="pair">
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: template picker"><div class="media"><img src="assets/img/template-picker.webp" width="1440" height="1220" alt="The Choose a Template screen listing templates under Interactive, Navigation and Information, and Multimedia, with a live example of a Galapagos tortoise encounter on the right." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Template picker.</b> Each template shows a live example before you pick it.</figcaption>
+      </figure>
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: content library"><div class="media"><img src="assets/img/content-library.webp?v=2" width="1440" height="1020" alt="The Content Library table with a thumbnail, title, tags, type icon, views and last updated date for each item, and an Edit Content button on every row." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Content Library.</b> Type, views and tags in every row.</figcaption>
+      </figure>
+    </div>
+    <figure class="fig narrow">
+      <button class="zoom" type="button" aria-label="Enlarge: link tree on phones"><div class="media"><img src="assets/img/visitor-linktree.webp" width="1360" height="1240" alt="Two phones showing Link Tree pages: a zoo guide with green buttons for each habitat, and a music festival page with photo tiles for each stage." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>One template, two venues.</b> The same Link Tree as a zoo guide and a festival map.</figcaption>
     </figure>
   </section>
 
@@ -140,11 +149,11 @@
       </div>
     </div>
     <figure class="fig">
-      <div class="media"><video src="assets/video/cheq-warning.mp4" poster="assets/img/cheq-warning-poster.webp" width="1322" height="928" autoplay muted loop playsinline preload="metadata" aria-label="The Add QR Code editor showing a QR Code Scanning Issue warning under the preview, then clicking Save brings up a confirmation dialog with Cancel and Save Anyway." style="display:block;width:100%;height:auto"></video></div>
+      <div class="media"><video src="assets/video/cheq-warning.mp4?v=2" poster="assets/img/cheq-warning-poster.webp?v=2" width="1320" height="916" autoplay muted loop playsinline preload="metadata" aria-label="The Add QR Code editor showing a QR Code Scanning Issue notice under the preview, then a confirmation dialog with Cancel and Save Anyway after clicking Save." style="display:block;width:100%;height:auto"></video></div>
       <figcaption><b>Warn twice, never block.</b> An inline notice while editing, then a confirm before saving.</figcaption>
     </figure>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: QR codes dashboard"><div class="media"><img src="assets/img/qr-library.webp" width="1071" height="1090" alt="QR Codes dashboard listing codes with attached content, content type tooltips, scan counts and a row actions menu." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <button class="zoom" type="button" aria-label="Enlarge: QR codes dashboard"><div class="media"><img src="assets/img/qr-library.webp?v=2" width="1440" height="1020" alt="The QR Codes dashboard listing each code with its attached content, content type, scan count and date created." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>The QR Codes dashboard</b> shows attached content, type and scans in every row.</figcaption>
     </figure>
   </section>
@@ -154,13 +163,43 @@
       <div>
         <h2>One code, different content by date</h2>
         <div class="copytext">
-          <p>A sign stays up for months but programs change weekly. Each code keeps its primary content and can swap in scheduled content, such as a Thursday evening exhibit, for set dates and times, chosen from the library in a side drawer.</p>
+          <p>A sign stays up for months but programs change weekly. Each code keeps its primary content and can swap in scheduled content, such as a Thursday evening exhibit, for set dates and times, chosen from the library and placed in a calendar drawer.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <div class="media"><video src="assets/video/cheq-schedule.mp4" poster="assets/img/cheq-schedule-poster.webp" width="848" height="888" autoplay muted loop playsinline preload="metadata" aria-label="Attaching primary content to a QR code, picking an exhibit from the Select Content dialog, then setting dates and times in the Add in Calendar drawer." style="display:block;width:100%;height:auto"></video></div>
+      <div class="media"><video src="assets/video/cheq-schedule.mp4?v=2" poster="assets/img/cheq-schedule-poster.webp?v=2" width="1200" height="1160" autoplay muted loop playsinline preload="metadata" aria-label="A QR code with primary content attached and Schedule Additional Content turned on, then the Select Content dialog, then the Add in Calendar drawer with a start date and times." style="display:block;width:100%;height:auto"></video></div>
       <figcaption><b>Pick, then schedule.</b> Primary content, a library pick, and the calendar drawer.</figcaption>
+    </figure>
+  </section>
+
+  <section class="cs-sec" id="surveys-payments">
+    <div class="cs-text">
+      <div>
+        <h2>Surveys and donations in the same shell</h2>
+        <div class="copytext">
+          <p>When the product grew past single prompts, I kept the new tools inside the patterns staff already knew.</p>
+          <ul>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A survey builder with Form and Design modes and a grouped picker of 15 field types</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A results page that leads with views, starts, completion rate and time</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Stripe payment links themed with the same logo uploader and color pickers</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pair">
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: add form elements"><div class="media"><img src="assets/img/survey-elements.webp" width="1440" height="1000" alt="The Create a Survey screen with the Add Form Elements dialog open, grouping inputs under Basic Text, Numeric and Date/Time, Selection and Choice, File and Media, and Feedback/Analytics." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Field picker</b> grouped by what you're asking for.</figcaption>
+      </figure>
+      <figure class="fig">
+        <button class="zoom" type="button" aria-label="Enlarge: survey results"><div class="media"><img src="assets/img/survey-results.webp" width="1440" height="1085" alt="Results Summary for a zoo membership survey: 1210 views, 650 starts, 353 responses, 56% completion and 6:23 time to complete, above a table of responses." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+        <figcaption><b>Results</b> open on the funnel, then the responses.</figcaption>
+      </figure>
+    </div>
+    <figure class="fig narrow">
+      <button class="zoom" type="button" aria-label="Enlarge: payment link editor"><div class="media"><img src="assets/img/payment-editor.webp" width="1440" height="1080" alt="Editing a donation payment link for an aviation museum foundation: the shareable Stripe link, a preview of the donate page, and the Logo section." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Payment links</b> get a live preview and the venue's logo and colors.</figcaption>
     </figure>
   </section>
 
@@ -169,36 +208,34 @@
       <div>
         <h2>The states nobody asks for</h2>
         <div class="copytext">
-          <p>Most of the system work was making each component hold up in its empty, filled, error and edge-case states.</p>
+          <p>Most of the system work was making each component hold up in its empty, filled, error and edge-case states, then checking the build against Figma.</p>
           <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>Preset colors that venues can edit, reset and reuse across every editor</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>An image uploader with zoom, rotate and crop for logos and main images</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>A collapsible sidebar so the editor and preview fit a laptop</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span>A warning before switching organizations with unsaved edits</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Color ramps, an Inter type scale and button sets as shared styles</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Preset colors venues can edit, reset and reuse in every editor</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>A sidebar that collapses to a rail so editor and preview fit a laptop</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span>Pixelay overlays of development builds to catch spacing slips before release</span></li>
           </ul>
         </div>
       </div>
     </div>
+    <figure class="fig">
+      <button class="zoom" type="button" aria-label="Enlarge: color ramps"><div class="media"><img src="assets/img/color-ramps.webp" width="1450" height="780" alt="Color styles: the Primary Bright and Primary Moody Blue ramps and the Secondary Elm teal ramp, each swatch labeled with its RGBA, HSLA and hex values." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Color ramps</b> for the indigo primary and the elm secondary, with every value labeled.</figcaption>
+    </figure>
     <div class="pair" style="align-items:start">
-    <figure class="fig">
-      <div class="media"><video src="assets/video/cheq-presets.mp4" poster="assets/img/cheq-presets-poster.webp" width="618" height="376" autoplay muted loop playsinline preload="metadata" aria-label="Preset Colors row: tapping a swatch opens an Edit Color popover, the hex value changes from blue to pink, the row updates, and the Design panel shows the new color across primary, secondary and accent." style="display:block;width:100%;height:auto"></video></div>
-      <figcaption><b>Editable presets.</b> Change a swatch once and every color picker follows.</figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="media"><video src="assets/video/cheq-sidebar.mp4" poster="assets/img/cheq-sidebar-poster.webp" width="1020" height="980" autoplay muted loop playsinline preload="metadata" aria-label="The Add QR Code screen with the sidebar expanded, then collapsed to an icon rail, giving the editor and preview more room." style="display:block;width:100%;height:auto"></video></div>
-      <figcaption><b>Collapse to a rail</b> to keep editor and preview side by side.</figcaption>
-    </figure>
+      <figure class="fig">
+        <div class="media"><video src="assets/video/cheq-presets.mp4?v=2" poster="assets/img/cheq-presets-poster.webp?v=2" width="674" height="384" autoplay muted loop playsinline preload="metadata" aria-label="Preset Colors row: tapping a swatch opens an Edit Color popover, the hex value changes from blue to pink, the row updates, and the Design panel shows the new color in primary, secondary and accent." style="display:block;width:100%;height:auto"></video></div>
+        <figcaption><b>Editable presets.</b> Change a swatch once and every color picker follows.</figcaption>
+      </figure>
+      <figure class="fig">
+        <div class="media"><video src="assets/video/cheq-sidebar.mp4?v=2" poster="assets/img/cheq-sidebar-poster.webp?v=2" width="1200" height="1160" autoplay muted loop playsinline preload="metadata" aria-label="The Add QR Code screen with the sidebar expanded and a Collapse Menu tooltip, then collapsed to an icon rail with an Expand Menu tooltip." style="display:block;width:100%;height:auto"></video></div>
+        <figcaption><b>Collapse to a rail</b> to keep editor and preview side by side.</figcaption>
+      </figure>
     </div>
-    <div class="pair">
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: image uploader"><div class="media"><img src="assets/img/image-uploader.webp" width="1197" height="959" alt="Image uploader component states for square and circular logos and landscape or portrait main images." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Image uploader</b> states for logos and main images.</figcaption>
+    <figure class="fig narrow">
+      <button class="zoom" type="button" aria-label="Enlarge: Pixelay design QA"><div class="media"><img src="assets/img/pixelay.webp?v=2" width="1800" height="1528" alt="Pixelay comparison of the development build and the Figma design for the Add QR Code screen, with the build links pinned above each." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Pixelay overlay</b> of a development build against the design.</figcaption>
     </figure>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: organization switch warning"><div class="media"><img src="assets/img/org-switch.webp" width="1213" height="950" alt="A modal warning that unsaved changes will be lost when leaving the current organization." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Switching organizations mid-edit</b> warns before work is lost.</figcaption>
-    </figure>
-    </div>
   </section>
 
   <section class="cs-sec" id="ai-assistant">
@@ -206,38 +243,24 @@
       <div>
         <h2>Rusty drafts, staff decide</h2>
         <div class="copytext">
-          <p>Writing a good question and four good answers is hard for a busy coordinator. An assistant called Rusty lives in the header and suggests copy in context, and long descriptions get a one-click Shorten. A "Coming soon" state let the entry point ship before the feature did.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig">
-      <button class="zoom" type="button" aria-label="Enlarge: AI assistant"><div class="media"><img src="assets/img/ai-assistant.webp" width="1565" height="549" alt="The Create a Poll screen with the Rusty chat panel open and suggesting four red panda names, plus button states for the AI entry point." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Rusty</b> suggesting names for a zoo's new red panda, with the entry-point states.</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-sec" id="handoff">
-    <div class="cs-text">
-      <div>
-        <h2>Design QA against the real build</h2>
-        <div class="copytext">
-          <p>I checked development builds against the Figma frames with Pixelay overlays, so spacing and alignment slips were caught before release rather than after.</p>
+          <p>Writing a good question and six good answers is hard for a busy coordinator. An assistant called Rusty lives in the header and suggests copy in context, and long descriptions get a one-click Shorten. A "Coming soon" state let the entry point ship before the feature did.</p>
         </div>
       </div>
     </div>
     <figure class="fig narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: Pixelay design QA"><div class="media"><img src="assets/img/pixelay.webp" width="1146" height="999" alt="Pixelay comparison of the development build and the Figma design for the Add QR Code screen." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>Pixelay overlay</b> of the development build against the design.</figcaption>
+      <button class="zoom" type="button" aria-label="Enlarge: AI assistant"><div class="media"><img src="assets/img/ai-assistant.webp?v=2" width="1417" height="1271" alt="The Create a Poll screen with the Rusty chat panel open, suggesting four red panda names, and a Shorten action under the description field." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
+      <figcaption><b>Rusty</b> suggesting names for a zoo's new red panda.</figcaption>
     </figure>
   </section>
 
-  <section class="cs-sec improve" id="what-s-next">
+  <section class="cs-sec improve" id="whats-next">
     <div class="cs-text">
       <div>
         <h2>Things to improve</h2>
         <div class="copytext">
           <ul>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Contrast checks while picking.</b> The scan warning appears after colors are chosen. A live contrast meter beside the pickers would steer people away from unscannable codes sooner.</span></li>
+            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Two ways to ask a question.</b> Open Response and the survey builder overlap, so staff have to guess which one to use; one builder with a single-question mode would settle it.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Fewer look-alike templates.</b> Call to Action and Image + Text use nearly the same editor and description, and could merge into one template with options.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Editing away from a desk.</b> The collapsed rail helps on laptops, but staff standing at an exhibit with a tablet or phone still can't edit comfortably.</span></li>
             <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Scans with context.</b> The dashboard shows total scans per code. Trends over time and by placement would tell venues which signs actually work.</span></li>
