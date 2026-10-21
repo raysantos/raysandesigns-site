@@ -816,6 +816,20 @@ body { font-size: var(--fs-16); line-height: 1.5rem; }
 .rot .w.out { transform: translateY(105%); opacity: 0; filter: none; transition: transform 1200ms cubic-bezier(.65, 0, .35, 1), opacity 900ms ease; }
 .rot { transition: width 1200ms cubic-bezier(.65, 0, .35, 1); }
 
+/* Hero glitch: after 10s the headline scrambles into "Reliable Human" (site.js). RGB split plus sliced jitter while it runs. */
+.hero h1.glitching .rot, .hero h1.glitching .rot .w { transition: none; }
+.hero h1.glitching .line { animation: hero-glitch 180ms steps(1) infinite; text-shadow: -3px 0 rgba(0, 240, 255, .75), 3px 0 rgba(255, 0, 110, .7); }
+.hero h1.glitching .line + .line { animation-duration: 140ms; animation-direction: reverse; }
+@keyframes hero-glitch {
+  0% { transform: translate(-4px, 1px); clip-path: inset(0 0 45% 0); }
+  20% { transform: translate(5px, -2px); clip-path: inset(30% 0 20% 0); }
+  40% { transform: translate(-2px, 0); clip-path: none; }
+  60% { transform: translate(3px, 2px); clip-path: inset(55% 0 0 0); }
+  80% { transform: translate(-5px, -1px); clip-path: inset(10% 0 60% 0); }
+  100% { transform: none; clip-path: none; }
+}
+@media (prefers-reduced-motion: reduce) { .hero h1.glitching .line { animation: none; text-shadow: none; } }
+
 /* Phones: the wordmark's cream fade runs all the way to the left edge of the screen */
 @media (max-width: 839px) {
   .top-app-bar .brand { position: relative; }

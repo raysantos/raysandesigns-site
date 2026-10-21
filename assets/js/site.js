@@ -140,7 +140,7 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     window.addEventListener('resize', fit);
     const slow = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setInterval(() => {
+    const spin = setInterval(() => {
       const cur = words[i];
       cur.classList.remove('on'); cur.classList.add('out');
       i = (i + 1) % words.length;
@@ -151,6 +151,46 @@
       fit();
       setTimeout(() => cur.classList.remove('out'), 1250);
     }, slow ? 6000 : 4600);
+
+    // After 10 seconds the headline glitches out and settles on "Reliable Human" for good
+    const h1 = rot.closest('h1');
+    const line2 = h1.querySelectorAll('.line')[1];
+    setTimeout(() => {
+      clearInterval(spin);
+      h1.classList.add('glitching');
+      words.forEach((w) => w.classList.remove('out'));
+      const sr = h1.querySelector('.sr-only');
+      if (sr) sr.textContent = 'Reliable human';
+      const parts = [[words[i], words[i].textContent, 'Reliable'], [line2, line2.textContent, 'Human']];
+      const done = () => {
+        parts.forEach(([el, , to]) => { el.textContent = to; });
+        fit();
+        h1.classList.remove('glitching');
+      };
+      if (slow) { done(); return; }
+      const junk = '!<>-_\\/[]{}=+*^?#%&01';
+      const dur = 1400;
+      const t0 = performance.now();
+      const tick = () => {
+        const p = Math.min((performance.now() - t0) / dur, 1);
+        if (p === 1) { done(); return; }
+        parts.forEach(([el, from, to]) => {
+          const len = Math.round(from.length + (to.length - from.length) * p);
+          let s = '';
+          for (let k = 0; k < len; k++) {
+            // Each letter locks in once the sweep passes it; the rest flicker as junk or the old word
+            const lock = 0.35 + 0.6 * (k / Math.max(to.length, 1));
+            if (p > lock && k < to.length) s += to[k];
+            else if (Math.random() < 0.25 && k < from.length && p < 0.5) s += from[k];
+            else s += junk[Math.floor(Math.random() * junk.length)];
+          }
+          el.textContent = s;
+        });
+        fit();
+        setTimeout(tick, 55);
+      };
+      tick();
+    }, 10000);
   }
 })();
 
