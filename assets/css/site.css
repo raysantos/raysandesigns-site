@@ -299,6 +299,7 @@ a.card:hover .media img { transform: scale(1.015); }
 @media (min-width: 840px) { .cs-hero { padding-block: 48px 16px; } }
 .back { margin: 0 0 24px -12px; }
 .cs-hero h1 { font-weight: 800; font-stretch: 40%; font-variation-settings: "wdth" 40, "opsz" 144; font-size: clamp(3.5rem, 12vw, 8.5rem); line-height: .9; letter-spacing: -.02em; text-transform: uppercase; }
+.cs-hero h1 .accent { color: var(--md-primary); }
 .cs-hero .lede { font: var(--title-l); color: var(--md-on-surface-variant); max-width: 44rem; margin-top: 24px; }
 .meta { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 32px; }
 .meta .card { padding: 16px; gap: 4px; }
@@ -553,6 +554,7 @@ a.feature:hover h3 { text-decoration: underline; text-underline-offset: 4px; tex
 
 /* Case study header in the original type style */
 .cs-hero h1 { font: 400 clamp(3rem, 8vw, 5.5rem)/1.05 var(--md-font); font-stretch: normal; font-variation-settings: normal; text-transform: none; letter-spacing: -.01em; color: var(--md-on-surface); }
+.cs-hero h1 .accent { color: var(--md-secondary); }
 .cs-hero .overline .ms, .cs-text .step { color: var(--chip-ink); }
 .cs-text .step { font: 700 .875rem/1.2 var(--md-font); text-transform: uppercase; letter-spacing: .02em; }
 .cs-text h2 { font: 400 clamp(1.875rem, 3.6vw, 2.5rem)/1.15 var(--md-font); color: var(--md-on-surface); }
@@ -924,6 +926,7 @@ html { -webkit-tap-highlight-color: transparent; }
 .cs-side .overline { margin-bottom: 0; }
 .cs-side .overline .ms { color: var(--chip-ink); }
 .cs-side h1 { font: 400 clamp(2.75rem, 8vw, 3.5rem)/1.05 var(--md-font); letter-spacing: -.01em; color: var(--md-on-surface); text-wrap: balance; }
+.cs-side h1 .accent { color: var(--md-secondary); }
 .cs-side .lede { font: var(--body-l); color: var(--md-on-surface-variant); margin: 0; }
 .cs-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; margin: 8px 0 0; padding-top: 20px; border-top: 1px solid var(--md-outline-variant); }
 .cs-meta dt { display: flex; align-items: center; gap: 6px; font: var(--label-m); letter-spacing: .06em; text-transform: uppercase; color: var(--chip-ink); }
