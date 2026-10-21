@@ -265,3 +265,34 @@
   }, { rootMargin: '-96px 0px -55% 0px' });
   byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
+
+// Back to home: slide the case study off to the right and the homepage in from the left.
+// index.html's head script plays the incoming half; every other navigation stays instant.
+(() => {
+  const isHome = (url) => /(^|\/)(index\.html)?$/.test(new URL(url, location.href).pathname);
+  const fromCaseStudy = !!document.querySelector('.cs-side .back');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('onpageswap' in window) {
+    window.addEventListener('pageswap', (e) => {
+      if (!e.viewTransition) return;
+      const to = e.activation && e.activation.entry && e.activation.entry.url;
+      if (fromCaseStudy && to && isHome(to) && !reduce) {
+        e.viewTransition.types.add('back');
+        try { sessionStorage.setItem('slide-back', '1'); } catch (err) {}
+      } else e.viewTransition.skipTransition();
+    });
+    return;
+  }
+  // No cross-document view transitions: slide out, then navigate.
+  const back = document.querySelector('.cs-side .back');
+  if (!back || reduce) return;
+  back.addEventListener('click', (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+    e.preventDefault();
+    try { sessionStorage.setItem('slide-back', '1'); } catch (err) {}
+    document.documentElement.classList.add('slide-back', 'out');
+    setTimeout(() => { location.href = back.href; }, 300);
+  });
+  // Coming back via the browser's back button from the bfcache: clear the slid-out state.
+  window.addEventListener('pageshow', (e) => { if (e.persisted) document.documentElement.classList.remove('slide-back', 'out'); });
+})();
