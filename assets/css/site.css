@@ -221,10 +221,8 @@ a.card-elevated:hover { box-shadow: var(--elev-2); }
 .cs-phones .fig { margin-top: 48px; }
 .cs-phones .fig.narrow { max-width: 42rem; margin-inline: 0; }
 .cs-phones .fig figcaption { margin: 20px 0 0; max-width: 36rem; text-align: left; line-height: 1.55; }
-/* Line the screens and captions up with the paragraph column (220px label + 32px gap) */
-@media (min-width: 840px) { .cs-phones .cs-sec .fig.narrow { margin-left: calc(220px + 32px); } }
-/* Any case study: .fig.col lines a figure up with the paragraph column */
-@media (min-width: 840px) { .cs-sec .fig.col, .cs-sec .pair.col { margin-left: calc(220px + 32px); } }
+/* Figures start at the left edge of the content column. (The old 220px label column is gone
+   since the sidebar layout, so .fig.col and .fig.narrow no longer need an offset.) */
 .cs-phones .next { margin-top: 96px; }
 @media (max-width: 839px) { .cs-phones .cs-sec { padding-block: 64px 0; } .cs-phones .fig { margin-top: 32px; } }
 @media (max-width: 839px) { .feature { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
