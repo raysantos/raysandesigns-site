@@ -90,6 +90,27 @@
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
   }
 
+  // Work section: case study cards (not the text-only older work) shuffle once a day, seeded by the local date
+  const grid = document.getElementById('work-grid');
+  if (grid) {
+    const cards = [...grid.querySelectorAll(':scope > .feature:not(.text-only)')];
+    const d = new Date();
+    let seed = 2166136261; // FNV-1a hash of the date, so neighbouring days don't start alike
+    for (const ch of `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`) seed = Math.imul(seed ^ ch.charCodeAt(0), 16777619);
+    const rand = () => { // mulberry32
+      seed = (seed + 0x6D2B79F5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    const before = grid.querySelector(':scope > .text-only');
+    cards.forEach(c => grid.insertBefore(c, before));
+  }
+
   // Work section: show the first row of stories, the rest behind "Show more work"
   const moreBtn = document.querySelector('.more-work');
   const workGrid = moreBtn && document.getElementById(moreBtn.getAttribute('aria-controls'));
