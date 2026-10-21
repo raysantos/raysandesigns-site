@@ -50,15 +50,9 @@
       </dl>
       <nav class="cs-toc" aria-label="On this page">
         <ol>
-            <li><a href="#the-problem"><span class="ms" aria-hidden="true">report</span>The problem</a></li>
-            <li><a href="#the-core-pattern"><span class="ms" aria-hidden="true">ads_click</span>The core pattern</a></li>
-            <li><a href="#how-it-reads-a-field"><span class="ms" aria-hidden="true">manage_search</span>How it reads a field</a></li>
-            <li><a href="#filling-the-gaps"><span class="ms" aria-hidden="true">bookmark_added</span>Filling the gaps</a></li>
-            <li><a href="#settings"><span class="ms" aria-hidden="true">tune</span>Settings</a></li>
-            <li><a href="#privacy"><span class="ms" aria-hidden="true">lock</span>Privacy</a></li>
-            <li><a href="#process-and-testing"><span class="ms" aria-hidden="true">science</span>Process and testing</a></li>
-            <li><a href="#revisions"><span class="ms" aria-hidden="true">history</span>Revisions</a></li>
-            <li><a href="#what-s-next"><span class="ms" aria-hidden="true">flag</span>What's next</a></li>
+            <li><a href="#problem"><span class="ms" aria-hidden="true">report</span>Problem</a></li>
+            <li><a href="#solution"><span class="ms" aria-hidden="true">lightbulb</span>Solution</a></li>
+            <li><a href="#result"><span class="ms" aria-hidden="true">task_alt</span>Result</a></li>
         </ol>
       </nav>
     </aside>
@@ -69,59 +63,28 @@
     </figure>
 
 
-  <section class="cs-sec" id="the-problem">
+  <section class="cs-sec" id="problem">
     <div class="cs-text">
       <div>
         <h2>Same answers, every application</h2>
         <div class="copytext">
-          <p>Most of my time on each application went to retyping answers I had already given. Greenhouse, Lever, Ashby and Workday all want name, email, phone and LinkedIn, then ask what Chrome's autofill never touches: work authorization, sponsorship, years of experience, why this company. Picking portfolio pieces and writing to the hiring team got whatever time was left.</p>
+          <p>Most of my time on each application went to retyping answers I had already given. Greenhouse, Lever, Ashby and Workday all want name, email, phone and LinkedIn, then ask what Chrome's autofill never touches: work authorization, sponsorship, years of experience. Picking portfolio pieces and writing to the hiring team got whatever time was left.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cs-sec" id="the-core-pattern">
+  <section class="cs-sec" id="solution">
     <div class="cs-text">
       <div>
-        <h2>Start from the right-click</h2>
+        <h2>Fill from the right-click, outline the gaps</h2>
         <div class="copytext">
-          <p>Autofill lives in the menu already under your hand: no toolbar popup, no per-site setup, and it works inside embedded application frames.</p>
+          <p>Autofill lives in the menu already under my hand, with no popup or per-site setup.</p>
           <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Fill blanks, never overwrite.</b> Only empty fields are touched, so running it twice is harmless.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Show the gaps.</b> Fields it can't place get a dashed amber outline, not a best guess.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Don't agree on my behalf.</b> No checkbox is ticked from a guess; password and file fields are skipped.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cs-sec" id="how-it-reads-a-field">
-    <div class="cs-text">
-      <div>
-        <h2>Every input leaves clues</h2>
-        <div class="copytext">
-          <p>A field might have a label, only a placeholder, or just a name like <code>job_application[first_name]</code>, so AppFill flattens every clue into plain words and checks 31 patterns. Each empty field tries four sources in order: answers saved for this site, the autocomplete hint, my custom answers, then the patterns. Dropdowns also match short values, so OR finds Oregon.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig col">
-      <div class="media"><video src="assets/video/appfill-read.mp4" poster="assets/img/appfill-read-poster.webp" width="1440" height="482" autoplay muted loop playsinline preload="metadata" aria-label="Animation in four steps: the First Name field's label, name, id and autocomplete hint are collected, flattened into plain words, matched to the firstName rule, and the value Jordan is filled in." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>Collect, flatten, match, fill.</b> Values go in through the native setter plus typing events, so React forms notice.</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-sec" id="filling-the-gaps">
-    <div class="cs-text">
-      <div>
-        <h2>Answer a gap once, or point at the field</h2>
-        <div class="copytext">
-          <p>Platform questions like work arrangement or pronouns get two fixes instead of a guess.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Remember this site.</b> I answer once by hand, then Remember my answers on this site fills the next form.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Saved per host.</b> Answers from one Greenhouse posting fill the next Greenhouse posting too.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Fill this field with…</b> Right-clicking a field lists every saved value with a preview, skipping empty ones.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Pointing overwrites.</b> Choosing one field is a clear instruction, so it replaces what's there.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Fill blanks, never overwrite.</b> Only empty fields change, so running it twice is harmless.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Show the gaps.</b> Anything it can't place gets a dashed amber outline, not a guess.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Learn each platform once.</b> Answers saved on one Greenhouse posting fill the next one.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Stays on this computer.</b> No account or server; hidden trap fields and ID or bank answers are never filled or saved.</span></li>
           </ul>
         </div>
       </div>
@@ -130,49 +93,18 @@
       <div class="media"><video src="assets/video/appfill-remember.mp4" poster="assets/img/appfill-remember-poster.webp" width="1440" height="722" autoplay muted loop playsinline preload="metadata" aria-label="Animation: on a first Greenhouse application four of five fields fill and the work arrangement question is outlined in amber. It is answered by hand, the answers are saved, and the next Greenhouse application fills all five." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
       <figcaption><b>Four of five, then five of five.</b> The second Greenhouse application has no amber outline.</figcaption>
     </figure>
-    <figure class="fig col">
-      <div class="media"><video src="assets/video/appfill-field.mp4" poster="assets/img/appfill-field-poster.webp" width="1440" height="728" autoplay muted loop playsinline preload="metadata" aria-label="Animation: right-clicking inside a Personal website field, opening Fill this field with, and choosing Portfolio, which fills only that field." style="display:block;width:100%;height:auto;border-radius:var(--shape-s)"></video></div>
-      <figcaption><b>That field, that value.</b> Nothing else on the page changes.</figcaption>
-    </figure>
   </section>
 
-  <section class="cs-sec" id="settings">
+  <section class="cs-sec" id="result">
     <div class="cs-text">
       <div>
-        <h2>A form for filling forms</h2>
+        <h2>Most of a form in one click</h2>
         <div class="copytext">
-          <p>Settings hold personal details, address, links, work, education and four yes-or-no questions, plus custom answers, remembered sites, and export and import. It saves as you type. Custom answers match on a few key words, so "why do you want, why this company" catches most versions of that question.</p>
-        </div>
-      </div>
-    </div>
-    <figure class="fig col narrow">
-      <button class="zoom" type="button" aria-label="Enlarge: settings page"><div class="media"><img src="assets/img/appfill-settings.webp" width="1200" height="1227" alt="The AppFill settings page with Personal, Address, Links and Work sections filled in with sample data for Jordan Ellis." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
-      <figcaption><b>The settings page,</b> filled in with a sample profile.</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-sec" id="privacy">
-    <div class="cs-text">
-      <div>
-        <h2>Everything stays on this computer</h2>
-        <div class="copytext">
-          <p>An autofill tool holds the details you'd least want leaking. The profile, custom answers and remembered sites live in local extension storage. Nothing is synced, sent or logged; export and import handle moving to a new machine.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cs-sec" id="process-and-testing">
-    <div class="cs-text">
-      <div>
-        <h2>Built with Claude, tested in a real browser</h2>
-        <div class="copytext">
-          <p>I set the behavior, Claude wrote the code in one session, then ran it in Chromium against a Greenhouse-style test form.</p>
+          <p>I set the behavior, Claude wrote the code, then it ran in Chromium against a Greenhouse-style test form.</p>
           <ul>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>13 of 14</b> fields filled on the first pass, with no saved answers.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>15 of 15</b> filled after remembering the site once, including the dropdown and checkbox.</span></li>
+            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>15 of 15</b> filled after remembering the site once.</span></li>
             <li><span class="ms" aria-hidden="true">check_circle</span><span><b>0</b> password, file or unsaved checkbox fields touched.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>1 bug</b> caught in test screenshots, before any real application.</span></li>
           </ul>
         </div>
       </div>
@@ -181,37 +113,6 @@
       <button class="zoom" type="button" aria-label="Enlarge: test form after one fill"><div class="media"><img src="assets/img/appfill-test.webp" width="900" height="1180" alt="The test form after one fill: green outlines on thirteen filled fields, a dashed amber outline on the one dropdown left, and a notice reading Filled 13 fields, 1 left for you." loading="lazy"></div><span class="hint" aria-hidden="true"><span class="ms">zoom_in</span></span></button>
       <figcaption><b>A real capture after one fill.</b> The amber dropdown is the one question no profile could answer.</figcaption>
     </figure>
-  </section>
-  <section class="cs-sec" id="revisions">
-    <div class="cs-text">
-      <div>
-        <h2>What changed since launch</h2>
-        <div class="copytext">
-          <p>One fix so far: radio questions now highlight the option that was actually selected.</p>
-          <details class="changes"><summary><span class="ms" aria-hidden="true">expand_more</span>1 change</summary>
-            <p><b>Fixes</b></p>
-            <ul>
-              <li><span class="ms" aria-hidden="true">build</span><span>Radio questions now outline the checked option, not the first one.</span></li>
-            </ul>
-          </details>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="cs-sec improve" id="what-s-next">
-    <div class="cs-text">
-      <div>
-        <h2>Things to improve</h2>
-        <div class="copytext">
-          <ul>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Custom dropdowns.</b> Workday and type-to-search pickers get outlined, not filled; an adapter that opens each picker and picks the match would close the biggest gap.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Resume uploads.</b> Extensions can't attach files, but the notice could flag an empty upload field.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>Keyboard shortcut.</b> One key to fill the page would suit applications I finish without the mouse.</span></li>
-            <li><span class="ms" aria-hidden="true">radio_button_unchecked</span><span><b>More than one profile.</b> Switching profiles from the menu would cover full-time and freelance applications, which want different titles, links and rates.</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </section>
     </div>
   </div>
