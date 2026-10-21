@@ -266,34 +266,42 @@
   byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
 })();
 
-// Back to home: slide the case study off to the right and the homepage in from the left.
-// index.html's head script plays the incoming half; every other navigation stays instant.
+// Page slide: leaving a case study for home slides everything right; opening a case study from home slides it left.
+// The head script on each page plays the incoming half; every other navigation stays instant.
 (() => {
   // Cloudflare serves pretty URLs, so home can be "/", "/index" or "/index.html"
   const isHome = (url) => /(^|\/)(index(\.html)?)?$/.test(new URL(url, location.href).pathname);
+  const onHome = isHome(location.href);
   const fromCaseStudy = !!document.querySelector('.cs-side .back');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dirTo = (url) => {
+    if (reduce || !url) return null;
+    const u = new URL(url, location.href);
+    if (u.origin !== location.origin) return null;
+    if (fromCaseStudy && isHome(u.href)) return 'back';
+    if (onHome && !isHome(u.href) && /(\.html|\/[\w-]+)$/.test(u.pathname)) return 'forward';
+    return null;
+  };
+  const remember = (dir) => { try { sessionStorage.setItem('slide-dir', dir); } catch (err) {} };
   if ('onpageswap' in window) {
     window.addEventListener('pageswap', (e) => {
       if (!e.viewTransition) return;
-      const to = e.activation && e.activation.entry && e.activation.entry.url;
-      if (fromCaseStudy && to && isHome(to) && !reduce) {
-        e.viewTransition.types.add('back');
-        try { sessionStorage.setItem('slide-back', '1'); } catch (err) {}
-      } else e.viewTransition.skipTransition();
+      const dir = dirTo(e.activation && e.activation.entry && e.activation.entry.url);
+      if (dir) { e.viewTransition.types.add(dir); remember(dir); } else e.viewTransition.skipTransition();
     });
     return;
   }
   // No cross-document view transitions: slide out, then navigate.
-  const back = document.querySelector('.cs-side .back');
-  if (!back || reduce) return;
-  back.addEventListener('click', (e) => {
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || a.target || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+    const dir = dirTo(a.href);
+    if (!dir) return;
     e.preventDefault();
-    try { sessionStorage.setItem('slide-back', '1'); } catch (err) {}
-    document.documentElement.classList.add('slide-back', 'out');
-    setTimeout(() => { location.href = back.href; }, 300);
+    remember(dir);
+    document.documentElement.classList.add('slide-' + dir, 'out');
+    setTimeout(() => { location.href = a.href; }, 300);
   });
-  // Coming back via the browser's back button from the bfcache: clear the slid-out state.
-  window.addEventListener('pageshow', (e) => { if (e.persisted) document.documentElement.classList.remove('slide-back', 'out'); });
+  // Coming back from the bfcache: clear the slid-out state.
+  window.addEventListener('pageshow', (e) => { if (e.persisted) document.documentElement.classList.remove('slide-back', 'slide-forward', 'out'); });
 })();

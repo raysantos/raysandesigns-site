@@ -357,22 +357,29 @@ dialog.lb img { max-width: none; width: max(100%, 1100px); border-radius: var(--
 .hero h1, .cs-hero h1 { animation: rise var(--dur-l) var(--ease-emph) both; }
 .hero-foot, .cs-hero .lede { animation: rise var(--dur-l) 80ms var(--ease-emph) both; }
 
-/* Back to home: the case study slides off to the right while the homepage slides in from the left.
+/* Page slide: a case study slides off to the right while home slides in from the left (back),
+   and the reverse when opening a case study from home (forward).
    Cross-document view transitions where supported; site.js skips every other navigation. */
 @view-transition { navigation: auto; }
 @keyframes slide-out-right { from { transform: none; } to { transform: translateX(100%); } }
 @keyframes slide-in-left { from { transform: translateX(-100%); } to { transform: none; } }
+@keyframes slide-out-left { from { transform: none; } to { transform: translateX(-100%); } }
+@keyframes slide-in-right { from { transform: translateX(100%); } to { transform: none; } }
 html:active-view-transition-type(back)::view-transition-old(root) { animation: slide-out-right 560ms var(--ease-emph) both; }
 html:active-view-transition-type(back)::view-transition-new(root) { animation: slide-in-left 560ms var(--ease-emph) both; }
-/* The header and phone nav bar are the same on both pages, so they stay put; only the Work highlight fades off */
+html:active-view-transition-type(forward)::view-transition-old(root) { animation: slide-out-left 560ms var(--ease-emph) both; }
+html:active-view-transition-type(forward)::view-transition-new(root) { animation: slide-in-right 560ms var(--ease-emph) both; }
+/* The header and phone nav bar are the same on both pages, so they stay put; only the Work highlight fades */
 .top-app-bar { view-transition-name: site-header; }
 .nav-bar { view-transition-name: site-nav-bar; }
-html:active-view-transition-type(back)::view-transition-group(site-header),
-html:active-view-transition-type(back)::view-transition-group(site-nav-bar) { animation-duration: 560ms; }
+html:active-view-transition-type(back, forward)::view-transition-group(site-header),
+html:active-view-transition-type(back, forward)::view-transition-group(site-nav-bar) { animation-duration: 560ms; }
 /* Fallback for browsers without cross-document view transitions */
-html.slide-back { overflow-x: hidden; }
+html.slide-back, html.slide-forward { overflow-x: hidden; }
 html.slide-back.out body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-out-right 320ms cubic-bezier(.3, 0, .8, .15) both; }
 html.slide-back.in body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-in-left 480ms var(--ease-emph) both; }
+html.slide-forward.out body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-out-left 320ms cubic-bezier(.3, 0, .8, .15) both; }
+html.slide-forward.in body > *:not(dialog):not(.snackbar):not(.top-app-bar):not(.nav-bar) { animation: slide-in-right 480ms var(--ease-emph) both; }
 @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
 
 /* =========================================================
