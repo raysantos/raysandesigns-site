@@ -964,3 +964,12 @@ html { -webkit-tap-highlight-color: transparent; }
    (same as the icon panels on iconic-logo.html). Bare phone clips keep their transparent frame. */
 .cs-main .fig .media:not(.bare) { background-color: var(--md-surface-container-lowest); background-image: radial-gradient(circle, color-mix(in srgb, var(--md-outline) 25%, transparent) 1px, transparent 1.5px); background-size: 16px 16px; background-position: 8px 8px; border-radius: var(--shape-l); padding: 0; }
 
+/* Phone screens: every one at the same size, in the same frame, on every case study */
+.cs-main .media.phone, .cs-main .media.phone.bare { width: 280px; max-width: 100%; padding: 0; background: var(--md-surface-container-lowest); border: 3px solid var(--md-outline-variant); border-radius: 28px; overflow: hidden; }
+.cs-main .media.phone > img, .cs-main .media.phone > video { display: block; width: 100% !important; height: auto !important; margin: 0; border: 0; border-radius: 0 !important; }
+.cs-main .zoom:has(> .media.phone) { width: fit-content; max-width: 100%; border-radius: 28px; }
+.cs-main .zoom:has(> .media.phone) .hint { right: 12px; bottom: 12px; }
+.cs-main .duo:has(.media.phone) { grid-template-columns: 280px minmax(0, 1fr); }
+@media (max-width: 599px) { .cs-main .duo:has(.media.phone) { grid-template-columns: minmax(0, 1fr); } }
+/* Two-phone composites: capped so each phone in them lands at about the same 280px */
+.cs-main .media.phones-2 { max-width: 580px; }

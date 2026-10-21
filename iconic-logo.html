@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261020d">
+<link rel="stylesheet" href="assets/css/site.css?v=20261020e">
 <style>
 .morph{padding:clamp(20px,4vw,40px) 16px 16px;background:var(--md-surface-container);display:grid;justify-items:center;gap:16px}
 .morph svg.stage{width:min(260px,60vw);height:auto;display:block}
@@ -123,7 +123,7 @@
       <div>
         <h2>A placeholder that said nothing</h2>
         <div class="copytext">
-          <p>Iconic shipped with a quick blue triangle and dot on a dark tile. It filled the slot but said nothing about the app. My brief was one line: black and white, a circle and a square, dotted like they're being edited. That's the moment Iconic lives in, a shape selected and mid-change.</p>
+          <p>Iconic shipped with a quick blue triangle and dot that said nothing about the app. My brief was one line: black and white, a square and a circle, dotted like they're mid-edit.</p>
         </div>
       </div>
     </div>
@@ -134,12 +134,7 @@
       <div>
         <h2>Fifteen versions in twenty minutes</h2>
         <div class="copytext">
-          <p>I designed it the same way I built the app: in conversation with Claude. I gave short directions, Claude edited the SVG by hand, checked it in a browser, and shipped each version to the live app.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Short calls, fast loops.</b> Directions like "solid circle", "right angles" and "centered" each became a live version within a minute.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Every version is a commit.</b> All fifteen are in the app's history, so the morph above uses the real files.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Compare before choosing.</b> For the bigger choices I asked for side-by-sides at real sizes, from 16 to 128px, on light and dark.</span></li>
-          </ul>
+          <p>I designed it the way I built the app, in conversation with Claude: a short direction, a hand-edited SVG, a live version within a minute. Fifteen versions took twenty minutes, each one a commit, compared side by side from 16 to 128px.</p>
         </div>
       </div>
     </div>
@@ -150,13 +145,7 @@
       <div>
         <h2>Start literal, then take things away</h2>
         <div class="copytext">
-          <p>The first draft was a dashed square and a dashed circle with selection handles on the corners, exactly as asked. It read as "editing", but too busy. I took it apart one call at a time:</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Solid circle.</b> One shape finished, one still being edited.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No handles.</b> The dashes alone say "selected".</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Thinner dashes, right-angle corners.</b> Round dots looked soft. Sharp L-shaped corners look like a selection box.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Corners lead.</b> Corner arms longer than the dashes between them, so the square holds its shape. That meant drawing each piece by hand, since a repeating dash pattern can't vary lengths.</span></li>
-          </ul>
+          <p>The first draft, dashed shapes with selection handles, read as editing but was too busy. I took it apart one call at a time: a solid circle, no handles, then thin dashes with long right-angle corners so the square holds its shape.</p>
         </div>
       </div>
     </div>
@@ -172,13 +161,7 @@
       <div>
         <h2>Equal by eye, not by numbers</h2>
         <div class="copytext">
-          <p>v1 is about details you feel more than see.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Reverse on overlap.</b> Where the square passes under the circle, its dashes turn black, so the whole square still reads.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Optically equal.</b> A circle looks smaller than a square of the same width, so the circle grew until they matched by eye.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No two-tone dashes.</b> I moved the circle so its edge crosses the square in the middle of a gap, and every dash is all white or all black.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Safe on every phone.</b> The mark sits at 86% so Android's circle crop only trims background.</span></li>
-          </ul>
+          <p>v1 is about details you feel more than see. The dashes turn black where the square passes under the circle, the circle grew until it looked equal to the square, and the mark sits at 86% so Android's circle crop only trims background.</p>
         </div>
       </div>
     </div>
@@ -192,12 +175,7 @@
       <div>
         <h2>16 pixels tells the truth</h2>
         <div class="copytext">
-          <p>v1 looked right on a home screen and fell apart in a browser tab. At 16px a thin dash is less than a pixel, so it blurs to grey.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>A separate small icon.</b> A bolder tab icon that fills the tile, with thicker dashes and fewer of them.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Drop what can't be seen.</b> The reversed corner was one blurry pixel, so it went.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Then drop the dashes.</b> They still read as noise, so the square became solid grey under a white circle. That became v2, at every size.</span></li>
-          </ul>
+          <p>At 16px a thin dash is less than a pixel and blurs to grey. A bolder tab icon helped, but the dashes still read as noise, so the square became solid grey under a white circle. That became v2, at every size.</p>
         </div>
       </div>
     </div>
@@ -214,13 +192,7 @@
       <div>
         <h2>Trying depth and color</h2>
         <div class="copytext">
-          <p>With the shape settled, I asked whether a shadow or a gradient would make it pop.</p>
-          <ul>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>Shadows didn't make it.</b> They only showed at large sizes, and my own site has a no-shadows rule. Flat fits the brand.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No 45° angles.</b> Diagonal gradients and shadows felt dated, so everything runs straight across, like my site header.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>All four colors was too much.</b> My header gradient (teal, blue, peach, coral) works because it slides and you only see two at a time. Packed into one icon it got busy.</span></li>
-            <li><span class="ms" aria-hidden="true">check_circle</span><span><b>No animated tab icon.</b> Chrome, Edge and Safari only show the first frame, so it stays still.</span></li>
-          </ul>
+          <p>Then I tried shadows and gradients. Shadows only showed at large sizes and broke my site's flat look, 45° angles felt dated, and all four header colors got busy in one icon. Tab icons can't animate, so it stays still.</p>
         </div>
       </div>
     </div>
@@ -237,8 +209,7 @@
       <div>
         <h2>The warm end of my signature</h2>
         <div class="copytext">
-          <p>The version I loved was a moment from the animated header: dark orange fading to light orange. v3 uses just that, coral to peach, with a faded white square and a white circle. It ties Iconic to my site and documents without the noise of all four colors.</p>
-          <p>The black-and-white v2 stays as the lo-fi logo, and it's the mark in Iconic's toolbar, where it sits on the dark bar without a tile.</p>
+          <p>The version I loved was one moment of my animated header: coral fading to peach. v3 uses just that, with a faded white square and a white circle, so Iconic matches my site. The black-and-white v2 stays as the lo-fi mark in Iconic's toolbar.</p>
         </div>
       </div>
     </div>
