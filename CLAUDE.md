@@ -47,6 +47,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 - Sidebar case study layout is live (see Case studies); dev carries the same CSS, JS and page conversions, plus `cheqrboard.html` and `asthma-assistant.html` converted the same way.
 - Work section news-style layout is live (see Current state in `main`'s CLAUDE.md); dev carries the same CSS and the Show more work change, `?v=20261012g`.
 - `cheqrboard.html`, rebuilt short: client work (Zero Copy Labs, 2025), 8 story sections plus Things to improve, no Revisions section (client work, like `industrial-iot.html`). Seven looping clips (`cheq-build`, `cheq-poll`, `cheq-warning`, `cheq-schedule`, `cheq-presets`, `cheq-sidebar`, `cheq-card`), each with a `-poster.webp`. The clips are soft because the Figma exports are low resolution.
+- `industrial-iot.html` matches `main` (2026-10-20): trimmed, plus the new Sign-in section with `proaxion-login-error.webp` and `proaxion-login-toast.webp`.
 - Home page: CheQRboard and Industrial IoT App are the first two `.app-grid` cards (six cards total). Chips: CheQRboard: Design systems, Product UI, Icon set. Industrial IoT: IoT, Dashboards, Icon design. Industrial IoT is real client work (ProAxion via Zero Copy Labs).
 - `asthma-assistant.html`: model UX case study for the Google DeepMind Senior Model UX Designer application. Unlisted and `noindex`. Don't add a home card or merge to `main` until its "To do" sections are filled in.
 
@@ -70,7 +71,7 @@ This file is the single source of truth for the site. Keep **Current state** and
 ## Open items
 
 - Ray to review CheQRboard and Industrial IoT on dev, then merge both to `main`.
-- Trim `industrial-iot.html` to the case study length rules below. (`document-system.html` was never trimmed either.)
+- Trim `document-system.html` to the case study length rules below.
 - Fill in the "To do" sections of `asthma-assistant.html`: instructions v1→v3, eval results, control screens, live playground.
 - Add a résumé link once the Google Senior Icon Designer resume is built.
 - Suggested, not started: an icon showcase strip, an og:image social preview.
