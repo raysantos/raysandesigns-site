@@ -269,7 +269,8 @@
 // Back to home: slide the case study off to the right and the homepage in from the left.
 // index.html's head script plays the incoming half; every other navigation stays instant.
 (() => {
-  const isHome = (url) => /(^|\/)(index\.html)?$/.test(new URL(url, location.href).pathname);
+  // Cloudflare serves pretty URLs, so home can be "/", "/index" or "/index.html"
+  const isHome = (url) => /(^|\/)(index(\.html)?)?$/.test(new URL(url, location.href).pathname);
   const fromCaseStudy = !!document.querySelector('.cs-side .back');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if ('onpageswap' in window) {
