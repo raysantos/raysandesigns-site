@@ -158,9 +158,9 @@
     // ...and the gradient behind it glitches into a random New York graffiti photo from Unsplash, credited bottom right
     const band = h1.closest('.hero-band');
     const shots = [
-      ['2MLVM0P4_Qs', 'Rio Buziez'], ['IPV5X5ne1m8', 'Ankit Dembla'], ['NFvJwmGBo7Q', 'Diego Allen'],
-      ['TikO1K5MmXE', 'Ruben Abreu'], ['Urt2tOrxSV8', 'Julie Ricard'], ['oO-3KuebmyI', 'Sebastian Enrique'],
-      ['pShoRxLR_6Y', 'Julie Ricard'], ['zNC7mK3TD18', 'Paul Brake']
+      ['3b9uLGy-538', 'New York Said'], ['6VQ2qH0HnYI', 'Mike Cox'], ['8LGH8IXG2v0', 'Hiroko Nishimura'],
+      ['9NTPXa4GiBQ', 'New York Said'], ['EqZkIJAeS9c', 'Angeline Wagner'], ['Tr8r1XBoqgI', 'Bradley Andrews'],
+      ['bq8YDCY1ABU', 'Matthew Stephenson'], ['nL4vdzcUqPY', 'Noah Heaps']
     ];
     const [shotId, shotBy] = shots[Math.floor(Math.random() * shots.length)];
     const shotSrc = 'assets/img/graffiti/' + shotId + '.webp';
