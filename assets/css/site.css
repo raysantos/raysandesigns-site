@@ -478,6 +478,12 @@ a.feature:hover .media img, a.feature:hover .media video { transform: scale(1.02
 #work .feature.flagship .media { margin: 0; }
 #work .feature.flagship .feature-text { max-width: none; gap: 16px; }
 #work .feature.flagship h3 { font-size: var(--fs-36); line-height: 2.75rem; }
+/* The lead slot rotates on every load, so it frames any card's media the same way: a 16:10 panel, cropped to fill */
+#work .feature.flagship .media { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; }
+#work .feature.flagship .media > img, #work .feature.flagship .media > video { width: 100% !important; height: 100% !important; object-fit: cover; object-position: top center; }
+#work .feature.flagship .media.bare { background: var(--md-surface-container); padding-top: 32px; align-items: flex-start; overflow: hidden; }
+#work .feature.flagship .media.bare > video { width: auto !important; max-width: min(46%, 340px); object-fit: contain; border-bottom: 0 !important; border-radius: 24px 24px 0 0 !important; }
+#work .feature.flagship .logo-tile { max-height: 200px; }
 /* Story row: three across, each closed by a thin rule, tags as a quiet meta line */
 #work .app-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 32px; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--md-outline-variant); }
 #work .app-grid .feature { grid-template-rows: auto 1fr; }
